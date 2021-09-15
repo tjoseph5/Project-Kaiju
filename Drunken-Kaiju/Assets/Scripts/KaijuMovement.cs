@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class KaijuMovement : MonoBehaviour
 {
+
+    Rigidbody rb;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = this.gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        rb.AddForce(0, 0, -10);
     }
 }
