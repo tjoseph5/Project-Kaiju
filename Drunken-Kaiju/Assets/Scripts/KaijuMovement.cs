@@ -45,7 +45,7 @@ public class KaijuMovement : MonoBehaviour
         {
             float targetAngle = Mathf.Atan2(move.z, move.x) * Mathf.Rad2Deg;
 
-            this.hipJoint.targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
+            this.hipJoint.targetRotation = Quaternion.Euler(0f, targetAngle + 90, 0f);
 
             this.hip.AddForce(move * this.speed);
 

@@ -16,12 +16,6 @@ public class CopyLimbs : MonoBehaviour
         this.targetInitialRotation = this.targetLimb.transform.localRotation;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
         this.m_configurableJoint.targetRotation = copyRotation();
