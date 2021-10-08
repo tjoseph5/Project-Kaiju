@@ -19,6 +19,7 @@ public class KaijuMovement : MonoBehaviour
     #endregion
 
     [SerializeField] float speed;
+    [SerializeField] float jumpHeight;
     [SerializeField] ConfigurableJoint hipJoint;
     [SerializeField] Rigidbody hip;
 
@@ -26,6 +27,13 @@ public class KaijuMovement : MonoBehaviour
 
     bool walk = false;
 
+    [Range(1,30)] [SerializeField] float velocityCap;
+    [Range(1, 3)] [SerializeField] float groundSpeedCap;
+
+    Vector2 movement;
+    Vector3 move;
+
+    [SerializeField] bool isGrounded;
 
     void Start()
     {
@@ -33,14 +41,25 @@ public class KaijuMovement : MonoBehaviour
         cameraMainTransform = GameObject.Find("Main Camera").transform;
     }
 
-
     void Update()
     {
-        Vector2 movement = movementControl.action.ReadValue<Vector2>();
-        Vector3 move = new Vector3(movement.x, 0, movement.y).normalized;
+        movement = movementControl.action.ReadValue<Vector2>();
+        move = new Vector3(movement.x, 0, movement.y).normalized;
+        move = cameraMainTransform.forward * move.z + cameraMainTransform.right * move.x;
+        move.y = 0f;
 
 
+        if (jumpControl.action.triggered)
+        {
+            Debug.Log("jump");
+            this.hip.AddForce(new Vector3 (0, jumpHeight, 0), ForceMode.Impulse);
+        }
 
+        this.targetAnimator.SetBool("Walk", this.walk);
+    }
+
+    void FixedUpdate()
+    {
         if (move.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(move.z, move.x) * Mathf.Rad2Deg;
@@ -56,11 +75,19 @@ public class KaijuMovement : MonoBehaviour
             this.walk = false;
         }
 
-        this.targetAnimator.SetBool("Walk", this.walk);
-
-        if (jumpControl.action.triggered)
+        if (isGrounded)
         {
-            Debug.Log("jump");
+            if (hip.velocity.magnitude > groundSpeedCap)
+            {
+                hip.velocity = Vector3.ClampMagnitude(hip.velocity, groundSpeedCap);
+            }
+        }
+        else
+        {
+            if (hip.velocity.magnitude > velocityCap)
+            {
+                hip.velocity = Vector3.ClampMagnitude(hip.velocity, velocityCap);
+            }
         }
     }
 
