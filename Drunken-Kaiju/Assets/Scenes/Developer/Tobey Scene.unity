@@ -1468,8 +1468,10 @@ MonoBehaviour:
   hip: {fileID: 68785284}
   targetAnimator: {fileID: 1808705420}
   velocityCap: 30
-  groundSpeedCap: 0
+  groundSpeedCap: 2
   isGrounded: 1
+  rayForwardLength: 2
+  rayDownLength: 2
 --- !u!4 &447649993 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8502932533222331957, guid: 9076c9cc344900b40a97fdeec806044e, type: 3}
@@ -4592,6 +4594,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: -1432989630079110010, guid: 89e48f560662f134f85ead184771d5e6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -1305776510752406161, guid: 89e48f560662f134f85ead184771d5e6, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -4719,7 +4725,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 8503db385df5413438d3276b6af15ea0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4965,8 +4971,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1342264362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -240.16, y: 1.2702, z: 58.55}
-  m_LocalScale: {x: 22, y: 0.5, z: 21}
+  m_LocalPosition: {x: -257.56, y: 0.5, z: 75.156}
+  m_LocalScale: {x: 56.75, y: 1.25, z: 54.25}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -6859,6 +6865,8 @@ MonoBehaviour:
   velocityCap: 0
   groundSpeedCap: 0
   isGrounded: 0
+  rayForwardLength: 0
+  rayDownLength: 0
 --- !u!54 &2144957640
 Rigidbody:
   m_ObjectHideFlags: 0

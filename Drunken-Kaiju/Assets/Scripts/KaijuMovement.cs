@@ -35,9 +35,26 @@ public class KaijuMovement : MonoBehaviour
 
     [SerializeField] bool isGrounded;
 
+    #region Raycast Setup
+    Vector3 rayForwardDir; //raycast vector that places the raycast's position
+    [SerializeField] float rayForwardLength; //length of raycast
+    RaycastHit rayForwardHit; //raycast collider
+
+    Vector3 rayDownDir;
+    [SerializeField] float rayDownLength;
+    RaycastHit rayDownHit;
+    #endregion
+
+
+    void Awake()
+    {
+        rayForwardDir = hip.transform.TransformVector(hip.gameObject.transform.forward);
+        rayDownDir = hip.transform.TransformVector(-hip.gameObject.transform.up);
+    }
+
     void Start()
     {
-        rb = this.gameObject.GetComponent<Rigidbody>();
+        rb = gameObject.GetComponent<Rigidbody>();
         cameraMainTransform = GameObject.Find("Main Camera").transform;
     }
 
@@ -48,14 +65,41 @@ public class KaijuMovement : MonoBehaviour
         move = cameraMainTransform.forward * move.z + cameraMainTransform.right * move.x;
         move.y = 0f;
 
+        if(Physics.Raycast(transform.position, rayDownDir, out rayDownHit, rayDownLength, 6 << 6))
+        {
+            if (rayDownHit.collider)
+            {
+                isGrounded = true;
+
+                if (jumpControl.action.triggered)
+                {
+                    Debug.Log("jump");
+                    this.hip.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
+                }
+            }
+            else
+            {
+                isGrounded = false;
+            }
+        }
 
         if (jumpControl.action.triggered)
         {
             Debug.Log("jump");
-            this.hip.AddForce(new Vector3 (0, jumpHeight, 0), ForceMode.Impulse);
+            this.hip.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
         }
 
         this.targetAnimator.SetBool("Walk", this.walk);
+
+        if (movement.magnitude > 0) //This makes sure that the direction of the raycast is always positioned to the player's forward axis (front z axis)
+        {
+            rayForwardDir = hip.transform.forward.normalized;
+        }
+
+        rayDownDir = -hip.transform.up.normalized;
+
+        Debug.DrawRay(hip.transform.position, rayForwardDir * rayForwardLength, Color.red); //raycast debug
+        Debug.DrawRay(hip.transform.position, rayDownDir * rayDownLength, Color.red); //raycast debug
     }
 
     void FixedUpdate()
@@ -75,19 +119,23 @@ public class KaijuMovement : MonoBehaviour
             this.walk = false;
         }
 
-        if (isGrounded)
+        switch (isGrounded)
         {
-            if (hip.velocity.magnitude > groundSpeedCap)
-            {
-                hip.velocity = Vector3.ClampMagnitude(hip.velocity, groundSpeedCap);
-            }
-        }
-        else
-        {
-            if (hip.velocity.magnitude > velocityCap)
-            {
-                hip.velocity = Vector3.ClampMagnitude(hip.velocity, velocityCap);
-            }
+            case true:
+                if (hip.velocity.magnitude > groundSpeedCap)
+                {
+                    hip.velocity = Vector3.ClampMagnitude(hip.velocity, groundSpeedCap);
+                    Debug.Log("Clamped Ground Speed");
+                }
+                break;
+
+            case false:
+                if (hip.velocity.magnitude > velocityCap)
+                {
+                    hip.velocity = Vector3.ClampMagnitude(hip.velocity, velocityCap);
+                    Debug.Log("Clamped Overall Speed");
+                }
+                break;
         }
     }
 
