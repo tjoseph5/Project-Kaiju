@@ -65,9 +65,9 @@ public class KaijuMovement : MonoBehaviour
         move = cameraMainTransform.forward * move.z + cameraMainTransform.right * move.x;
         move.y = 0f;
 
-        if(Physics.Raycast(transform.position, rayDownDir, out rayDownHit, rayDownLength, 6 << 6))
+        if(Physics.Raycast(transform.position, rayDownDir, out rayDownHit, rayDownLength, 1 << 6))
         {
-            if (rayDownHit.collider)
+            if (rayDownHit.collider.tag == "Untagged")
             {
                 isGrounded = true;
 
@@ -75,6 +75,7 @@ public class KaijuMovement : MonoBehaviour
                 {
                     Debug.Log("jump");
                     this.hip.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
+                    targetAnimator.SetTrigger("Jump");
                 }
             }
             else
@@ -83,11 +84,14 @@ public class KaijuMovement : MonoBehaviour
             }
         }
 
+        
         if (jumpControl.action.triggered)
         {
             Debug.Log("jump");
             this.hip.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
+            targetAnimator.SetTrigger("Jump");
         }
+        
 
         this.targetAnimator.SetBool("Walk", this.walk);
 
@@ -125,7 +129,7 @@ public class KaijuMovement : MonoBehaviour
                 if (hip.velocity.magnitude > groundSpeedCap)
                 {
                     hip.velocity = Vector3.ClampMagnitude(hip.velocity, groundSpeedCap);
-                    Debug.Log("Clamped Ground Speed");
+                    //Debug.Log("Clamped Ground Speed");
                 }
                 break;
 
@@ -133,7 +137,7 @@ public class KaijuMovement : MonoBehaviour
                 if (hip.velocity.magnitude > velocityCap)
                 {
                     hip.velocity = Vector3.ClampMagnitude(hip.velocity, velocityCap);
-                    Debug.Log("Clamped Overall Speed");
+                    //Debug.Log("Clamped Overall Speed");
                 }
                 break;
         }
