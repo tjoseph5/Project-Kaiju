@@ -6,6 +6,7 @@ public class DestructableObject : MonoBehaviour
 {
 
     public float health;
+    public float breakForce;
     [SerializeField] GameObject[] destroyedBuildings;
 
     public enum BuildingTypes { house, skyscraper, warehouse, extra};
@@ -65,24 +66,48 @@ public class DestructableObject : MonoBehaviour
 
                     GameObject houseD = Instantiate(destroyedBuildings[0], this.transform.position, this.transform.rotation);
                     houseD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+
+                    foreach(Rigidbody rigid in houseD.GetComponentsInChildren<Rigidbody>())
+                    {
+                        Vector3 forceInput = (rigid.transform.position - transform.position).normalized * breakForce;
+                        rigid.AddForce(forceInput);
+                    }
                     break;
 
                 case BuildingTypes.skyscraper:
 
                     GameObject skyD = Instantiate(destroyedBuildings[1], this.transform.position, this.transform.rotation);
                     skyD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+
+                    foreach (Rigidbody rigid in skyD.GetComponentsInChildren<Rigidbody>())
+                    {
+                        Vector3 forceInput = (rigid.transform.position - transform.position).normalized * breakForce;
+                        rigid.AddForce(forceInput);
+                    }
                     break;
 
                 case BuildingTypes.warehouse:
 
                     GameObject warehouseD = Instantiate(destroyedBuildings[2], this.transform.position, this.transform.rotation);
                     warehouseD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+
+                    foreach (Rigidbody rigid in warehouseD.GetComponentsInChildren<Rigidbody>())
+                    {
+                        Vector3 forceInput = (rigid.transform.position - transform.position).normalized * breakForce;
+                        rigid.AddForce(forceInput);
+                    }
                     break;
 
                 case BuildingTypes.extra:
 
                     GameObject extraD = Instantiate(destroyedBuildings[3], this.transform.position, this.transform.rotation);
                     extraD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+
+                    foreach (Rigidbody rigid in extraD.GetComponentsInChildren<Rigidbody>())
+                    {
+                        Vector3 forceInput = (rigid.transform.position - transform.position).normalized * breakForce;
+                        rigid.AddForce(forceInput);
+                    }
                     break;
             }
         }
