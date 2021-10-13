@@ -28,7 +28,7 @@ public class KaijuMovement : MonoBehaviour
     bool walk = false;
 
     [Range(1,30)] [SerializeField] float velocityCap;
-    [Range(1, 3)] [SerializeField] float groundSpeedCap;
+    [Range(1, 4)] [SerializeField] float groundSpeedCap;
 
     Vector2 movement;
     Vector3 move;
