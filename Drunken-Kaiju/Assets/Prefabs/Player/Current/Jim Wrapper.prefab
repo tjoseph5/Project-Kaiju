@@ -1754,10 +1754,10 @@ MonoBehaviour:
   jumpControl: {fileID: -1521698987172784742, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   speed: 70
   jumpHeight: 100
-  hipJoint: {fileID: 7055547110832893557}
-  hip: {fileID: 7055547110832893556}
+  rootJoint: {fileID: 7055547110832893557}
+  rootRb: {fileID: 7055547110832893556}
   targetAnimator: {fileID: 7055547111465377148}
-  velocityCap: 30
+  velocityCap: 60
   groundSpeedCap: 3.65
   isGrounded: 1
   rayForwardLength: 2

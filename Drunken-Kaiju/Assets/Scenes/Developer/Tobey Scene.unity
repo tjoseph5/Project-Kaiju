@@ -4445,7 +4445,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817153558}
-  m_LocalRotation: {x: 0.09397189, y: 0.000000004279609, z: -4.0395048e-10, w: 0.9955749}
+  m_LocalRotation: {x: 0.093971886, y: -0.000000004282561, z: 4.0422907e-10, w: 0.9955749}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4818,8 +4818,7 @@ MonoBehaviour:
   jumpControl: {fileID: -1521698987172784742, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   speed: 50
   jumpHeight: 0
-  hipJoint: {fileID: 541558537}
-  hip: {fileID: 541558535}
+  rootRb: {fileID: 0}
   targetAnimator: {fileID: 368912419}
   velocityCap: 0
   groundSpeedCap: 0
@@ -5088,6 +5087,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 31.23851
       objectReference: {fileID: 0}
+    - target: {fileID: 7055547110209812333, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -2.1757336
+      objectReference: {fileID: 0}
     - target: {fileID: 7055547110399900875, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_Name
       value: Jim Wrapper
@@ -5136,13 +5139,73 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7055547110421909214, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -2.1757336
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055547110464318194, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 3.2148209
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055547110553242579, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -17.286385
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055547110832893557, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.3777892
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055547110942217041, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -18.001278
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055547110942217041, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 0.000014305115
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055547111098241925, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -14.667676
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055547111098241925, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: -0.000015735626
+      objectReference: {fileID: 0}
     - target: {fileID: 7055547111140240331, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7055547111140240332, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
-      propertyPath: velocityCap
-      value: 60
+      propertyPath: playerJoints.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055547111306111996, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.07101774
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055547111642509476, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 24.21892
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055547111656701732, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -18.0013
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055547111656701732, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: -0.000025749207
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055547111741180597, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -14.667728
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055547111741180597, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: -0.000020503998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055547111935539396, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.07100606
       objectReference: {fileID: 0}
     - target: {fileID: 7377159840809110133, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalPosition.x
