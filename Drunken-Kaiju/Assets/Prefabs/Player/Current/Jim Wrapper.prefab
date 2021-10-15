@@ -1758,10 +1758,10 @@ MonoBehaviour:
   hip: {fileID: 7055547110832893556}
   targetAnimator: {fileID: 7055547111465377148}
   velocityCap: 30
-  groundSpeedCap: 4
+  groundSpeedCap: 3.65
   isGrounded: 1
   rayForwardLength: 2
-  rayDownLength: 2
+  rayDownLength: 2.5
 --- !u!95 &7055547111465377148
 Animator:
   serializedVersion: 3

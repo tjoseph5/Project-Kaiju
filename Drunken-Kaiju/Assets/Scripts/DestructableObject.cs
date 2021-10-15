@@ -12,6 +12,7 @@ public class DestructableObject : MonoBehaviour
     public enum BuildingTypes { house, skyscraper, warehouse, extra};
     public BuildingTypes buildingTypes = BuildingTypes.house;
 
+    [SerializeField] Transform player;
 
     private void Awake()
     {
@@ -69,7 +70,7 @@ public class DestructableObject : MonoBehaviour
 
                     foreach(Rigidbody rigid in houseD.GetComponentsInChildren<Rigidbody>())
                     {
-                        Vector3 forceInput = (rigid.transform.position - transform.position).normalized * breakForce;
+                        Vector3 forceInput = (rigid.transform.position - transform.position - player.position).normalized * breakForce;
                         rigid.AddForce(forceInput);
                     }
                     break;
