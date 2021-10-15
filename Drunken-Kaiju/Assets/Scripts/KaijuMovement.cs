@@ -11,6 +11,7 @@ public class KaijuMovement : MonoBehaviour
     #region Controller Input Actions
     public InputActionReference movementControl;
     public InputActionReference jumpControl;
+    public InputActionReference dashControl;
     #endregion
 
     #region Camera Stuff
@@ -20,6 +21,7 @@ public class KaijuMovement : MonoBehaviour
 
     [SerializeField] float speed;
     [SerializeField] float jumpHeight;
+    [SerializeField] float dashDistance;
 
 
     #region Joint Setup
@@ -54,6 +56,7 @@ public class KaijuMovement : MonoBehaviour
     #endregion
 
     bool activateRagdoll;
+    bool dashAttack;
 
 
     void Awake()
@@ -125,7 +128,7 @@ public class KaijuMovement : MonoBehaviour
             {
                 isGrounded = true;
 
-                if (jumpControl.action.triggered)
+                if (jumpControl.action.triggered && !activateRagdoll)
                 {
                     Debug.Log("jump");
                     this.rootRb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
@@ -151,8 +154,36 @@ public class KaijuMovement : MonoBehaviour
 
         if(jumpControl.action.triggered && activateRagdoll)
         {
-            activateRagdoll = false;
-            ActivateRagdoll(activateRagdoll);
+            if(rootRb.velocity.magnitude < 0.5)
+            {
+                activateRagdoll = false;
+                ActivateRagdoll(activateRagdoll);
+            }
+        }
+
+        if(dashControl.action.triggered)
+        {
+            activateRagdoll = true;
+            dashAttack = true;
+        }
+
+        switch (activateRagdoll)
+        {
+            case true:
+
+                movementControl.action.Disable();
+                //jumpControl.action.Disable();
+                dashControl.action.Disable();
+                
+                break;
+            
+            case false:
+
+                movementControl.action.Enable();
+                //jumpControl.action.Enable();
+                dashControl.action.Enable();
+
+                break;
         }
     }
 
@@ -206,6 +237,13 @@ public class KaijuMovement : MonoBehaviour
                 }
 
                 break;
+        }
+
+        if (dashAttack)
+        {
+            ActivateRagdoll(activateRagdoll);
+            rootRb.AddForce(0, 100, rootRb.transform.forward.z - dashDistance, ForceMode.Impulse);
+            dashAttack = false;
         }
     }
 
@@ -267,7 +305,6 @@ public class KaijuMovement : MonoBehaviour
                 joint.angularXDrive = deactiveRagdollDrive;
                 joint.angularYZDrive = deactiveRagdollDrive;
             }
-            movementControl.action.Disable();
         }
         else
         {
@@ -320,7 +357,7 @@ public class KaijuMovement : MonoBehaviour
             playerJoints[13].angularYZDrive = tailDrive;
             #endregion
 
-            movementControl.action.Enable();
+            rootRb.transform.position += new Vector3(0, 1, 0);
         }
     }
 
@@ -329,12 +366,14 @@ public class KaijuMovement : MonoBehaviour
     {
         movementControl.action.Enable();
         jumpControl.action.Enable();
+        dashControl.action.Enable();
     }
 
     private void OnDisable()
     {
         movementControl.action.Disable();
         jumpControl.action.Disable();
+        dashControl.action.Disable();
     }
     #endregion
 }

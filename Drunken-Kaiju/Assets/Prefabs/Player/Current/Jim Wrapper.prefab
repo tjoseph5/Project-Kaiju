@@ -1752,9 +1752,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementControl: {fileID: -1957726166194751612, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   jumpControl: {fileID: -1521698987172784742, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
+  dashControl: {fileID: -5351408382537963711, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   speed: 70
   jumpHeight: 100
-  rootJoint: {fileID: 7055547110832893557}
+  dashDistance: 150
   rootRb: {fileID: 7055547110832893556}
   targetAnimator: {fileID: 7055547111465377148}
   velocityCap: 60
