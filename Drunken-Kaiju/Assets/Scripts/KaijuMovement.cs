@@ -22,6 +22,7 @@ public class KaijuMovement : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float jumpHeight;
     [SerializeField] float dashDistance;
+    [SerializeField] float dashHeight;
 
 
     #region Joint Setup
@@ -117,9 +118,11 @@ public class KaijuMovement : MonoBehaviour
 
         movement = movementControl.action.ReadValue<Vector2>();
         move = new Vector3(movement.x, 0, movement.y).normalized;
-        move = cameraMainTransform.forward * move.z + cameraMainTransform.right * move.x;
-        move.y = 0f;
-
+        if (!dashAttack)
+        {
+            move = cameraMainTransform.forward * move.z + cameraMainTransform.right * move.x;
+            move.y = 0f;
+        }
         if(Physics.Raycast(rootRb.transform.position, rayDownDir, out rayDownHit, rayDownLength, ~playerLayerMask))
         {
             Debug.Log("hitsomething");
@@ -154,7 +157,7 @@ public class KaijuMovement : MonoBehaviour
 
         if(jumpControl.action.triggered && activateRagdoll)
         {
-            if(rootRb.velocity.magnitude < 0.5)
+            if(rootRb.velocity.magnitude < 0.2)
             {
                 activateRagdoll = false;
                 ActivateRagdoll(activateRagdoll);
@@ -242,7 +245,7 @@ public class KaijuMovement : MonoBehaviour
         if (dashAttack)
         {
             ActivateRagdoll(activateRagdoll);
-            rootRb.AddForce(0, 100, rootRb.transform.forward.z - dashDistance, ForceMode.Impulse);
+            rootRb.velocity = new Vector3(0, dashHeight, rayForwardDir.z * dashDistance);
             dashAttack = false;
         }
     }
