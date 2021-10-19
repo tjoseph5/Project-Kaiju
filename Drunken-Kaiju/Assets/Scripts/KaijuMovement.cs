@@ -12,6 +12,7 @@ public class KaijuMovement : MonoBehaviour
     public InputActionReference movementControl;
     public InputActionReference jumpControl;
     public InputActionReference dashControl;
+    public InputActionReference attackControl;
     #endregion
 
     #region Camera Stuff
@@ -23,6 +24,7 @@ public class KaijuMovement : MonoBehaviour
     [SerializeField] float jumpHeight;
     [SerializeField] float dashDistance;
     [SerializeField] float dashHeight;
+    [SerializeField] float punchTimer;
 
 
     #region Joint Setup
@@ -35,6 +37,7 @@ public class KaijuMovement : MonoBehaviour
     [SerializeField] Animator targetAnimator;
     bool walk = false;
     bool inAir = false;
+    bool punch = false;
 
     [Range(1,60)] [SerializeField] float velocityCap;
     [Range(1, 4)] [SerializeField] float groundSpeedCap;
@@ -58,6 +61,7 @@ public class KaijuMovement : MonoBehaviour
 
     bool activateRagdoll;
     bool dashAttack;
+    bool isAttacking;
 
 
     void Awake()
@@ -370,6 +374,7 @@ public class KaijuMovement : MonoBehaviour
         movementControl.action.Enable();
         jumpControl.action.Enable();
         dashControl.action.Enable();
+        attackControl.action.Enable();
     }
 
     private void OnDisable()
@@ -377,6 +382,7 @@ public class KaijuMovement : MonoBehaviour
         movementControl.action.Disable();
         jumpControl.action.Disable();
         dashControl.action.Disable();
+        attackControl.action.Disable();
     }
     #endregion
 }
