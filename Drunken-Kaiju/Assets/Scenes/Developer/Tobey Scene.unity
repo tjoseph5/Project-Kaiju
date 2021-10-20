@@ -5736,7 +5736,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817153558}
-  m_LocalRotation: {x: 0.09397188, y: -0.000000027308367, z: 0.000000002577625, w: 0.9955749}
+  m_LocalRotation: {x: 0.09397191, y: 0.0000000064938352, z: -6.1295047e-10, w: 0.9955749}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6246,10 +6246,12 @@ MonoBehaviour:
   movementControl: {fileID: -1957726166194751612, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   jumpControl: {fileID: -1521698987172784742, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   dashControl: {fileID: 0}
+  attackControl: {fileID: 0}
   speed: 50
   jumpHeight: 0
   dashDistance: 0
   dashHeight: 0
+  attackTimer: 0
   rootRb: {fileID: 0}
   targetAnimator: {fileID: 368912419}
   velocityCap: 0
@@ -6605,8 +6607,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7055547111140240332, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: dashDistance
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
+    - target: {fileID: 7055547111140240332, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: attackControl
+      value: 
+      objectReference: {fileID: -7403655656206594927, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
     - target: {fileID: 7055547111140240332, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: playerJoints.Array.size
       value: 14

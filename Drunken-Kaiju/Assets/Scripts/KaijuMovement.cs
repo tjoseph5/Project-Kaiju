@@ -24,7 +24,7 @@ public class KaijuMovement : MonoBehaviour
     [SerializeField] float jumpHeight;
     [SerializeField] float dashDistance;
     [SerializeField] float dashHeight;
-    [SerializeField] float punchTimer;
+    [SerializeField] float attackTimer;
 
 
     #region Joint Setup
@@ -37,7 +37,7 @@ public class KaijuMovement : MonoBehaviour
     [SerializeField] Animator targetAnimator;
     bool walk = false;
     bool inAir = false;
-    bool punch = false;
+    bool isAttacking = false;
 
     [Range(1,60)] [SerializeField] float velocityCap;
     [Range(1, 4)] [SerializeField] float groundSpeedCap;
@@ -61,7 +61,7 @@ public class KaijuMovement : MonoBehaviour
 
     bool activateRagdoll;
     bool dashAttack;
-    bool isAttacking;
+
 
 
     void Awake()
@@ -119,6 +119,7 @@ public class KaijuMovement : MonoBehaviour
     {
         this.targetAnimator.SetBool("Walk", this.walk);
         this.targetAnimator.SetBool("In Air", this.inAir);
+        this.targetAnimator.SetBool("Is Attacking", this.isAttacking);
 
         movement = movementControl.action.ReadValue<Vector2>();
         move = new Vector3(movement.x, 0, movement.y).normalized;
@@ -135,18 +136,26 @@ public class KaijuMovement : MonoBehaviour
             {
                 isGrounded = true;
 
-                if (jumpControl.action.triggered && !activateRagdoll)
+                if(attackTimer == 0)
                 {
-                    Debug.Log("jump");
-                    this.rootRb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
-                    targetAnimator.SetTrigger("Jump");
-                    isGrounded = false;
+                    if (jumpControl.action.triggered && !activateRagdoll)
+                    {
+                        Debug.Log("jump");
+                        this.rootRb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
+                        targetAnimator.SetTrigger("Jump");
+                        isGrounded = false;
+                    }
                 }
             }
         }
         else
         {
             isGrounded = false;
+        }
+
+        if(Physics.Raycast(rootRb.transform.position, rayForwardDir, out rayForwardHit, rayForwardLength, ~playerLayerMask))
+        {
+            //Check if either punch left or punch right is playing and then check the frames that are active
         }
 
         if (movement.magnitude > 0) //This makes sure that the direction of the raycast is always positioned to the player's forward axis (front z axis)
@@ -159,21 +168,25 @@ public class KaijuMovement : MonoBehaviour
         Debug.DrawRay(rootRb.transform.position, rayForwardDir * rayForwardLength, Color.red); //raycast debug
         Debug.DrawRay(rootRb.transform.position, rayDownDir * rayDownLength, Color.red); //raycast debug
 
-        if(jumpControl.action.triggered && activateRagdoll)
+
+        if (jumpControl.action.triggered && activateRagdoll) //Resets player after ragdolled
         {
-            if(rootRb.velocity.magnitude < 0.2)
+            if (rootRb.velocity.magnitude < 0.2)
             {
-                activateRagdoll = false;
-                ActivateRagdoll(activateRagdoll);
+            activateRagdoll = false;
+            ActivateRagdoll(activateRagdoll);
             }
         }
 
-        if(dashControl.action.triggered)
+        if (attackTimer == 0)
         {
-            activateRagdoll = true;
-            dashAttack = true;
+            if (dashControl.action.triggered)
+            {
+                activateRagdoll = true;
+                dashAttack = true;
+            }
         }
-
+        
         switch (activateRagdoll)
         {
             case true:
@@ -181,6 +194,7 @@ public class KaijuMovement : MonoBehaviour
                 movementControl.action.Disable();
                 //jumpControl.action.Disable();
                 dashControl.action.Disable();
+                attackControl.action.Disable();
                 
                 break;
             
@@ -189,8 +203,35 @@ public class KaijuMovement : MonoBehaviour
                 movementControl.action.Enable();
                 //jumpControl.action.Enable();
                 dashControl.action.Enable();
+                attackControl.action.Enable();
 
                 break;
+        }
+
+
+        if (attackControl.action.triggered)
+        {
+            targetAnimator.SetTrigger("Attack");
+
+            if(targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("L_PUNCH") || targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("R_PUNCH") || targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("L_PUNCH_WALK"))
+            {
+                attackTimer = targetAnimator.GetCurrentAnimatorStateInfo(0).length;
+            }
+
+        }
+
+
+        if (attackTimer > 0)
+        {
+            attackTimer -= Time.deltaTime;
+            movementControl.action.Disable();
+            isAttacking = true;
+        }
+        else
+        {
+            attackTimer = 0;
+            movementControl.action.Enable();
+            isAttacking = false;
         }
     }
 
