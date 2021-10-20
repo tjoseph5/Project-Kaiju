@@ -1750,20 +1750,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c91453ee5bd039943883d5ee62d2d564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rootRb: {fileID: 7055547110832893556}
   movementControl: {fileID: -1957726166194751612, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   jumpControl: {fileID: -1521698987172784742, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   dashControl: {fileID: -5351408382537963711, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
+  attackControl: {fileID: -7403655656206594927, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   speed: 70
   jumpHeight: 155
-  dashDistance: 300
+  dashDistance: 250
   dashHeight: 100
-  rootRb: {fileID: 7055547110832893556}
   targetAnimator: {fileID: 7055547111465377148}
   velocityCap: 60
   groundSpeedCap: 4
-  isGrounded: 1
   rayForwardLength: 2
   rayDownLength: 2.5
+  isGrounded: 1
 --- !u!95 &7055547111465377148
 Animator:
   serializedVersion: 3

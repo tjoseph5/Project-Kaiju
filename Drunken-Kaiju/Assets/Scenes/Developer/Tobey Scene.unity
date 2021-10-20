@@ -428,7 +428,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110965566}
-  m_LocalRotation: {x: 0.07584735, y: 1.2390032e-10, z: 9.437795e-12, w: 0.9971195}
+  m_LocalRotation: {x: 0.07584735, y: -1.2390032e-10, z: -9.4377665e-12, w: 0.9971195}
   m_LocalPosition: {x: -234.49484, y: 9.016737, z: 32.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2176,7 +2176,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702819915}
-  m_LocalRotation: {x: 0.057745676, y: -0.0000000021472086, z: 1.2419926e-10, w: 0.99833137}
+  m_LocalRotation: {x: 0.057745676, y: 0.000000002147209, z: -1.2419928e-10, w: 0.99833137}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5736,7 +5736,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817153558}
-  m_LocalRotation: {x: 0.09397191, y: 0.0000000064938352, z: -6.1295047e-10, w: 0.9955749}
+  m_LocalRotation: {x: 0.09397188, y: 0.000000027308367, z: -0.000000002577625, w: 0.9955749}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6243,6 +6243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c91453ee5bd039943883d5ee62d2d564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rootRb: {fileID: 0}
   movementControl: {fileID: -1957726166194751612, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   jumpControl: {fileID: -1521698987172784742, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   dashControl: {fileID: 0}
@@ -6251,14 +6252,12 @@ MonoBehaviour:
   jumpHeight: 0
   dashDistance: 0
   dashHeight: 0
-  attackTimer: 0
-  rootRb: {fileID: 0}
   targetAnimator: {fileID: 368912419}
   velocityCap: 0
   groundSpeedCap: 0
-  isGrounded: 0
   rayForwardLength: 0
   rayDownLength: 0
+  isGrounded: 0
 --- !u!54 &2144957640
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6605,14 +6604,6 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -0.00001859665
       objectReference: {fileID: 0}
-    - target: {fileID: 7055547111140240332, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
-      propertyPath: dashDistance
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 7055547111140240332, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
-      propertyPath: attackControl
-      value: 
-      objectReference: {fileID: -7403655656206594927, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
     - target: {fileID: 7055547111140240332, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: playerJoints.Array.size
       value: 14

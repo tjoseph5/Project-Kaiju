@@ -5,9 +5,12 @@ using UnityEngine.InputSystem;
 
 public class KaijuMovement : MonoBehaviour
 {
+    #region Rigidbody Setup
+    Rigidbody rb; //Overall Rigidbody for Parent Object
+    [SerializeField] Rigidbody rootRb; //Root Rigidbody (recommended)
+    #endregion
 
-    Rigidbody rb;
-
+    //New Input System References
     #region Controller Input Actions
     public InputActionReference movementControl;
     public InputActionReference jumpControl;
@@ -15,37 +18,44 @@ public class KaijuMovement : MonoBehaviour
     public InputActionReference attackControl;
     #endregion
 
+    //Different Camera States
     #region Camera Stuff
     private Transform cameraMainTransform;
 
     #endregion
 
+    //Values
+    #region Values
     [SerializeField] float speed;
     [SerializeField] float jumpHeight;
     [SerializeField] float dashDistance;
     [SerializeField] float dashHeight;
-    [SerializeField] float attackTimer;
+    float attackTimer;
+    #endregion
 
-
+    //A list for both Config Joints and Spring Position Values
     #region Joint Setup
-    ConfigurableJoint [] playerJoints = new ConfigurableJoint [14];
+    ConfigurableJoint[] playerJoints = new ConfigurableJoint [14];
     float [] playerJointSprings = new float [14];
     #endregion
 
-    [SerializeField] Rigidbody rootRb;
-
-    [SerializeField] Animator targetAnimator;
+    //Animator Bools and Setup
+    #region Animation Setup
+    [SerializeField] Animator targetAnimator; //Jim Animator
     bool walk = false;
     bool inAir = false;
     bool isAttacking = false;
+    #endregion
 
+    #region Velocity Caps
     [Range(1,60)] [SerializeField] float velocityCap;
     [Range(1, 4)] [SerializeField] float groundSpeedCap;
+    #endregion
 
+    #region Movement Vectors
     Vector2 movement;
     Vector3 move;
-
-    [SerializeField] bool isGrounded;
+    #endregion
 
     #region Raycast Setup
     Vector3 rayForwardDir; //raycast vector that places the raycast's position
@@ -59,9 +69,12 @@ public class KaijuMovement : MonoBehaviour
     LayerMask playerLayerMask = 1 << 6;
     #endregion
 
+    //Specific bools for player functions
+    #region Bool States
     bool activateRagdoll;
     bool dashAttack;
-
+    [SerializeField] bool isGrounded;
+    #endregion
 
 
     void Awake()
@@ -297,9 +310,11 @@ public class KaijuMovement : MonoBehaviour
 
     public void ActivateRagdoll(bool activated)
     {
+        //The Universal Joint Drive's spring Position amount for when the player enters a Ragdoll state
         JointDrive deactiveRagdollDrive = playerJoints[0].angularXDrive;
         deactiveRagdollDrive.positionSpring = 25;
 
+        //This setups each JointDrive Variable to equal the stored float of each joint's spring position
         #region Joint Drive Setup
 
         JointDrive rootDrive = playerJoints[0].angularXDrive;
@@ -346,7 +361,8 @@ public class KaijuMovement : MonoBehaviour
 
         #endregion
 
-        if (activated)
+        #region Activation States
+        if (activated) //Sets all the spring positions to equal [JointDrive deactivateRagdollDrive]
         {
             foreach(ConfigurableJoint joint in playerJoints)
             {
@@ -354,7 +370,7 @@ public class KaijuMovement : MonoBehaviour
                 joint.angularYZDrive = deactiveRagdollDrive;
             }
         }
-        else
+        else //Restores all values back to normal
         {
             foreach(ConfigurableJoint joint in playerJoints)
             {
@@ -407,6 +423,7 @@ public class KaijuMovement : MonoBehaviour
 
             rootRb.transform.position += new Vector3(0, 1, 0);
         }
+        #endregion
     }
 
     #region Input Enable / Disable stuff
