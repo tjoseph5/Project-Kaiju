@@ -199,7 +199,8 @@ public class KaijuMovement : MonoBehaviour
                 dashAttack = true;
             }
         }
-        
+
+        #region Specific Bool related Control Activations
         switch (activateRagdoll)
         {
             case true:
@@ -221,8 +222,19 @@ public class KaijuMovement : MonoBehaviour
                 break;
         }
 
+        switch (isGrounded)
+        {
+            case true:
+                attackControl.action.Enable();
+                break;
+            case false:
+                attackControl.action.Disable();
+                break;
+        }
+        #endregion
 
-        if (attackControl.action.triggered)
+
+        if (attackControl.action.triggered && isGrounded)
         {
             targetAnimator.SetTrigger("Attack");
 
@@ -238,12 +250,14 @@ public class KaijuMovement : MonoBehaviour
         {
             attackTimer -= Time.deltaTime;
             movementControl.action.Disable();
+            jumpControl.action.Disable();
             isAttacking = true;
         }
         else
         {
             attackTimer = 0;
             movementControl.action.Enable();
+            jumpControl.action.Enable();
             isAttacking = false;
         }
     }
