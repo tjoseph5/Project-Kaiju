@@ -57,6 +57,22 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Grab/Throw"",
+                    ""type"": ""Button"",
+                    ""id"": ""0c257a4c-af8f-4832-8ba9-9639752e8a06"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Puking"",
+                    ""type"": ""Button"",
+                    ""id"": ""15280c36-b272-44e3-b44a-ff53b91b4c3e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -213,6 +229,50 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6c8aab1a-c026-4f42-ae51-b988a9672c57"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Grab/Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2c58eb83-ca8f-4979-8c15-32b719a63970"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Grab/Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e137982-bc17-44a8-9433-7cdd2766702b"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Puking"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""921b9d61-f558-473e-a61d-bffa65ffd6e2"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Puking"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -226,6 +286,8 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         m_Player_CameraLook = m_Player.FindAction("CameraLook", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
+        m_Player_GrabThrow = m_Player.FindAction("Grab/Throw", throwIfNotFound: true);
+        m_Player_Puking = m_Player.FindAction("Puking", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -280,6 +342,8 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_CameraLook;
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Dash;
+    private readonly InputAction m_Player_GrabThrow;
+    private readonly InputAction m_Player_Puking;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -289,6 +353,8 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         public InputAction @CameraLook => m_Wrapper.m_Player_CameraLook;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
+        public InputAction @GrabThrow => m_Wrapper.m_Player_GrabThrow;
+        public InputAction @Puking => m_Wrapper.m_Player_Puking;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -313,6 +379,12 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                @GrabThrow.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGrabThrow;
+                @GrabThrow.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGrabThrow;
+                @GrabThrow.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGrabThrow;
+                @Puking.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPuking;
+                @Puking.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPuking;
+                @Puking.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPuking;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -332,6 +404,12 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
+                @GrabThrow.started += instance.OnGrabThrow;
+                @GrabThrow.performed += instance.OnGrabThrow;
+                @GrabThrow.canceled += instance.OnGrabThrow;
+                @Puking.started += instance.OnPuking;
+                @Puking.performed += instance.OnPuking;
+                @Puking.canceled += instance.OnPuking;
             }
         }
     }
@@ -343,5 +421,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         void OnCameraLook(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnGrabThrow(InputAction.CallbackContext context);
+        void OnPuking(InputAction.CallbackContext context);
     }
 }
