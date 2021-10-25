@@ -329,6 +329,7 @@ public class KaijuMovement : MonoBehaviour
         if(pukeControl.action.triggered && isGrounded && pukeAmount == 100)
         {
             isPuking = true;
+            //Insert Animation
         }
     }
 

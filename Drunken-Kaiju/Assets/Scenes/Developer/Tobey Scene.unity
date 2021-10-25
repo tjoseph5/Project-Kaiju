@@ -5860,7 +5860,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817153558}
-  m_LocalRotation: {x: 0.09397188, y: -0.000000027308367, z: 0.000000002577625, w: 0.9955749}
+  m_LocalRotation: {x: 0.09397191, y: 0.0000000064938352, z: -6.1295047e-10, w: 0.9955749}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6386,6 +6386,7 @@ MonoBehaviour:
   groundSpeedCap: 0
   rayForwardLength: 0
   rayDownLength: 0
+  activateRagdoll: 0
   isGrounded: 0
   isPuking: 0
 --- !u!54 &2144957640
@@ -6891,16 +6892,8 @@ PrefabInstance:
       value: -0.00001859665
       objectReference: {fileID: 0}
     - target: {fileID: 7055547111140240332, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
-      propertyPath: pukeAmount
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7055547111140240332, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: pukeTimerEffect
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7055547111140240332, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
-      propertyPath: pukeDepleteSpeed
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7055547111140240332, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: playerJoints.Array.size

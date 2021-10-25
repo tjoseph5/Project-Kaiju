@@ -1772,14 +1772,16 @@ MonoBehaviour:
   jumpHeight: 155
   dashDistance: 250
   dashHeight: 100
-  pukeAmount: 0
-  pukeDepleteSpeed: 0
+  pukeAmount: 100
+  pukeDepleteSpeed: 10
   targetAnimator: {fileID: 7055547111465377148}
   velocityCap: 60
   groundSpeedCap: 4
   rayForwardLength: 2
   rayDownLength: 2.5
+  activateRagdoll: 0
   isGrounded: 1
+  isPuking: 0
 --- !u!95 &7055547111465377148
 Animator:
   serializedVersion: 3
