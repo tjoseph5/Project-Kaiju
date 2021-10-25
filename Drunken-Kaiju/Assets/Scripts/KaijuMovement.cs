@@ -133,6 +133,8 @@ public class KaijuMovement : MonoBehaviour
         this.targetAnimator.SetBool("Walk", this.walk);
         this.targetAnimator.SetBool("In Air", this.inAir);
         this.targetAnimator.SetBool("Is Attacking", this.isAttacking);
+        this.targetAnimator.SetBool("Ragdoll", this.activateRagdoll);
+        this.targetAnimator.SetBool("Dive", this.dashAttack);
 
         movement = movementControl.action.ReadValue<Vector2>();
         move = new Vector3(movement.x, 0, movement.y).normalized;
@@ -251,6 +253,7 @@ public class KaijuMovement : MonoBehaviour
             attackTimer -= Time.deltaTime;
             movementControl.action.Disable();
             jumpControl.action.Disable();
+            dashControl.action.Disable();
             isAttacking = true;
         }
         else
@@ -258,6 +261,7 @@ public class KaijuMovement : MonoBehaviour
             attackTimer = 0;
             movementControl.action.Enable();
             jumpControl.action.Enable();
+            dashControl.action.Enable();
             isAttacking = false;
         }
     }
