@@ -12,10 +12,12 @@ public class KaijuMovement : MonoBehaviour
 
     //New Input System References
     #region Controller Input Actions
+    [Header("Input Action References")]
     public InputActionReference movementControl;
     public InputActionReference jumpControl;
     public InputActionReference dashControl;
     public InputActionReference attackControl;
+    public InputActionReference pukeControl;
     #endregion
 
     //Different Camera States
@@ -26,11 +28,14 @@ public class KaijuMovement : MonoBehaviour
 
     //Values
     #region Values
+    [Header("Values and Animator Manager")]
     [SerializeField] float speed;
     [SerializeField] float jumpHeight;
     [SerializeField] float dashDistance;
     [SerializeField] float dashHeight;
     float attackTimer;
+    [Range(0, 100)] public float pukeAmount;
+    [SerializeField] float pukeDepleteSpeed; //Will dictate how long puking last
     #endregion
 
     //A list for both Config Joints and Spring Position Values
@@ -48,6 +53,7 @@ public class KaijuMovement : MonoBehaviour
     #endregion
 
     #region Velocity Caps
+    [Header("Physics and Raycast Manager")]
     [Range(1,60)] [SerializeField] float velocityCap;
     [Range(1, 4)] [SerializeField] float groundSpeedCap;
     #endregion
@@ -74,6 +80,7 @@ public class KaijuMovement : MonoBehaviour
     bool activateRagdoll;
     bool dashAttack;
     [SerializeField] bool isGrounded;
+    [SerializeField] bool isPuking;
     #endregion
 
 
@@ -89,6 +96,8 @@ public class KaijuMovement : MonoBehaviour
         cameraMainTransform = GameObject.Find("Main Camera").transform;
 
         activateRagdoll = false;
+
+        rootRb.gameObject.GetComponent<CopyLimbs>().canCopy = true;
 
         #region Config Joint Setup
 
@@ -106,7 +115,6 @@ public class KaijuMovement : MonoBehaviour
         playerJoints[11] = rootRb.transform.GetChild(2).GetChild(0).GetComponent<ConfigurableJoint>();              //Right Knee Joint
         playerJoints[12] = rootRb.transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<ConfigurableJoint>();  //Right Foot Joint
         playerJoints[13] = rootRb.transform.GetChild(3).GetComponent<ConfigurableJoint>();                          //Tail Joint
-
         #endregion
         #region Config Joint Spring Position Store Setup
 
@@ -184,6 +192,17 @@ public class KaijuMovement : MonoBehaviour
         Debug.DrawRay(rootRb.transform.position, rayDownDir * rayDownLength, Color.red); //raycast debug
 
 
+        
+        if(movement.magnitude != 0)
+        {
+            rootRb.gameObject.GetComponent<CopyLimbs>().canCopy = true;
+        }
+        else if(movement.magnitude == 0 && isGrounded || isAttacking == true || isPuking == true || !isGrounded)
+        {
+            rootRb.gameObject.GetComponent<CopyLimbs>().canCopy = false;
+        }
+        
+
         if (jumpControl.action.triggered && activateRagdoll) //Resets player after ragdolled
         {
             if (rootRb.velocity.magnitude < 0.2)
@@ -211,7 +230,7 @@ public class KaijuMovement : MonoBehaviour
                 //jumpControl.action.Disable();
                 dashControl.action.Disable();
                 attackControl.action.Disable();
-                
+                pukeControl.action.Disable();
                 break;
             
             case false:
@@ -220,7 +239,7 @@ public class KaijuMovement : MonoBehaviour
                 //jumpControl.action.Enable();
                 dashControl.action.Enable();
                 attackControl.action.Enable();
-
+                pukeControl.action.Enable();
                 break;
         }
 
@@ -231,6 +250,24 @@ public class KaijuMovement : MonoBehaviour
                 break;
             case false:
                 attackControl.action.Disable();
+                break;
+        }
+
+        switch (isPuking)
+        {
+            case true:
+                movementControl.action.Disable();
+                jumpControl.action.Disable();
+                dashControl.action.Disable();
+                attackControl.action.Disable();
+                pukeControl.action.Disable();
+                break;
+            case false:
+                movementControl.action.Enable();
+                jumpControl.action.Enable();
+                dashControl.action.Enable();
+                attackControl.action.Enable();
+                pukeControl.action.Enable();
                 break;
         }
         #endregion
@@ -247,13 +284,17 @@ public class KaijuMovement : MonoBehaviour
 
         }
 
+        if(pukeControl.action.triggered && isGrounded && pukeAmount == 100)
+        {
+            isPuking = true;
+        }
 
         if (attackTimer > 0)
         {
-            attackTimer -= Time.deltaTime;
             movementControl.action.Disable();
             jumpControl.action.Disable();
             dashControl.action.Disable();
+            pukeControl.action.Disable();
             isAttacking = true;
         }
         else
@@ -262,7 +303,29 @@ public class KaijuMovement : MonoBehaviour
             movementControl.action.Enable();
             jumpControl.action.Enable();
             dashControl.action.Enable();
+            pukeControl.action.Enable();
             isAttacking = false;
+        }
+
+        if(pukeAmount > 100)
+        {
+            pukeAmount = 100;
+        }
+        else if(pukeAmount < 0)
+        {
+            pukeAmount = 0;
+        }
+
+        if(isPuking && pukeAmount > 0)
+        {
+            pukeAmount -= pukeDepleteSpeed * Time.deltaTime;
+        }
+        else if(pukeAmount <= 0 && isPuking)
+        {
+            pukeAmount = 0;
+            activateRagdoll = true;
+            ActivateRagdoll(activateRagdoll);
+            isPuking = false;
         }
     }
 
@@ -330,7 +393,7 @@ public class KaijuMovement : MonoBehaviour
     {
         //The Universal Joint Drive's spring Position amount for when the player enters a Ragdoll state
         JointDrive deactiveRagdollDrive = playerJoints[0].angularXDrive;
-        deactiveRagdollDrive.positionSpring = 25;
+        deactiveRagdollDrive.positionSpring = 35;
 
         //This setups each JointDrive Variable to equal the stored float of each joint's spring position
         #region Joint Drive Setup
@@ -451,6 +514,7 @@ public class KaijuMovement : MonoBehaviour
         jumpControl.action.Enable();
         dashControl.action.Enable();
         attackControl.action.Enable();
+        pukeControl.action.Enable();
     }
 
     private void OnDisable()
@@ -459,6 +523,7 @@ public class KaijuMovement : MonoBehaviour
         jumpControl.action.Disable();
         dashControl.action.Disable();
         attackControl.action.Disable();
+        pukeControl.action.Disable();
     }
     #endregion
 }

@@ -140,6 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 3132571216111149381}
   m_configurableJoint: {fileID: 0}
+  canCopy: 1
 --- !u!54 &7055547111495426834
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -279,6 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 497604559027026203}
   m_configurableJoint: {fileID: 0}
+  canCopy: 1
 --- !u!54 &7055547111741180598
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -419,6 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 7448194444672607921}
   m_configurableJoint: {fileID: 0}
+  canCopy: 1
 --- !u!54 &7055547111642509475
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -559,6 +562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 5945267419924432977}
   m_configurableJoint: {fileID: 0}
+  canCopy: 1
 --- !u!54 &7055547110421909213
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -699,6 +703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 2505419562865165977}
   m_configurableJoint: {fileID: 0}
+  canCopy: 1
 --- !u!54 &7055547110832893556
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -832,7 +837,7 @@ ConstantForce:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3164804436808348296}
   m_Enabled: 1
-  m_Force: {x: 0, y: 15, z: 0}
+  m_Force: {x: 0, y: 20, z: 0}
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
@@ -843,13 +848,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3164804436808348296}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d63ebe0e17e592c4fa4eaa00a62f28fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 41003865999219504}
   m_configurableJoint: {fileID: 0}
+  canCopy: 1
 --- !u!54 &7055547110942217042
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -990,6 +996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 1242556918524322196}
   m_configurableJoint: {fileID: 0}
+  canCopy: 1
 --- !u!54 &7055547111306111997
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1130,6 +1137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 821317801761564987}
   m_configurableJoint: {fileID: 0}
+  canCopy: 1
 --- !u!54 &7055547110209812332
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1270,6 +1278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 1004269961680286386}
   m_configurableJoint: {fileID: 0}
+  canCopy: 1
 --- !u!54 &7055547110464318193
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1410,6 +1419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 7691569011259871589}
   m_configurableJoint: {fileID: 0}
+  canCopy: 1
 --- !u!54 &7055547111098241926
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1550,6 +1560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 5339568488221378083}
   m_configurableJoint: {fileID: 0}
+  canCopy: 1
 --- !u!1 &7055547110399900875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,6 +1733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 5379572344317247817}
   m_configurableJoint: {fileID: 0}
+  canCopy: 1
 --- !u!54 &7055547111140240331
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1755,10 +1767,13 @@ MonoBehaviour:
   jumpControl: {fileID: -1521698987172784742, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   dashControl: {fileID: -5351408382537963711, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   attackControl: {fileID: -7403655656206594927, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
+  pukeControl: {fileID: 392695067068676158, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   speed: 70
   jumpHeight: 155
   dashDistance: 250
   dashHeight: 100
+  pukeAmount: 0
+  pukeDepleteSpeed: 0
   targetAnimator: {fileID: 7055547111465377148}
   velocityCap: 60
   groundSpeedCap: 4
@@ -1924,6 +1939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 7065007432222632872}
   m_configurableJoint: {fileID: 0}
+  canCopy: 1
 --- !u!54 &7055547110941002482
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2064,6 +2080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 8627322335161723262}
   m_configurableJoint: {fileID: 0}
+  canCopy: 1
 --- !u!1001 &7055547110331289057
 PrefabInstance:
   m_ObjectHideFlags: 0
