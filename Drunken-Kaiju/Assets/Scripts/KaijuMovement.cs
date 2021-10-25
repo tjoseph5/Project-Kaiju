@@ -77,7 +77,7 @@ public class KaijuMovement : MonoBehaviour
 
     //Specific bools for player functions
     #region Bool States
-    bool activateRagdoll;
+    [SerializeField]bool activateRagdoll;
     bool dashAttack;
     [SerializeField] bool isGrounded;
     [SerializeField] bool isPuking;
@@ -143,6 +143,100 @@ public class KaijuMovement : MonoBehaviour
         this.targetAnimator.SetBool("Is Attacking", this.isAttacking);
         this.targetAnimator.SetBool("Ragdoll", this.activateRagdoll);
         this.targetAnimator.SetBool("Dive", this.dashAttack);
+
+        //Input Activation must remain on top
+        #region Specific Bool related Control Activations
+        switch (activateRagdoll)
+        {
+            case true:
+
+                movementControl.action.Disable();
+                //jumpControl.action.Disable();
+                dashControl.action.Disable();
+                attackControl.action.Disable();
+                pukeControl.action.Disable();
+                break;
+
+            case false:
+
+                movementControl.action.Enable();
+                //jumpControl.action.Enable();
+                dashControl.action.Enable();
+                attackControl.action.Enable();
+                pukeControl.action.Enable();
+                break;
+        }
+
+        switch (isGrounded)
+        {
+            case true:
+                attackControl.action.Enable();
+                break;
+            case false:
+                attackControl.action.Disable();
+                break;
+        }
+
+        switch (isPuking)
+        {
+            case true:
+                movementControl.action.Disable();
+                jumpControl.action.Disable();
+                dashControl.action.Disable();
+                attackControl.action.Disable();
+                pukeControl.action.Disable();
+                break;
+            case false:
+                movementControl.action.Enable();
+                jumpControl.action.Enable();
+                dashControl.action.Enable();
+                attackControl.action.Enable();
+                pukeControl.action.Enable();
+                break;
+        }
+        #endregion
+
+        //Value Management must remain on top due to input activation
+        #region Value Management
+        if (attackTimer > 0)
+        {
+            movementControl.action.Disable();
+            jumpControl.action.Disable();
+            dashControl.action.Disable();
+            pukeControl.action.Disable();
+            isAttacking = true;
+        }
+        else
+        {
+            attackTimer = 0;
+            movementControl.action.Enable();
+            jumpControl.action.Enable();
+            dashControl.action.Enable();
+            pukeControl.action.Enable();
+            isAttacking = false;
+        }
+
+        if (pukeAmount > 100)
+        {
+            pukeAmount = 100;
+        }
+        else if (pukeAmount < 0)
+        {
+            pukeAmount = 0;
+        }
+
+        if (isPuking && pukeAmount > 0)
+        {
+            pukeAmount -= pukeDepleteSpeed * Time.deltaTime;
+        }
+        else if (pukeAmount <= 0 && isPuking)
+        {
+            pukeAmount = 0;
+            activateRagdoll = true;
+            ActivateRagdoll(activateRagdoll);
+            isPuking = false;
+        }
+        #endregion
 
         movement = movementControl.action.ReadValue<Vector2>();
         move = new Vector3(movement.x, 0, movement.y).normalized;
@@ -221,58 +315,6 @@ public class KaijuMovement : MonoBehaviour
             }
         }
 
-        #region Specific Bool related Control Activations
-        switch (activateRagdoll)
-        {
-            case true:
-
-                movementControl.action.Disable();
-                //jumpControl.action.Disable();
-                dashControl.action.Disable();
-                attackControl.action.Disable();
-                pukeControl.action.Disable();
-                break;
-            
-            case false:
-
-                movementControl.action.Enable();
-                //jumpControl.action.Enable();
-                dashControl.action.Enable();
-                attackControl.action.Enable();
-                pukeControl.action.Enable();
-                break;
-        }
-
-        switch (isGrounded)
-        {
-            case true:
-                attackControl.action.Enable();
-                break;
-            case false:
-                attackControl.action.Disable();
-                break;
-        }
-
-        switch (isPuking)
-        {
-            case true:
-                movementControl.action.Disable();
-                jumpControl.action.Disable();
-                dashControl.action.Disable();
-                attackControl.action.Disable();
-                pukeControl.action.Disable();
-                break;
-            case false:
-                movementControl.action.Enable();
-                jumpControl.action.Enable();
-                dashControl.action.Enable();
-                attackControl.action.Enable();
-                pukeControl.action.Enable();
-                break;
-        }
-        #endregion
-
-
         if (attackControl.action.triggered && isGrounded)
         {
             targetAnimator.SetTrigger("Attack");
@@ -287,45 +329,6 @@ public class KaijuMovement : MonoBehaviour
         if(pukeControl.action.triggered && isGrounded && pukeAmount == 100)
         {
             isPuking = true;
-        }
-
-        if (attackTimer > 0)
-        {
-            movementControl.action.Disable();
-            jumpControl.action.Disable();
-            dashControl.action.Disable();
-            pukeControl.action.Disable();
-            isAttacking = true;
-        }
-        else
-        {
-            attackTimer = 0;
-            movementControl.action.Enable();
-            jumpControl.action.Enable();
-            dashControl.action.Enable();
-            pukeControl.action.Enable();
-            isAttacking = false;
-        }
-
-        if(pukeAmount > 100)
-        {
-            pukeAmount = 100;
-        }
-        else if(pukeAmount < 0)
-        {
-            pukeAmount = 0;
-        }
-
-        if(isPuking && pukeAmount > 0)
-        {
-            pukeAmount -= pukeDepleteSpeed * Time.deltaTime;
-        }
-        else if(pukeAmount <= 0 && isPuking)
-        {
-            pukeAmount = 0;
-            activateRagdoll = true;
-            ActivateRagdoll(activateRagdoll);
-            isPuking = false;
         }
     }
 
