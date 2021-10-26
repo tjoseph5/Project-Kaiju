@@ -18,6 +18,7 @@ public class KaijuMovement : MonoBehaviour
     public InputActionReference dashControl;
     public InputActionReference attackControl;
     public InputActionReference pukeControl;
+    public InputActionReference pickup_throwControl;
     #endregion
 
     //Different Camera States
@@ -83,6 +84,11 @@ public class KaijuMovement : MonoBehaviour
     [SerializeField] bool isPuking;
     #endregion
 
+    #region Pickup/Throwing variables
+    Transform objectHolder;
+    bool isHolding;
+    #endregion
+
 
     void Awake()
     {
@@ -98,6 +104,8 @@ public class KaijuMovement : MonoBehaviour
         activateRagdoll = false;
 
         rootRb.gameObject.GetComponent<CopyLimbs>().canCopy = true;
+
+        objectHolder = rootRb.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).transform;
 
         #region Config Joint Setup
 
@@ -151,19 +159,19 @@ public class KaijuMovement : MonoBehaviour
             case true:
 
                 movementControl.action.Disable();
-                //jumpControl.action.Disable();
                 dashControl.action.Disable();
                 attackControl.action.Disable();
                 pukeControl.action.Disable();
+                pickup_throwControl.action.Disable();
                 break;
 
             case false:
 
                 movementControl.action.Enable();
-                //jumpControl.action.Enable();
                 dashControl.action.Enable();
                 attackControl.action.Enable();
                 pukeControl.action.Enable();
+                pickup_throwControl.action.Enable();
                 break;
         }
 
@@ -180,18 +188,20 @@ public class KaijuMovement : MonoBehaviour
         switch (isPuking)
         {
             case true:
-                movementControl.action.Disable();
+                speed = 0;
                 jumpControl.action.Disable();
                 dashControl.action.Disable();
                 attackControl.action.Disable();
                 pukeControl.action.Disable();
+                pickup_throwControl.action.Disable();
                 break;
             case false:
-                movementControl.action.Enable();
+                speed = 70;
                 jumpControl.action.Enable();
                 dashControl.action.Enable();
                 attackControl.action.Enable();
                 pukeControl.action.Enable();
+                pickup_throwControl.action.Enable();
                 break;
         }
         #endregion
@@ -247,20 +257,23 @@ public class KaijuMovement : MonoBehaviour
         }
         if(Physics.Raycast(rootRb.transform.position, rayDownDir, out rayDownHit, rayDownLength, ~playerLayerMask))
         {
-            Debug.Log("hitsomething");
-
-            if (rayDownHit.collider)
+            if(rayDownHit.collider.tag != "Interactable")
             {
-                isGrounded = true;
+                Debug.Log("hitsomething");
 
-                if(attackTimer == 0)
+                if (rayDownHit.collider)
                 {
-                    if (jumpControl.action.triggered && !activateRagdoll)
+                    isGrounded = true;
+
+                    if (attackTimer == 0)
                     {
-                        Debug.Log("jump");
-                        this.rootRb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
-                        targetAnimator.SetTrigger("Jump");
-                        isGrounded = false;
+                        if (jumpControl.action.triggered && !activateRagdoll)
+                        {
+                            Debug.Log("jump");
+                            this.rootRb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
+                            targetAnimator.SetTrigger("Jump");
+                            isGrounded = false;
+                        }
                     }
                 }
             }
@@ -270,15 +283,12 @@ public class KaijuMovement : MonoBehaviour
             isGrounded = false;
         }
 
-        if(Physics.Raycast(rootRb.transform.position, rayForwardDir, out rayForwardHit, rayForwardLength, ~playerLayerMask))
-        {
-            //Check if either punch left or punch right is playing and then check the frames that are active
-        }
-
         if (movement.magnitude > 0) //This makes sure that the direction of the raycast is always positioned to the player's forward axis (front z axis)
         {
-            rayForwardDir = rootRb.transform.forward.normalized;
+            
         }
+
+        rayForwardDir = rootRb.transform.forward.normalized;
 
         rayDownDir = -rootRb.transform.up.normalized;
 
@@ -324,12 +334,29 @@ public class KaijuMovement : MonoBehaviour
                 attackTimer = targetAnimator.GetCurrentAnimatorStateInfo(0).length;
             }
 
+
+            if (Physics.Raycast(rootRb.transform.position, rayForwardDir, out rayForwardHit, rayForwardLength, ~playerLayerMask))
+            {
+                //Check if either punch left or punch right is playing and then check the frames that are active
+            }
+
         }
 
         if(pukeControl.action.triggered && isGrounded && pukeAmount == 100)
         {
             isPuking = true;
             //Insert Animation
+        }
+
+        if (pickup_throwControl.action.triggered && isGrounded)
+        {
+            if (Physics.Raycast(rootRb.transform.position, rayForwardDir, out rayForwardHit, rayForwardLength, ~playerLayerMask))
+            {
+                if(rayForwardHit.collider.tag == "Interactable")
+                {
+                    Debug.Log("Pickup " + rayForwardHit.collider.name);
+                }
+            }
         }
     }
 
@@ -519,6 +546,7 @@ public class KaijuMovement : MonoBehaviour
         dashControl.action.Enable();
         attackControl.action.Enable();
         pukeControl.action.Enable();
+        pickup_throwControl.action.Enable();
     }
 
     private void OnDisable()
@@ -528,6 +556,7 @@ public class KaijuMovement : MonoBehaviour
         dashControl.action.Disable();
         attackControl.action.Disable();
         pukeControl.action.Disable();
+        pickup_throwControl.action.Disable();
     }
     #endregion
 }
