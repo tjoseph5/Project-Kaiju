@@ -62,6 +62,14 @@ public class DestructableObject : MonoBehaviour
         {
             Destruction();
         }
+
+        if (col.gameObject.GetComponent<Rigidbody>())
+        {
+            if(col.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 15)
+            {
+                Destruction();
+            }
+        }
     }
 
     private void OnParticleCollision(GameObject col)
