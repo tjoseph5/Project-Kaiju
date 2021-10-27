@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactable
+  - Puke
   layers:
   - Default
   - TransparentFX

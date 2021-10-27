@@ -37,6 +37,16 @@ public class KaijuMovement : MonoBehaviour
     float attackTimer;
     [Range(0, 100)] public float pukeAmount;
     [SerializeField] float pukeDepleteSpeed; //Will dictate how long puking last
+    [HideInInspector] public ParticleSystem pukeFX;
+    #endregion
+
+    #region Pickup/Throwing variables
+    Transform objectHolderTransform;
+    GameObject heldObj;
+    bool isHolding;
+    [SerializeField] float throwPower;
+
+    float dragStore;
     #endregion
 
     //A list for both Config Joints and Spring Position Values
@@ -84,15 +94,6 @@ public class KaijuMovement : MonoBehaviour
     [SerializeField] bool isPuking;
     #endregion
 
-    #region Pickup/Throwing variables
-    Transform objectHolderTransform;
-    GameObject heldObj;
-    bool isHolding;
-    [SerializeField] float throwPower;
-
-    float dragStore;
-    #endregion
-
 
     void Awake()
     {
@@ -110,6 +111,8 @@ public class KaijuMovement : MonoBehaviour
         rootRb.gameObject.GetComponent<CopyLimbs>().canCopy = true;
 
         objectHolderTransform = rootRb.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).transform;
+
+        pukeFX = rootRb.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<ParticleSystem>();
 
         heldObj = null;
 
@@ -152,11 +155,13 @@ public class KaijuMovement : MonoBehaviour
 
     void Update()
     {
+        #region Animation Bool Assign
         this.targetAnimator.SetBool("Walk", this.walk);
         this.targetAnimator.SetBool("In Air", this.inAir);
         this.targetAnimator.SetBool("Is Attacking", this.isAttacking);
         this.targetAnimator.SetBool("Ragdoll", this.activateRagdoll);
         this.targetAnimator.SetBool("Dive", this.dashAttack);
+        #endregion
 
         //Input Activation must remain on top
         #region Specific Bool related Control Activations
@@ -220,15 +225,18 @@ public class KaijuMovement : MonoBehaviour
             jumpControl.action.Disable();
             dashControl.action.Disable();
             pukeControl.action.Disable();
+            pickup_throwControl.action.Disable();
             isAttacking = true;
+            attackTimer -= Time.deltaTime;
         }
-        else
+        else if(attackTimer <= 0)
         {
             attackTimer = 0;
             movementControl.action.Enable();
             jumpControl.action.Enable();
             dashControl.action.Enable();
             pukeControl.action.Enable();
+            pickup_throwControl.action.Enable();
             isAttacking = false;
         }
 
@@ -248,6 +256,7 @@ public class KaijuMovement : MonoBehaviour
         else if (pukeAmount <= 0 && isPuking)
         {
             pukeAmount = 0;
+            pukeFX.Stop();
             activateRagdoll = true;
             ActivateRagdoll(activateRagdoll);
             isPuking = false;
@@ -356,6 +365,7 @@ public class KaijuMovement : MonoBehaviour
         {
             isPuking = true;
             //Insert Animation
+            pukeFX.Play();
         }
 
         if (pickup_throwControl.action.triggered && isGrounded)
