@@ -6579,7 +6579,8 @@ MonoBehaviour:
   dashHeight: 100
   pukeAmount: 100
   pukeDepleteSpeed: 10
-  throwPower: 0
+  pukeFX: {fileID: 0}
+  throwPower: 30
   targetAnimator: {fileID: 7055547111465377148}
   velocityCap: 60
   groundSpeedCap: 4

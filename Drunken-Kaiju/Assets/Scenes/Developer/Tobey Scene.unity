@@ -2572,7 +2572,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17902
+  m_Name: pb_Mesh19448
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6353,10 +6353,6 @@ PrefabInstance:
     - target: {fileID: 7055547111098241925, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: -0.00001859665
-      objectReference: {fileID: 0}
-    - target: {fileID: 7055547111140240332, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
-      propertyPath: throwPower
-      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7055547111140240332, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: pukeTimerEffect
