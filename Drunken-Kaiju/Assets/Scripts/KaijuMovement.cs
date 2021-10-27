@@ -366,6 +366,10 @@ public class KaijuMovement : MonoBehaviour
             isPuking = true;
             //Insert Animation
             pukeFX.Play();
+            if (isHolding)
+            {
+                ObjectPickupManager(heldObj.GetComponent<Rigidbody>());
+            }
         }
 
         if (pickup_throwControl.action.triggered && isGrounded)
