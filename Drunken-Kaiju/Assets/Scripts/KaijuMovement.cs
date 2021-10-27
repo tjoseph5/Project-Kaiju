@@ -199,7 +199,7 @@ public class KaijuMovement : MonoBehaviour
         switch (isPuking)
         {
             case true:
-                speed = 0;
+                movementControl.action.Disable();
                 jumpControl.action.Disable();
                 dashControl.action.Disable();
                 attackControl.action.Disable();
@@ -207,7 +207,7 @@ public class KaijuMovement : MonoBehaviour
                 pickup_throwControl.action.Disable();
                 break;
             case false:
-                speed = 70;
+                movementControl.action.Enable();
                 jumpControl.action.Enable();
                 dashControl.action.Enable();
                 attackControl.action.Enable();

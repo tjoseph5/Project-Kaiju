@@ -14,9 +14,6 @@ public class DestructableObject : MonoBehaviour
 
     [SerializeField] Transform player;
 
-    ParticleSystem puke;
-    List<ParticleCollisionEvent> collisionEvents;
-
     private void Awake()
     {
         
@@ -24,9 +21,6 @@ public class DestructableObject : MonoBehaviour
 
     void Start()
     {
-        puke = player.GetComponent<KaijuMovement>().pukeFX;
-        collisionEvents = new List<ParticleCollisionEvent>();
-
         switch (buildingTypes)
         {
             case BuildingTypes.house:
