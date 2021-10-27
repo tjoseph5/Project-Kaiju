@@ -12,6 +12,7 @@ public class DestructableObject : MonoBehaviour
     public enum BuildingTypes { house, skyscraper, warehouse, extra};
     public BuildingTypes buildingTypes = BuildingTypes.house;
 
+    [SerializeField] Transform player;
 
     private void Awake()
     {
@@ -59,57 +60,47 @@ public class DestructableObject : MonoBehaviour
     {
         if(col.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
-            switch (buildingTypes)
-            {
-                case BuildingTypes.house:
+            Destruction();
+        }
+    }
 
-                    GameObject houseD = Instantiate(destroyedBuildings[0], this.transform.position, this.transform.rotation);
-                    houseD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+    private void OnParticleCollision(GameObject col)
+    {
+        if(col.gameObject.tag == "Puke")
+        {
+            Debug.Log("bruh");
+            Destruction();
+        }
+    }
 
-                    foreach(Rigidbody rigid in houseD.GetComponentsInChildren<Rigidbody>())
-                    {
-                        Vector3 forceInput = (rigid.transform.position - transform.position).normalized * breakForce;
-                        rigid.AddForce(forceInput);
-                    }
-                    break;
+    void Destruction()
+    {
+        Destroy(gameObject);
+        switch (buildingTypes)
+        {
+            case BuildingTypes.house:
 
-                case BuildingTypes.skyscraper:
+                GameObject houseD = Instantiate(destroyedBuildings[0], this.transform.position, this.transform.rotation);
+                houseD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                break;
 
-                    GameObject skyD = Instantiate(destroyedBuildings[1], this.transform.position, this.transform.rotation);
-                    skyD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+            case BuildingTypes.skyscraper:
 
-                    foreach (Rigidbody rigid in skyD.GetComponentsInChildren<Rigidbody>())
-                    {
-                        Vector3 forceInput = (rigid.transform.position - transform.position).normalized * breakForce;
-                        rigid.AddForce(forceInput);
-                    }
-                    break;
+                GameObject skyD = Instantiate(destroyedBuildings[1], this.transform.position, this.transform.rotation);
+                skyD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                break;
 
-                case BuildingTypes.warehouse:
+            case BuildingTypes.warehouse:
 
-                    GameObject warehouseD = Instantiate(destroyedBuildings[2], this.transform.position, this.transform.rotation);
-                    warehouseD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                GameObject warehouseD = Instantiate(destroyedBuildings[2], this.transform.position, this.transform.rotation);
+                warehouseD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                break;
 
-                    foreach (Rigidbody rigid in warehouseD.GetComponentsInChildren<Rigidbody>())
-                    {
-                        Vector3 forceInput = (rigid.transform.position - transform.position).normalized * breakForce;
-                        rigid.AddForce(forceInput);
-                    }
-                    break;
+            case BuildingTypes.extra:
 
-                case BuildingTypes.extra:
-
-                    GameObject extraD = Instantiate(destroyedBuildings[3], this.transform.position, this.transform.rotation);
-                    extraD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
-
-                    foreach (Rigidbody rigid in extraD.GetComponentsInChildren<Rigidbody>())
-                    {
-                        Vector3 forceInput = (rigid.transform.position - transform.position).normalized * breakForce;
-                        rigid.AddForce(forceInput);
-                    }
-                    break;
-            }
+                GameObject extraD = Instantiate(destroyedBuildings[3], this.transform.position, this.transform.rotation);
+                extraD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                break;
         }
     }
 }
