@@ -63,11 +63,17 @@ public class DestructableObject : MonoBehaviour
             Destruction();
         }
 
-        if (col.gameObject.GetComponent<Rigidbody>())
+        if (col.gameObject.GetComponent<Rigidbody>() && col.gameObject.tag != "Player")
         {
-            if(col.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 15)
+            if(col.gameObject.GetComponent<Rigidbody>().velocity.sqrMagnitude > 15)
             {
-                Destruction();
+                if(col.gameObject.layer != 7)
+                {
+                    //Debug.Log("yooo");
+                    Destruction();
+                    //var opposite = -col.gameObject.GetComponent<Rigidbody>().velocity;
+                    //col.gameObject.GetComponent<Rigidbody>().velocity = opposite.normalized;
+                }
             }
         }
     }
@@ -90,6 +96,12 @@ public class DestructableObject : MonoBehaviour
 
                 GameObject houseD = Instantiate(destroyedBuildings[0], this.transform.position, this.transform.rotation);
                 houseD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+
+                foreach(Rigidbody rb in houseD.GetComponentsInChildren<Rigidbody>())
+                {
+                    Vector3 force = (rb.transform.position - transform.position).normalized * 5;
+                    rb.AddForce(force);
+                }
                 break;
 
             case BuildingTypes.skyscraper:
