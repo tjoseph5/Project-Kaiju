@@ -41,8 +41,8 @@ public class KaijuMovement : MonoBehaviour
 
     //A list for both Config Joints and Spring Position Values
     #region Joint Setup
-    ConfigurableJoint[] playerJoints = new ConfigurableJoint [14];
-    float [] playerJointSprings = new float [14];
+    ConfigurableJoint[] playerJoints = new ConfigurableJoint[14];
+    float[] playerJointSprings = new float[14];
     #endregion
 
     //Animator Bools and Setup
@@ -55,7 +55,7 @@ public class KaijuMovement : MonoBehaviour
 
     #region Velocity Caps
     [Header("Physics and Raycast Manager")]
-    [Range(1,60)] [SerializeField] float velocityCap;
+    [Range(1, 60)] [SerializeField] float velocityCap;
     [Range(1, 4)] [SerializeField] float groundSpeedCap;
     #endregion
 
@@ -78,15 +78,19 @@ public class KaijuMovement : MonoBehaviour
 
     //Specific bools for player functions
     #region Bool States
-    [SerializeField]bool activateRagdoll;
+    [SerializeField] bool activateRagdoll;
     bool dashAttack;
     [SerializeField] bool isGrounded;
     [SerializeField] bool isPuking;
     #endregion
 
     #region Pickup/Throwing variables
-    Transform objectHolder;
+    Transform objectHolderTransform;
+    GameObject heldObj;
     bool isHolding;
+    [SerializeField] float throwPower;
+
+    float dragStore;
     #endregion
 
 
@@ -105,7 +109,9 @@ public class KaijuMovement : MonoBehaviour
 
         rootRb.gameObject.GetComponent<CopyLimbs>().canCopy = true;
 
-        objectHolder = rootRb.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).transform;
+        objectHolderTransform = rootRb.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).transform;
+
+        heldObj = null;
 
         #region Config Joint Setup
 
@@ -255,9 +261,9 @@ public class KaijuMovement : MonoBehaviour
             move = cameraMainTransform.forward * move.z + cameraMainTransform.right * move.x;
             move.y = 0f;
         }
-        if(Physics.Raycast(rootRb.transform.position, rayDownDir, out rayDownHit, rayDownLength, ~playerLayerMask))
+        if (Physics.Raycast(rootRb.transform.position, rayDownDir, out rayDownHit, rayDownLength, ~playerLayerMask))
         {
-            if(rayDownHit.collider.tag != "Interactable")
+            if (rayDownHit.collider.tag != "Interactable")
             {
                 Debug.Log("hitsomething");
 
@@ -283,11 +289,6 @@ public class KaijuMovement : MonoBehaviour
             isGrounded = false;
         }
 
-        if (movement.magnitude > 0) //This makes sure that the direction of the raycast is always positioned to the player's forward axis (front z axis)
-        {
-            
-        }
-
         rayForwardDir = rootRb.transform.forward.normalized;
 
         rayDownDir = -rootRb.transform.up.normalized;
@@ -296,23 +297,23 @@ public class KaijuMovement : MonoBehaviour
         Debug.DrawRay(rootRb.transform.position, rayDownDir * rayDownLength, Color.red); //raycast debug
 
 
-        
-        if(movement.magnitude != 0)
+
+        if (movement.magnitude != 0)
         {
             rootRb.gameObject.GetComponent<CopyLimbs>().canCopy = true;
         }
-        else if(movement.magnitude == 0 && isGrounded || isAttacking == true || isPuking == true || !isGrounded)
+        else if (movement.magnitude == 0 && isGrounded || isAttacking == true || isPuking == true || !isGrounded)
         {
             rootRb.gameObject.GetComponent<CopyLimbs>().canCopy = false;
         }
-        
+
 
         if (jumpControl.action.triggered && activateRagdoll) //Resets player after ragdolled
         {
             if (rootRb.velocity.magnitude < 0.2)
             {
-            activateRagdoll = false;
-            ActivateRagdoll(activateRagdoll);
+                activateRagdoll = false;
+                ActivateRagdoll(activateRagdoll);
             }
         }
 
@@ -322,6 +323,11 @@ public class KaijuMovement : MonoBehaviour
             {
                 activateRagdoll = true;
                 dashAttack = true;
+
+                if (isHolding)
+                {
+                    ObjectPickupManager(heldObj.GetComponent<Rigidbody>());
+                }
             }
         }
 
@@ -329,7 +335,7 @@ public class KaijuMovement : MonoBehaviour
         {
             targetAnimator.SetTrigger("Attack");
 
-            if(targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("L_PUNCH") || targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("R_PUNCH") || targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("L_PUNCH_WALK"))
+            if (targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("L_PUNCH") || targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("R_PUNCH") || targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("L_PUNCH_WALK"))
             {
                 attackTimer = targetAnimator.GetCurrentAnimatorStateInfo(0).length;
             }
@@ -340,9 +346,13 @@ public class KaijuMovement : MonoBehaviour
                 //Check if either punch left or punch right is playing and then check the frames that are active
             }
 
+            if (isHolding)
+            {
+                ObjectPickupManager(heldObj.GetComponent<Rigidbody>());
+            }
         }
 
-        if(pukeControl.action.triggered && isGrounded && pukeAmount == 100)
+        if (pukeControl.action.triggered && isGrounded && pukeAmount == 100)
         {
             isPuking = true;
             //Insert Animation
@@ -350,13 +360,33 @@ public class KaijuMovement : MonoBehaviour
 
         if (pickup_throwControl.action.triggered && isGrounded)
         {
-            if (Physics.Raycast(rootRb.transform.position, rayForwardDir, out rayForwardHit, rayForwardLength, ~playerLayerMask))
+            if (!isHolding)
             {
-                if(rayForwardHit.collider.tag == "Interactable")
+                if (Physics.Raycast(rootRb.transform.position, rayForwardDir, out rayForwardHit, rayForwardLength, ~playerLayerMask))
                 {
-                    Debug.Log("Pickup " + rayForwardHit.collider.name);
+                    if (rayForwardHit.collider.tag == "Interactable")
+                    {
+                        if (rayForwardHit.collider.gameObject.GetComponent<Rigidbody>())
+                        {
+                            ObjectPickupManager(rayForwardHit.collider.gameObject.GetComponent<Rigidbody>());
+                        }
+                    }
                 }
             }
+            else
+            {
+                ObjectPickupManager(heldObj.GetComponent<Rigidbody>(), true);
+            }
+        }
+
+        if (isHolding)
+        {
+            heldObj.transform.position = objectHolderTransform.transform.position;
+            Physics.IgnoreLayerCollision(6, 8, true);
+        }
+        else if (!isHolding)
+        {
+            Physics.IgnoreLayerCollision(6, 8, false);
         }
     }
 
@@ -402,7 +432,7 @@ public class KaijuMovement : MonoBehaviour
                 this.walk = false;
                 this.inAir = true;
 
-                if(rootRb.velocity.y < -10)
+                if (rootRb.velocity.y < -10)
                 {
                     activateRagdoll = true;
                     Debug.Log("Free Falling!");
@@ -415,11 +445,12 @@ public class KaijuMovement : MonoBehaviour
         if (dashAttack)
         {
             ActivateRagdoll(activateRagdoll);
-            rootRb.velocity = new Vector3(0, dashHeight, rayForwardDir.z * dashDistance);
+            rootRb.velocity = new Vector3(0, dashHeight, rootRb.transform.forward.z * dashDistance);
             dashAttack = false;
         }
     }
 
+    #region ActivateRagdoll
     public void ActivateRagdoll(bool activated)
     {
         //The Universal Joint Drive's spring Position amount for when the player enters a Ragdoll state
@@ -476,7 +507,7 @@ public class KaijuMovement : MonoBehaviour
         #region Activation States
         if (activated) //Sets all the spring positions to equal [JointDrive deactivateRagdollDrive]
         {
-            foreach(ConfigurableJoint joint in playerJoints)
+            foreach (ConfigurableJoint joint in playerJoints)
             {
                 joint.angularXDrive = deactiveRagdollDrive;
                 joint.angularYZDrive = deactiveRagdollDrive;
@@ -484,7 +515,7 @@ public class KaijuMovement : MonoBehaviour
         }
         else //Restores all values back to normal
         {
-            foreach(ConfigurableJoint joint in playerJoints)
+            foreach (ConfigurableJoint joint in playerJoints)
             {
                 joint.transform.localRotation = Quaternion.Euler(0, 0, 0);
             }
@@ -536,6 +567,35 @@ public class KaijuMovement : MonoBehaviour
             rootRb.transform.position += new Vector3(0, 1, 0);
         }
         #endregion
+    }
+    #endregion
+
+    void ObjectPickupManager(Rigidbody objRb, bool hasThrown = false)
+    {
+        if (heldObj == null)
+        {
+            dragStore = objRb.drag;
+            heldObj = rayForwardHit.collider.gameObject;
+            Debug.Log("Pickup " + heldObj.name);
+            objRb.useGravity = false;
+            objRb.drag = 10;
+            isHolding = true;
+        }
+        else if (heldObj != null)
+        {
+            objRb.drag = dragStore;
+            objRb.useGravity = true;
+            isHolding = false;
+
+            if (hasThrown)
+            {
+                objRb.AddForce(0, (throwPower/2), rootRb.transform.forward.z * throwPower, ForceMode.Impulse);
+            }
+
+            heldObj = null;
+            //Debug.Log("Object Dropped. heldObj variable is currently " + heldObj.name);
+
+        }
     }
 
     #region Input Enable / Disable stuff
