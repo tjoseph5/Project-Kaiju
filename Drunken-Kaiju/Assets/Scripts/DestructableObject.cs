@@ -89,7 +89,8 @@ public class DestructableObject : MonoBehaviour
 
     void Destruction()
     {
-        Destroy(gameObject);
+        gameObject.GetComponent<Collider>().enabled = false;
+        Debug.Log(gameObject.GetComponent<Collider>().enabled);
         switch (buildingTypes)
         {
             case BuildingTypes.house:
@@ -99,7 +100,7 @@ public class DestructableObject : MonoBehaviour
 
                 foreach(Rigidbody rb in houseD.GetComponentsInChildren<Rigidbody>())
                 {
-                    Vector3 force = (rb.transform.position - transform.position).normalized * 5;
+                    Vector3 force = (rb.transform.position - transform.position).normalized * 15;
                     rb.AddForce(force);
                 }
                 break;
@@ -122,5 +123,7 @@ public class DestructableObject : MonoBehaviour
                 extraD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
                 break;
         }
+
+        Destroy(gameObject);
     }
 }
