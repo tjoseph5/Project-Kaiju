@@ -69,10 +69,7 @@ public class DestructableObject : MonoBehaviour
             {
                 if(col.gameObject.layer != 7)
                 {
-                    //Debug.Log("yooo");
                     Destruction();
-                    //var opposite = -col.gameObject.GetComponent<Rigidbody>().velocity;
-                    //col.gameObject.GetComponent<Rigidbody>().velocity = opposite.normalized;
                 }
             }
         }
