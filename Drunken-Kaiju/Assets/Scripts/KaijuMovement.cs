@@ -37,6 +37,7 @@ public class KaijuMovement : MonoBehaviour
     float attackTimer;
     [Range(0, 100)] public float pukeAmount;
     [SerializeField] float pukeDepleteSpeed; //Will dictate how long puking last
+    [SerializeField] float ragdollActivateSpeed;
     [HideInInspector] public ParticleSystem pukeFX;
     #endregion
 
@@ -446,7 +447,7 @@ public class KaijuMovement : MonoBehaviour
                 this.walk = false;
                 this.inAir = true;
 
-                if (rootRb.velocity.y < -10)
+                if (rootRb.velocity.y < ragdollActivateSpeed)
                 {
                     activateRagdoll = true;
                     Debug.Log("Free Falling!");

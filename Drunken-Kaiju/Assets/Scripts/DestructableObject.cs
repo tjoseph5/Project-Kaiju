@@ -91,39 +91,44 @@ public class DestructableObject : MonoBehaviour
     {
         gameObject.GetComponent<Collider>().enabled = false;
         Debug.Log(gameObject.GetComponent<Collider>().enabled);
-        switch (buildingTypes)
+
+        if(gameObject.GetComponent<Collider>().enabled == false)
         {
-            case BuildingTypes.house:
+            switch (buildingTypes)
+            {
+                case BuildingTypes.house:
 
-                GameObject houseD = Instantiate(destroyedBuildings[0], this.transform.position, this.transform.rotation);
-                houseD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                    GameObject houseD = Instantiate(destroyedBuildings[0], this.transform.position, this.transform.rotation);
+                    houseD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
 
-                foreach(Rigidbody rb in houseD.GetComponentsInChildren<Rigidbody>())
-                {
-                    Vector3 force = (rb.transform.position - transform.position).normalized * 15;
-                    rb.AddForce(force);
-                }
-                break;
+                    foreach (Rigidbody rb in houseD.GetComponentsInChildren<Rigidbody>())
+                    {
+                        Vector3 force = (rb.transform.position - transform.position).normalized * 15;
+                        rb.AddForce(force);
+                    }
+                    break;
 
-            case BuildingTypes.skyscraper:
+                case BuildingTypes.skyscraper:
 
-                GameObject skyD = Instantiate(destroyedBuildings[1], this.transform.position, this.transform.rotation);
-                skyD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
-                break;
+                    GameObject skyD = Instantiate(destroyedBuildings[1], this.transform.position, this.transform.rotation);
+                    skyD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                    break;
 
-            case BuildingTypes.warehouse:
+                case BuildingTypes.warehouse:
 
-                GameObject warehouseD = Instantiate(destroyedBuildings[2], this.transform.position, this.transform.rotation);
-                warehouseD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
-                break;
+                    GameObject warehouseD = Instantiate(destroyedBuildings[2], this.transform.position, this.transform.rotation);
+                    warehouseD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                    break;
 
-            case BuildingTypes.extra:
+                case BuildingTypes.extra:
 
-                GameObject extraD = Instantiate(destroyedBuildings[3], this.transform.position, this.transform.rotation);
-                extraD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
-                break;
+                    GameObject extraD = Instantiate(destroyedBuildings[3], this.transform.position, this.transform.rotation);
+                    extraD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                    break;
+            }
+
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
+        
     }
 }
