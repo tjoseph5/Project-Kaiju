@@ -118,148 +118,150 @@ public class DestructableObject : MonoBehaviour
 
     void Destruction()
     {
-        gameObject.GetComponent<Collider>().enabled = false;
-        Debug.Log(gameObject.GetComponent<Collider>().enabled);
+        //gameObject.GetComponent<Collider>().enabled = false;
+        //Debug.Log(gameObject.GetComponent<Collider>().enabled);
+        Destroy(gameObject);
 
-        if(gameObject.GetComponent<Collider>().enabled == false)
+        switch (buildingTypes)
         {
-            switch (buildingTypes)
-            {
-                case BuildingTypes.billboard:
+            case BuildingTypes.billboard:
 
-                    GameObject bD = Instantiate(BuildingManager.singleton.destroyedBuildings[0], this.transform.position, this.transform.rotation);
-                    bD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                GameObject bD = Instantiate(BuildingManager.singleton.destroyedBuildings[0], this.transform.position, this.transform.rotation);
+                bD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
 
-                    foreach (Rigidbody rb in bD.GetComponentsInChildren<Rigidbody>())
-                    {
-                        Vector3 force = (rb.transform.position - transform.position).normalized * 15;
-                        rb.AddForce(force);
-                    }
-                    break;
+                foreach (Rigidbody rb in bD.GetComponentsInChildren<Rigidbody>())
+                {
+                    Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
+                    rb.AddForce(force);
+                }
+                break;
 
-                case BuildingTypes.factory:
+            case BuildingTypes.factory:
 
-                    GameObject fD = Instantiate(BuildingManager.singleton.destroyedBuildings[1], this.transform.position, this.transform.rotation);
-                    fD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                GameObject fD = Instantiate(BuildingManager.singleton.destroyedBuildings[1], this.transform.position, this.transform.rotation);
+                fD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
 
-                    foreach (Rigidbody rb in fD.GetComponentsInChildren<Rigidbody>())
-                    {
-                        Vector3 force = (rb.transform.position - transform.position).normalized * 15;
-                        rb.AddForce(force);
-                    }
-                    break;
+                foreach (Rigidbody rb in fD.GetComponentsInChildren<Rigidbody>())
+                {
+                    Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
+                    rb.AddForce(force);
+                }
+                break;
 
-                case BuildingTypes.genericStore:
+            case BuildingTypes.genericStore:
 
-                    GameObject gSD = Instantiate(BuildingManager.singleton.destroyedBuildings[2], this.transform.position, this.transform.rotation);
-                    gSD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                GameObject gSD = Instantiate(BuildingManager.singleton.destroyedBuildings[2], this.transform.position, this.transform.rotation);
+                gSD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
 
-                    foreach (Rigidbody rb in gSD.GetComponentsInChildren<Rigidbody>())
-                    {
-                        Vector3 force = (rb.transform.position - transform.position).normalized * 15;
-                        rb.AddForce(force);
-                    }
-                    break;
+                foreach (Rigidbody rb in gSD.GetComponentsInChildren<Rigidbody>())
+                {
+                    Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
+                    rb.AddForce(force);
+                }
+                break;
 
-                case BuildingTypes.hospital:
+            case BuildingTypes.hospital:
 
-                    GameObject hospD = Instantiate(BuildingManager.singleton.destroyedBuildings[3], this.transform.position, this.transform.rotation);
-                    hospD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                GameObject hospD = Instantiate(BuildingManager.singleton.destroyedBuildings[3], this.transform.position, this.transform.rotation);
+                hospD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
 
-                    foreach (Rigidbody rb in hospD.GetComponentsInChildren<Rigidbody>())
-                    {
-                        Vector3 force = (rb.transform.position - transform.position).normalized * 15;
-                        rb.AddForce(force);
-                    }
-                    break;
+                foreach (Rigidbody rb in hospD.GetComponentsInChildren<Rigidbody>())
+                {
+                    Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
+                    rb.AddForce(force);
+                }
+                break;
 
-                case BuildingTypes.house:
+            case BuildingTypes.house:
 
-                    GameObject houseD = Instantiate(BuildingManager.singleton.destroyedBuildings[4], this.transform.position, this.transform.rotation);
-                    houseD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                GameObject houseD = Instantiate(BuildingManager.singleton.destroyedBuildings[4], this.transform.position, this.transform.rotation);
+                houseD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
 
-                    foreach (Rigidbody rb in houseD.GetComponentsInChildren<Rigidbody>())
-                    {
-                        Vector3 force = (rb.transform.position - transform.position).normalized * 15;
-                        rb.AddForce(force);
-                    }
-                    break;
+                foreach (Rigidbody rb in houseD.GetComponentsInChildren<Rigidbody>())
+                {
+                    Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
+                    rb.AddForce(force);
+                }
+                break;
 
-                case BuildingTypes.nuclearSmokeStack:
+            case BuildingTypes.nuclearSmokeStack:
 
-                    GameObject nSSD = Instantiate(BuildingManager.singleton.destroyedBuildings[5], this.transform.position, this.transform.rotation);
-                    nSSD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                GameObject nSSD = Instantiate(BuildingManager.singleton.destroyedBuildings[5], this.transform.position, this.transform.rotation);
+                nSSD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
 
-                    foreach (Rigidbody rb in nSSD.GetComponentsInChildren<Rigidbody>())
-                    {
-                        Vector3 force = (rb.transform.position - transform.position).normalized * 15;
-                        rb.AddForce(force);
-                    }
-                    break;
+                foreach (Rigidbody rb in nSSD.GetComponentsInChildren<Rigidbody>())
+                {
+                    Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
+                    rb.AddForce(force);
+                }
+                break;
 
-                case BuildingTypes.officeBuilding:
+            case BuildingTypes.officeBuilding:
 
-                    GameObject oBD = Instantiate(BuildingManager.singleton.destroyedBuildings[6], this.transform.position, this.transform.rotation);
-                    oBD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                GameObject oBD = Instantiate(BuildingManager.singleton.destroyedBuildings[6], this.transform.position, this.transform.rotation);
+                oBD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
 
-                    foreach (Rigidbody rb in oBD.GetComponentsInChildren<Rigidbody>())
-                    {
-                        Vector3 force = (rb.transform.position - transform.position).normalized * 15;
-                        rb.AddForce(force);
-                    }
-                    break;
+                foreach (Rigidbody rb in oBD.GetComponentsInChildren<Rigidbody>())
+                {
+                    Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
+                    rb.AddForce(force);
+                }
+                break;
 
-                case BuildingTypes.skyscraper:
+            case BuildingTypes.skyscraper:
 
-                    GameObject skyD = Instantiate(BuildingManager.singleton.destroyedBuildings[7], this.transform.position, this.transform.rotation);
-                    skyD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                GameObject skyD = Instantiate(BuildingManager.singleton.destroyedBuildings[7], this.transform.position, this.transform.rotation);
+                skyD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
 
-                    foreach (Rigidbody rb in skyD.GetComponentsInChildren<Rigidbody>())
-                    {
-                        Vector3 force = (rb.transform.position - transform.position).normalized * 15;
-                        rb.AddForce(force);
-                    }
-                    break;
+                foreach (Rigidbody rb in skyD.GetComponentsInChildren<Rigidbody>())
+                {
+                    Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
+                    rb.AddForce(force);
+                }
+                break;
 
-                case BuildingTypes.smokeStack:
+            case BuildingTypes.smokeStack:
 
-                    GameObject sSD = Instantiate(BuildingManager.singleton.destroyedBuildings[8], this.transform.position, this.transform.rotation);
-                    sSD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                GameObject sSD = Instantiate(BuildingManager.singleton.destroyedBuildings[8], this.transform.position, this.transform.rotation);
+                sSD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
 
-                    foreach (Rigidbody rb in sSD.GetComponentsInChildren<Rigidbody>())
-                    {
-                        Vector3 force = (rb.transform.position - transform.position).normalized * 15;
-                        rb.AddForce(force);
-                    }
-                    break;
+                foreach (Rigidbody rb in sSD.GetComponentsInChildren<Rigidbody>())
+                {
+                    Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
+                    rb.AddForce(force);
+                }
+                break;
 
-                case BuildingTypes.warehouse:
+            case BuildingTypes.warehouse:
 
-                    GameObject wD = Instantiate(BuildingManager.singleton.destroyedBuildings[9], this.transform.position, this.transform.rotation);
-                    wD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                GameObject wD = Instantiate(BuildingManager.singleton.destroyedBuildings[9], this.transform.position, this.transform.rotation);
+                wD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
 
-                    foreach (Rigidbody rb in wD.GetComponentsInChildren<Rigidbody>())
-                    {
-                        Vector3 force = (rb.transform.position - transform.position).normalized * 15;
-                        rb.AddForce(force);
-                    }
-                    break;
+                foreach (Rigidbody rb in wD.GetComponentsInChildren<Rigidbody>())
+                {
+                    Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
+                    rb.AddForce(force);
+                }
+                break;
 
-                case BuildingTypes.windTurbine:
+            case BuildingTypes.windTurbine:
 
-                    GameObject wTD = Instantiate(BuildingManager.singleton.destroyedBuildings[10], this.transform.position, this.transform.rotation);
-                    wTD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                GameObject wTD = Instantiate(BuildingManager.singleton.destroyedBuildings[10], this.transform.position, this.transform.rotation);
+                wTD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
 
-                    foreach (Rigidbody rb in wTD.GetComponentsInChildren<Rigidbody>())
-                    {
-                        Vector3 force = (rb.transform.position - transform.position).normalized * 15;
-                        rb.AddForce(force);
-                    }
-                    break;
-            }
-
-            Destroy(gameObject);
+                foreach (Rigidbody rb in wTD.GetComponentsInChildren<Rigidbody>())
+                {
+                    Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
+                    rb.AddForce(force);
+                }
+                break;
         }
-        
-    }
+
+        if (gameObject.GetComponent<Collider>().enabled == false)
+        {
+            
+
+            
+        }
+    }   
 }
