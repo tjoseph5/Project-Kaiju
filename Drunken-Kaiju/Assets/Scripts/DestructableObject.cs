@@ -7,7 +7,6 @@ public class DestructableObject : MonoBehaviour
 
     [Range(0,100)] [HideInInspector] public float health;
     public float breakForce;
-    [SerializeField] GameObject[] destroyedBuildings;
 
     public enum BuildingTypes { billboard, factory, genericStore, hospital, house, nuclearSmokeStack, officeBuilding, skyscraper, smokeStack, warehouse, windTurbine };
     public BuildingTypes buildingTypes = BuildingTypes.house;
