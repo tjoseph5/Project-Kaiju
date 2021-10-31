@@ -8,6 +8,8 @@ public class CopyLimbs : MonoBehaviour
     [SerializeField] private Transform targetLimb;
     [SerializeField] private ConfigurableJoint m_configurableJoint;
 
+    public bool canCopy;
+
     Quaternion targetInitialRotation;
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,10 @@ public class CopyLimbs : MonoBehaviour
 
     private void FixedUpdate()
     {
-        this.m_configurableJoint.targetRotation = copyRotation();
+        if (canCopy)
+        {
+            this.m_configurableJoint.targetRotation = copyRotation();
+        }
     }
 
     private Quaternion copyRotation()
