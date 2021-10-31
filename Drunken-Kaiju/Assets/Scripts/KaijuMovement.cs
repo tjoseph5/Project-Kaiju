@@ -37,6 +37,7 @@ public class KaijuMovement : MonoBehaviour
     float attackTimer;
     [Range(0, 100)] public float pukeAmount;
     [SerializeField] float pukeDepleteSpeed; //Will dictate how long puking last
+    [SerializeField] float ragdollActivateSpeed;
     [HideInInspector] public ParticleSystem pukeFX;
     #endregion
 
@@ -88,10 +89,10 @@ public class KaijuMovement : MonoBehaviour
 
     //Specific bools for player functions
     #region Bool States
-    [SerializeField] bool activateRagdoll;
+    bool activateRagdoll;
     bool dashAttack;
-    [SerializeField] bool isGrounded;
-    [SerializeField] bool isPuking;
+    bool isGrounded;
+    bool isPuking;
     #endregion
 
 
@@ -330,7 +331,9 @@ public class KaijuMovement : MonoBehaviour
         {
             if (dashControl.action.triggered)
             {
+                rootRb.AddForce(rootRb.transform.forward.x * dashDistance, dashHeight, rootRb.transform.forward.z * dashDistance, ForceMode.Impulse);
                 activateRagdoll = true;
+                ActivateRagdoll(activateRagdoll);
                 dashAttack = true;
 
                 if (isHolding)
@@ -446,7 +449,7 @@ public class KaijuMovement : MonoBehaviour
                 this.walk = false;
                 this.inAir = true;
 
-                if (rootRb.velocity.y < -10)
+                if (rootRb.velocity.y < ragdollActivateSpeed)
                 {
                     activateRagdoll = true;
                     Debug.Log("Free Falling!");
@@ -454,13 +457,6 @@ public class KaijuMovement : MonoBehaviour
                 }
 
                 break;
-        }
-
-        if (dashAttack)
-        {
-            ActivateRagdoll(activateRagdoll);
-            rootRb.velocity = new Vector3(0, dashHeight, rootRb.transform.forward.z * dashDistance);
-            dashAttack = false;
         }
     }
 
@@ -581,6 +577,13 @@ public class KaijuMovement : MonoBehaviour
             rootRb.transform.position += new Vector3(0, 1, 0);
         }
         #endregion
+
+        #region Bool Status
+        if (dashAttack)
+        {
+            dashAttack = false;
+        }
+        #endregion
     }
     #endregion
 
@@ -603,7 +606,7 @@ public class KaijuMovement : MonoBehaviour
 
             if (hasThrown)
             {
-                objRb.AddForce(0, (throwPower/2), rootRb.transform.forward.z * throwPower, ForceMode.Impulse);
+                objRb.AddForce(rootRb.transform.forward.x * throwPower, (throwPower/2), rootRb.transform.forward.z * throwPower, ForceMode.Impulse);
             }
 
             heldObj = null;

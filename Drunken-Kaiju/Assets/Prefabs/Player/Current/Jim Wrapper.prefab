@@ -13,7 +13,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!136 &7055547111935539398
@@ -154,7 +154,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!135 &7055547111495426835
@@ -294,7 +294,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!136 &7055547111741180599
@@ -435,7 +435,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!136 &7055547111642509477
@@ -576,7 +576,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!136 &7055547110421909215
@@ -717,7 +717,7 @@ Rigidbody:
   m_AngularDrag: 3
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &7055547110832893558
@@ -837,7 +837,7 @@ ConstantForce:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3164804436808348296}
   m_Enabled: 1
-  m_Force: {x: 0, y: 20, z: 0}
+  m_Force: {x: 0, y: 5, z: 0}
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
@@ -869,7 +869,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!136 &7055547110942217040
@@ -1010,7 +1010,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!136 &7055547111306111998
@@ -1151,7 +1151,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!136 &7055547110209812334
@@ -1292,7 +1292,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!136 &7055547110464318195
@@ -6237,7 +6237,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!136 &7055547111098241927
@@ -6410,7 +6410,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!136 &7055547110553242580
@@ -6551,7 +6551,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &7055547111140240332
@@ -6574,20 +6574,19 @@ MonoBehaviour:
   pukeControl: {fileID: 392695067068676158, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   pickup_throwControl: {fileID: -4914988446588275288, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   speed: 70
-  jumpHeight: 155
-  dashDistance: 250
+  jumpHeight: 125
+  dashDistance: 200
   dashHeight: 100
   pukeAmount: 100
   pukeDepleteSpeed: 10
-  throwPower: 0
+  ragdollActivateSpeed: -10
+  pukeFX: {fileID: 0}
+  throwPower: 30
   targetAnimator: {fileID: 7055547111465377148}
   velocityCap: 60
   groundSpeedCap: 4
   rayForwardLength: 5
   rayDownLength: 2.5
-  activateRagdoll: 0
-  isGrounded: 1
-  isPuking: 0
 --- !u!95 &7055547111465377148
 Animator:
   serializedVersion: 3
@@ -6620,7 +6619,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!136 &7055547111656701731
@@ -6791,7 +6790,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!136 &7055547110941002483
