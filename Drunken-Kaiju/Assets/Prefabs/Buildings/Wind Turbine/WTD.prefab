@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7724530253760527919}
   - component: {fileID: 7314845851854844621}
   - component: {fileID: 7314845851854844627}
+  - component: {fileID: 5473706591632110284}
   m_Layer: 7
   m_Name: shard2
   m_TagString: Untagged
@@ -114,6 +115,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 697903988925253736, guid: 604f4c259b25e59449ab93f2eebb90bb, type: 3}
+--- !u!114 &5473706591632110284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911458908431458884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1174056151585969999
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,6 +140,7 @@ GameObject:
   - component: {fileID: 3067349433883912998}
   - component: {fileID: 7314845851813890760}
   - component: {fileID: 7314845851813890766}
+  - component: {fileID: 2694748073417513775}
   m_Layer: 7
   m_Name: shard5
   m_TagString: Untagged
@@ -228,6 +242,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5673084798034043110, guid: 604f4c259b25e59449ab93f2eebb90bb, type: 3}
+--- !u!114 &2694748073417513775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174056151585969999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3174047138290643924
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,6 +267,7 @@ GameObject:
   - component: {fileID: 6350461490946945356}
   - component: {fileID: 7314845851984829119}
   - component: {fileID: 7314845851984829117}
+  - component: {fileID: 7150036423270802119}
   m_Layer: 7
   m_Name: shard4
   m_TagString: Untagged
@@ -342,6 +369,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1160288528575290666, guid: 604f4c259b25e59449ab93f2eebb90bb, type: 3}
+--- !u!114 &7150036423270802119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3174047138290643924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5063434276118306410
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,6 +394,7 @@ GameObject:
   - component: {fileID: 2429863404470028652}
   - component: {fileID: 7314845851988258652}
   - component: {fileID: 7314845851988258594}
+  - component: {fileID: 6182463981201540924}
   m_Layer: 7
   m_Name: shard3
   m_TagString: Untagged
@@ -456,6 +496,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6017172911788317743, guid: 604f4c259b25e59449ab93f2eebb90bb, type: 3}
+--- !u!114 &6182463981201540924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5063434276118306410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6075999836488540275
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +521,7 @@ GameObject:
   - component: {fileID: 7843505017533665838}
   - component: {fileID: 7314845850622513517}
   - component: {fileID: 7314845850622513523}
+  - component: {fileID: 4387066288259570765}
   m_Layer: 7
   m_Name: shard1
   m_TagString: Untagged
@@ -570,6 +623,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4122916103799640655, guid: 604f4c259b25e59449ab93f2eebb90bb, type: 3}
+--- !u!114 &4387066288259570765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075999836488540275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7584875798848473644
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +644,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7064235725388140694}
+  - component: {fileID: 3078498921181476716}
   m_Layer: 7
   m_Name: WTD
   m_TagString: Untagged
@@ -605,3 +671,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3078498921181476716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7584875798848473644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

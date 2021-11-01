@@ -108,7 +108,7 @@ public class DestructableObject : MonoBehaviour
 
         if (col.gameObject.GetComponent<Rigidbody>() && col.gameObject.tag != "Player")
         {
-            if(col.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 15)
+            if(col.gameObject.GetComponent<Rigidbody>().velocity.sqrMagnitude > 10)
             {
                 if(col.gameObject.layer != 7)
                 {

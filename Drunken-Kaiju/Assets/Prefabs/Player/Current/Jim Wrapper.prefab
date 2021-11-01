@@ -6573,6 +6573,7 @@ MonoBehaviour:
   attackControl: {fileID: -7403655656206594927, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   pukeControl: {fileID: 392695067068676158, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   pickup_throwControl: {fileID: -4914988446588275288, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
+  health: 100
   speed: 70
   jumpHeight: 125
   dashDistance: 200

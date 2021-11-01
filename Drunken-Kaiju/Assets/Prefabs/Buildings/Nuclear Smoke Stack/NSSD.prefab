@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3954049798773629617}
   - component: {fileID: 3980818899979930724}
   - component: {fileID: 6813625954710021624}
+  - component: {fileID: 2705231053694190665}
   m_Layer: 7
   m_Name: shard1
   m_TagString: Untagged
@@ -114,6 +115,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2705231053694190665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032565383203573996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2036418351774592757
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,6 +140,7 @@ GameObject:
   - component: {fileID: 8916769862800751091}
   - component: {fileID: 8875870300007272593}
   - component: {fileID: 5475455261275307959}
+  - component: {fileID: 5520554937159129249}
   m_Layer: 7
   m_Name: shard3
   m_TagString: Untagged
@@ -228,6 +242,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5520554937159129249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036418351774592757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3694294525831805619
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +263,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4039471446105235465}
+  - component: {fileID: 2945034451367873691}
   m_Layer: 7
   m_Name: NSSD
   m_TagString: Untagged
@@ -264,6 +291,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2945034451367873691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3694294525831805619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5353993597717391312
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +316,7 @@ GameObject:
   - component: {fileID: 8113035824689879993}
   - component: {fileID: 5525748201242860278}
   - component: {fileID: 1547383626124670996}
+  - component: {fileID: 3058529272973599444}
   m_Layer: 7
   m_Name: shard5
   m_TagString: Untagged
@@ -378,6 +418,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3058529272973599444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353993597717391312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6241995793824338651
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,6 +443,7 @@ GameObject:
   - component: {fileID: 3545786739818401456}
   - component: {fileID: 7245948426878382957}
   - component: {fileID: 3756537800121165024}
+  - component: {fileID: 1319561892383864188}
   m_Layer: 7
   m_Name: shard2
   m_TagString: Untagged
@@ -492,6 +545,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1319561892383864188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6241995793824338651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8505709906410947403
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +570,7 @@ GameObject:
   - component: {fileID: 155231260895953363}
   - component: {fileID: 6273126373906798171}
   - component: {fileID: 8450921644406049645}
+  - component: {fileID: 5336784557253216300}
   m_Layer: 7
   m_Name: shard4
   m_TagString: Untagged
@@ -606,6 +672,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5336784557253216300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8505709906410947403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9136908452290589327
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,6 +697,7 @@ GameObject:
   - component: {fileID: 4369896144697796319}
   - component: {fileID: 1245210910926326349}
   - component: {fileID: 4493088018328126072}
+  - component: {fileID: 642072931786407924}
   m_Layer: 7
   m_Name: shard6
   m_TagString: Untagged
@@ -720,3 +799,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &642072931786407924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9136908452290589327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

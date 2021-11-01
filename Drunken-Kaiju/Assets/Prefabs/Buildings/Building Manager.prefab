@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8632502499725534992}
   - component: {fileID: 3094744770054734915}
+  - component: {fileID: 7426103660321536163}
   m_Layer: 0
   m_Name: Building Manager
   m_TagString: Untagged
@@ -55,3 +56,16 @@ MonoBehaviour:
   - {fileID: 4929824436972336007, guid: 5e406fc37ebde6d4fbaefb103aefbdb7, type: 3}
   - {fileID: 7212692260072574867, guid: b5fdb8f5fcf677940b4f6446e7f9d7e1, type: 3}
   - {fileID: 7584875798848473644, guid: 14f518f8f8d118f4c8c9834442771ef4, type: 3}
+--- !u!114 &7426103660321536163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687992434590320908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 345549985be16594ab1bedcace71b09a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shards: []

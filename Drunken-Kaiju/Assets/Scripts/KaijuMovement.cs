@@ -30,6 +30,7 @@ public class KaijuMovement : MonoBehaviour
     //Values
     #region Values
     [Header("Values and Animator Manager")]
+    [Range(0,100)] public float health;
     [SerializeField] float speed;
     [SerializeField] float jumpHeight;
     [SerializeField] float dashDistance;
@@ -104,6 +105,7 @@ public class KaijuMovement : MonoBehaviour
 
     void Start()
     {
+        health = 100;
         rb = gameObject.GetComponent<Rigidbody>();
         cameraMainTransform = GameObject.Find("Main Camera").transform;
 
@@ -263,6 +265,15 @@ public class KaijuMovement : MonoBehaviour
             isPuking = false;
         }
         #endregion
+
+        if(health > 100)
+        {
+            health = 100;
+        }
+        else if(health < 0)
+        {
+            health = 0;
+        }
 
         movement = movementControl.action.ReadValue<Vector2>();
         move = new Vector3(movement.x, 0, movement.y).normalized;
