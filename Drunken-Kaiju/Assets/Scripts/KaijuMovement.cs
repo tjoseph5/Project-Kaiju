@@ -606,7 +606,7 @@ public class KaijuMovement : MonoBehaviour
 
             if (hasThrown)
             {
-                objRb.AddForce(rootRb.transform.forward.x * throwPower, (throwPower/2), rootRb.transform.forward.z * throwPower, ForceMode.Impulse);
+                objRb.AddForce(rootRb.transform.forward.x * throwPower, (throwPower/3), rootRb.transform.forward.z * throwPower, ForceMode.Impulse);
             }
 
             heldObj = null;

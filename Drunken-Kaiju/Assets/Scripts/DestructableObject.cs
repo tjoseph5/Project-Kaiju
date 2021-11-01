@@ -11,7 +11,7 @@ public class DestructableObject : MonoBehaviour
     public enum BuildingTypes { billboard, factory, genericStore, hospital, house, nuclearSmokeStack, officeBuilding, skyscraper, smokeStack, warehouse, windTurbine };
     public BuildingTypes buildingTypes = BuildingTypes.house;
 
-    Transform player;
+    [SerializeField]GameObject player;
 
     private void Awake()
     {
@@ -21,7 +21,8 @@ public class DestructableObject : MonoBehaviour
     void Start()
     {
 
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        //player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = null;
 
         switch (buildingTypes)
         {
@@ -90,14 +91,24 @@ public class DestructableObject : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
+
         if(col.gameObject.tag == "Player")
+        {
+            if (player == null)
+            {
+                player = col.gameObject;
+                Debug.Log("Player collision is now: " + player.name);
+            }
+        }
+
+        if(col.gameObject == player)
         {
             Destruction();
         }
 
         if (col.gameObject.GetComponent<Rigidbody>() && col.gameObject.tag != "Player")
         {
-            if(col.gameObject.GetComponent<Rigidbody>().velocity.sqrMagnitude > 15)
+            if(col.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 15)
             {
                 if(col.gameObject.layer != 7)
                 {

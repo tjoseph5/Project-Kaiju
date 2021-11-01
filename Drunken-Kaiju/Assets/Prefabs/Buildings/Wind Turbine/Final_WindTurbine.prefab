@@ -112,3 +112,4 @@ MonoBehaviour:
   health: 0
   breakForce: 50
   buildingTypes: 10
+  player: {fileID: 0}
