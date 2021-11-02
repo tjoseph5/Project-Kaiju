@@ -291,7 +291,7 @@ public class KaijuMovement : MonoBehaviour
             {
                 Debug.Log("hitsomething");
 
-                if (rayDownHit.collider)
+                if (rayDownHit.collider && !activateRagdoll)
                 {
                     isGrounded = true;
 
@@ -389,7 +389,7 @@ public class KaijuMovement : MonoBehaviour
             }
         }
 
-        if (pickup_throwControl.action.triggered && isGrounded)
+        if (pickup_throwControl.action.triggered)
         {
             if (!isHolding)
             {
