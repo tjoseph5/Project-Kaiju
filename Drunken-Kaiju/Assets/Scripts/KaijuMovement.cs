@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class KaijuMovement : MonoBehaviour
 {
+    public static KaijuMovement singleton;
+
     #region Rigidbody Setup
     Rigidbody rb; //Overall Rigidbody for Parent Object
     [SerializeField] Rigidbody rootRb; //Root Rigidbody (recommended)
@@ -99,6 +101,7 @@ public class KaijuMovement : MonoBehaviour
 
     void Awake()
     {
+        singleton = this;
         rayForwardDir = rootRb.transform.TransformVector(rootRb.gameObject.transform.forward);
         rayDownDir = rootRb.transform.TransformVector(-rootRb.gameObject.transform.up);
     }
@@ -398,6 +401,14 @@ public class KaijuMovement : MonoBehaviour
                         {
                             ObjectPickupManager(rayForwardHit.collider.gameObject.GetComponent<Rigidbody>());
                         }
+
+                        if (rayForwardHit.collider.gameObject.GetComponent<PickupObjects>())
+                        {
+                            if(rayForwardHit.collider.gameObject.GetComponent<PickupObjects>().pickupTypes == PickupObjects.PickupTypes.bottlePickup && !rayForwardHit.collider.gameObject.GetComponent<PickupObjects>().hasDrank)
+                            {
+                                rayForwardHit.collider.gameObject.GetComponent<PickupObjects>().BottlePickup();
+                            }
+                        }
                     }
                 }
             }
@@ -410,11 +421,11 @@ public class KaijuMovement : MonoBehaviour
         if (isHolding)
         {
             heldObj.transform.position = objectHolderTransform.transform.position;
-            Physics.IgnoreLayerCollision(6, 8, true);
+            //Physics.IgnoreLayerCollision(6, 8, true);
         }
         else if (!isHolding)
         {
-            Physics.IgnoreLayerCollision(6, 8, false);
+            //Physics.IgnoreLayerCollision(6, 8, false);
         }
     }
 
@@ -606,14 +617,27 @@ public class KaijuMovement : MonoBehaviour
             heldObj = rayForwardHit.collider.gameObject;
             Debug.Log("Pickup " + heldObj.name);
             objRb.useGravity = false;
+            objRb.isKinematic = true;
             objRb.drag = 10;
             isHolding = true;
+            objRb.transform.rotation = new Quaternion(0, 0, 0, 0);
+
+            if(heldObj.layer != 8)
+            {
+                heldObj.layer = 8;
+            }
         }
         else if (heldObj != null)
         {
             objRb.drag = dragStore;
+            objRb.isKinematic = false;
             objRb.useGravity = true;
             isHolding = false;
+
+            if (heldObj.layer == 8)
+            {
+                heldObj.layer = 0;
+            }
 
             if (hasThrown)
             {

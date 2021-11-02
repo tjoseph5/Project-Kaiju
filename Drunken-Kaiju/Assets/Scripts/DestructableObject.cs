@@ -129,8 +129,6 @@ public class DestructableObject : MonoBehaviour
 
     void Destruction()
     {
-        //gameObject.GetComponent<Collider>().enabled = false;
-        //Debug.Log(gameObject.GetComponent<Collider>().enabled);
         Destroy(gameObject);
 
         switch (buildingTypes)
@@ -181,6 +179,9 @@ public class DestructableObject : MonoBehaviour
                     Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
                     rb.AddForce(force);
                 }
+
+                KaijuMovement.singleton.health = 100;
+
                 break;
 
             case BuildingTypes.house:

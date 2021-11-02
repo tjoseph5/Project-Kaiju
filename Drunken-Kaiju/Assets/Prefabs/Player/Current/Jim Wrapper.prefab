@@ -837,7 +837,7 @@ ConstantForce:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3164804436808348296}
   m_Enabled: 1
-  m_Force: {x: 0, y: 5, z: 0}
+  m_Force: {x: 0, y: 30, z: 0}
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
@@ -1431,7 +1431,7 @@ GameObject:
   - component: {fileID: 593601280748244231}
   - component: {fileID: 590910533871072605}
   - component: {fileID: 2202782957736948429}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Puke Radiation
   m_TagString: Puke
   m_Icon: {fileID: 0}
@@ -6578,7 +6578,7 @@ MonoBehaviour:
   jumpHeight: 125
   dashDistance: 200
   dashHeight: 100
-  pukeAmount: 100
+  pukeAmount: 75
   pukeDepleteSpeed: 10
   ragdollActivateSpeed: -10
   pukeFX: {fileID: 0}
