@@ -108,7 +108,7 @@ public class DestructableObject : MonoBehaviour
 
         if (col.gameObject.GetComponent<Rigidbody>() && col.gameObject.tag != "Player")
         {
-            if(col.gameObject.GetComponent<Rigidbody>().velocity.sqrMagnitude > 10)
+            if(col.gameObject.GetComponent<Rigidbody>().velocity.sqrMagnitude > 5)
             {
                 if(col.gameObject.layer != 7)
                 {
@@ -267,13 +267,6 @@ public class DestructableObject : MonoBehaviour
                     rb.AddForce(force);
                 }
                 break;
-        }
-
-        if (gameObject.GetComponent<Collider>().enabled == false)
-        {
-            
-
-            
         }
     }   
 }

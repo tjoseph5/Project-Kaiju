@@ -58,6 +58,7 @@ public class PickupObjects : MonoBehaviour
                 {
                     if (!this.hasDrank)
                     {
+                        gameObject.layer = 0;
                         BottlePickup();
                     }
                 }
@@ -105,7 +106,7 @@ public class PickupObjects : MonoBehaviour
     public void BottlePickup()
     {
         hasDrank = true;
-        gameObject.layer = 8;
+        //gameObject.layer = 8;
         KaijuMovement.singleton.pukeAmount += 25;
         gameObject.GetComponent<Rigidbody>().useGravity = true;
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
