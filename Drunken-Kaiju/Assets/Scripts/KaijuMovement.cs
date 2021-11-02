@@ -291,7 +291,7 @@ public class KaijuMovement : MonoBehaviour
             {
                 Debug.Log("hitsomething");
 
-                if (rayDownHit.collider)
+                if (rayDownHit.collider && !activateRagdoll)
                 {
                     isGrounded = true;
 
