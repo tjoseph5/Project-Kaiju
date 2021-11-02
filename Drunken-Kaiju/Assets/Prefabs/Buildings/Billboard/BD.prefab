@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2421164131162550451}
+  - component: {fileID: 7392683064400591244}
   m_Layer: 7
   m_Name: BD
   m_TagString: Untagged
@@ -32,6 +33,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7392683064400591244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3085637956898925065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3962494802652738872
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,6 +58,7 @@ GameObject:
   - component: {fileID: 5528937393535461866}
   - component: {fileID: 3962494802652738878}
   - component: {fileID: 3962494802652738879}
+  - component: {fileID: 8375483009815760741}
   m_Layer: 7
   m_Name: polySurface16
   m_TagString: Untagged
@@ -145,6 +159,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1116444134294172880, guid: 1a1ed1afaf506bf4da6b6812783a37dc, type: 3}
+--- !u!114 &8375483009815760741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3962494802652738872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4198054167029370404
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,6 +184,7 @@ GameObject:
   - component: {fileID: 1998137715468009925}
   - component: {fileID: 4198054167029370426}
   - component: {fileID: 4198054167029370427}
+  - component: {fileID: 7447061854913244055}
   m_Layer: 7
   m_Name: polySurface2
   m_TagString: Untagged
@@ -258,3 +285,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5597002278806442958, guid: 1a1ed1afaf506bf4da6b6812783a37dc, type: 3}
+--- !u!114 &7447061854913244055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4198054167029370404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

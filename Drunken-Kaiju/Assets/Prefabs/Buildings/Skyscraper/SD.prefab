@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 324207466183289182}
+  - component: {fileID: 1701254779004290641}
   m_Layer: 7
   m_Name: SD
   m_TagString: Untagged
@@ -38,6 +39,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1701254779004290641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095500977077892068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2319928484410009506
 GameObject:
   m_ObjectHideFlags: 0
@@ -51,6 +64,7 @@ GameObject:
   - component: {fileID: 5174213672111206564}
   - component: {fileID: 285250168796785797}
   - component: {fileID: 285250168796785799}
+  - component: {fileID: 6028822628625289242}
   m_Layer: 7
   m_Name: shard3
   m_TagString: Untagged
@@ -99,8 +113,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 885ed1b7085479e45abae26e1664e73f, type: 3}
-  - {fileID: 5561349426305759274, guid: 885ed1b7085479e45abae26e1664e73f, type: 3}
+  - {fileID: 5561349426305759274, guid: 89e48f560662f134f85ead184771d5e6, type: 3}
+  - {fileID: 5561349426305759274, guid: 89e48f560662f134f85ead184771d5e6, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -130,7 +144,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2319928484410009506}
   serializedVersion: 2
-  m_Mass: 0.7
+  m_Mass: 0.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -152,6 +166,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6017172911788317743, guid: ba4db2a6577d1b443a5a79c8845d0800, type: 3}
+--- !u!114 &6028822628625289242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2319928484410009506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3613203734353091003
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +191,7 @@ GameObject:
   - component: {fileID: 769937752116866022}
   - component: {fileID: 285250167955048853}
   - component: {fileID: 285250167955048855}
+  - component: {fileID: 2132159025015162890}
   m_Layer: 7
   m_Name: shard1
   m_TagString: Untagged
@@ -213,8 +240,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 885ed1b7085479e45abae26e1664e73f, type: 3}
-  - {fileID: 5561349426305759274, guid: 885ed1b7085479e45abae26e1664e73f, type: 3}
+  - {fileID: 5561349426305759274, guid: 89e48f560662f134f85ead184771d5e6, type: 3}
+  - {fileID: 5561349426305759274, guid: 89e48f560662f134f85ead184771d5e6, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -244,7 +271,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3613203734353091003}
   serializedVersion: 2
-  m_Mass: 0.7
+  m_Mass: 0.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -266,6 +293,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4122916103799640655, guid: ba4db2a6577d1b443a5a79c8845d0800, type: 3}
+--- !u!114 &2132159025015162890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3613203734353091003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4808741360511663064
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,6 +318,7 @@ GameObject:
   - component: {fileID: 59734807873220488}
   - component: {fileID: 285250168632911814}
   - component: {fileID: 285250168632911808}
+  - component: {fileID: 8261343512927211996}
   m_Layer: 7
   m_Name: shard6
   m_TagString: Untagged
@@ -327,8 +367,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 885ed1b7085479e45abae26e1664e73f, type: 3}
-  - {fileID: 5561349426305759274, guid: 885ed1b7085479e45abae26e1664e73f, type: 3}
+  - {fileID: 5561349426305759274, guid: 89e48f560662f134f85ead184771d5e6, type: 3}
+  - {fileID: 5561349426305759274, guid: 89e48f560662f134f85ead184771d5e6, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -358,7 +398,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4808741360511663064}
   serializedVersion: 2
-  m_Mass: 0.7
+  m_Mass: 0.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -380,6 +420,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8094190371653704284, guid: ba4db2a6577d1b443a5a79c8845d0800, type: 3}
+--- !u!114 &8261343512927211996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4808741360511663064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5366776736504121884
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,6 +445,7 @@ GameObject:
   - component: {fileID: 4492264881012115588}
   - component: {fileID: 285250168553044417}
   - component: {fileID: 285250168553044419}
+  - component: {fileID: 7102866794229015898}
   m_Layer: 7
   m_Name: shard4
   m_TagString: Untagged
@@ -441,8 +494,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 885ed1b7085479e45abae26e1664e73f, type: 3}
-  - {fileID: 5561349426305759274, guid: 885ed1b7085479e45abae26e1664e73f, type: 3}
+  - {fileID: 5561349426305759274, guid: 89e48f560662f134f85ead184771d5e6, type: 3}
+  - {fileID: 5561349426305759274, guid: 89e48f560662f134f85ead184771d5e6, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -472,7 +525,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5366776736504121884}
   serializedVersion: 2
-  m_Mass: 0.7
+  m_Mass: 0.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -494,6 +547,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1160288528575290666, guid: ba4db2a6577d1b443a5a79c8845d0800, type: 3}
+--- !u!114 &7102866794229015898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5366776736504121884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6605166519252111534
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +572,7 @@ GameObject:
   - component: {fileID: 6626474365261100134}
   - component: {fileID: 285250167586221388}
   - component: {fileID: 285250167586221390}
+  - component: {fileID: 1731317244312109320}
   m_Layer: 7
   m_Name: shard7
   m_TagString: Untagged
@@ -555,8 +621,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 885ed1b7085479e45abae26e1664e73f, type: 3}
-  - {fileID: 5561349426305759274, guid: 885ed1b7085479e45abae26e1664e73f, type: 3}
+  - {fileID: 5561349426305759274, guid: 89e48f560662f134f85ead184771d5e6, type: 3}
+  - {fileID: 5561349426305759274, guid: 89e48f560662f134f85ead184771d5e6, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -586,7 +652,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6605166519252111534}
   serializedVersion: 2
-  m_Mass: 0.7
+  m_Mass: 0.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -608,6 +674,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1766809595301799932, guid: ba4db2a6577d1b443a5a79c8845d0800, type: 3}
+--- !u!114 &1731317244312109320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6605166519252111534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7666156640293023305
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,6 +699,7 @@ GameObject:
   - component: {fileID: 7915320080181636269}
   - component: {fileID: 285250167481989833}
   - component: {fileID: 285250167481989835}
+  - component: {fileID: 2296666144126769254}
   m_Layer: 7
   m_Name: shard8
   m_TagString: Untagged
@@ -669,8 +748,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 885ed1b7085479e45abae26e1664e73f, type: 3}
-  - {fileID: 5561349426305759274, guid: 885ed1b7085479e45abae26e1664e73f, type: 3}
+  - {fileID: 5561349426305759274, guid: 89e48f560662f134f85ead184771d5e6, type: 3}
+  - {fileID: 5561349426305759274, guid: 89e48f560662f134f85ead184771d5e6, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -700,7 +779,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7666156640293023305}
   serializedVersion: 2
-  m_Mass: 0.7
+  m_Mass: 0.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -722,6 +801,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -547343557084233894, guid: ba4db2a6577d1b443a5a79c8845d0800, type: 3}
+--- !u!114 &2296666144126769254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7666156640293023305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7696866183150836620
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,6 +826,7 @@ GameObject:
   - component: {fileID: 956433662258661351}
   - component: {fileID: 285250167514985464}
   - component: {fileID: 285250167514985466}
+  - component: {fileID: 3533440637633101321}
   m_Layer: 7
   m_Name: shard2
   m_TagString: Untagged
@@ -783,8 +875,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 885ed1b7085479e45abae26e1664e73f, type: 3}
-  - {fileID: 5561349426305759274, guid: 885ed1b7085479e45abae26e1664e73f, type: 3}
+  - {fileID: 5561349426305759274, guid: 89e48f560662f134f85ead184771d5e6, type: 3}
+  - {fileID: 5561349426305759274, guid: 89e48f560662f134f85ead184771d5e6, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -814,7 +906,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7696866183150836620}
   serializedVersion: 2
-  m_Mass: 0.7
+  m_Mass: 0.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -836,6 +928,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 697903988925253736, guid: ba4db2a6577d1b443a5a79c8845d0800, type: 3}
+--- !u!114 &3533440637633101321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7696866183150836620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8520231974426963591
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,6 +953,7 @@ GameObject:
   - component: {fileID: 5541554000822096622}
   - component: {fileID: 285250167500130914}
   - component: {fileID: 285250167500130924}
+  - component: {fileID: 8803894877610374176}
   m_Layer: 7
   m_Name: shard5
   m_TagString: Untagged
@@ -897,8 +1002,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 885ed1b7085479e45abae26e1664e73f, type: 3}
-  - {fileID: 5561349426305759274, guid: 885ed1b7085479e45abae26e1664e73f, type: 3}
+  - {fileID: 5561349426305759274, guid: 89e48f560662f134f85ead184771d5e6, type: 3}
+  - {fileID: 5561349426305759274, guid: 89e48f560662f134f85ead184771d5e6, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -928,7 +1033,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8520231974426963591}
   serializedVersion: 2
-  m_Mass: 0.7
+  m_Mass: 0.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -950,3 +1055,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5673084798034043110, guid: ba4db2a6577d1b443a5a79c8845d0800, type: 3}
+--- !u!114 &8803894877610374176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8520231974426963591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
