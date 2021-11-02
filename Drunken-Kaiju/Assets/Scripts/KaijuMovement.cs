@@ -389,7 +389,7 @@ public class KaijuMovement : MonoBehaviour
             }
         }
 
-        if (pickup_throwControl.action.triggered && isGrounded)
+        if (pickup_throwControl.action.triggered)
         {
             if (!isHolding)
             {
