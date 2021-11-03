@@ -167,6 +167,7 @@ public class KaijuMovement : MonoBehaviour
         this.targetAnimator.SetBool("Is Attacking", this.isAttacking);
         this.targetAnimator.SetBool("Ragdoll", this.activateRagdoll);
         this.targetAnimator.SetBool("Dive", this.dashAttack);
+        this.targetAnimator.SetBool("Is Puking", this.isPuking);
         #endregion
 
         //Input Activation must remain on top
@@ -613,6 +614,7 @@ public class KaijuMovement : MonoBehaviour
     {
         if (heldObj == null)
         {
+            targetAnimator.SetTrigger("Grab");
             dragStore = objRb.drag;
             heldObj = rayForwardHit.collider.gameObject;
             Debug.Log("Pickup " + heldObj.name);
@@ -641,6 +643,7 @@ public class KaijuMovement : MonoBehaviour
 
             if (hasThrown)
             {
+                targetAnimator.SetTrigger("Throw");
                 objRb.AddForce(rootRb.transform.forward.x * throwPower, (throwPower/3), rootRb.transform.forward.z * throwPower, ForceMode.Impulse);
             }
 
