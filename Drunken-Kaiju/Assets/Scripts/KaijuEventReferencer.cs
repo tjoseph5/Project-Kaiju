@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class KaijuEventReferencer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static KaijuEventReferencer animReferencer;
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        
+        animReferencer = this;
     }
 
     public void ThrowReferencer()
