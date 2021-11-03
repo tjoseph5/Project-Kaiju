@@ -46,7 +46,7 @@ public class KaijuMovement : MonoBehaviour
 
     #region Pickup/Throwing variables
     Transform objectHolderTransform;
-    GameObject heldObj;
+    [HideInInspector] public GameObject heldObj;
     bool isHolding;
     [SerializeField] float throwPower;
 
@@ -81,7 +81,7 @@ public class KaijuMovement : MonoBehaviour
     #region Raycast Setup
     Vector3 rayForwardDir; //raycast vector that places the raycast's position
     [SerializeField] float rayForwardLength; //length of raycast
-    RaycastHit rayForwardHit; //raycast collider
+    [HideInInspector] public RaycastHit rayForwardHit; //raycast collider
 
     Vector3 rayDownDir;
     [SerializeField] float rayDownLength;
@@ -400,7 +400,7 @@ public class KaijuMovement : MonoBehaviour
                     {
                         if (rayForwardHit.collider.gameObject.GetComponent<Rigidbody>())
                         {
-                            ObjectPickupManager(rayForwardHit.collider.gameObject.GetComponent<Rigidbody>());
+                            targetAnimator.SetTrigger("Grab");
                         }
 
                         if (rayForwardHit.collider.gameObject.GetComponent<PickupObjects>())
@@ -415,7 +415,7 @@ public class KaijuMovement : MonoBehaviour
             }
             else
             {
-                ObjectPickupManager(heldObj.GetComponent<Rigidbody>(), true);
+                targetAnimator.SetTrigger("Throw");
             }
         }
 
@@ -610,11 +610,10 @@ public class KaijuMovement : MonoBehaviour
     }
     #endregion
 
-    void ObjectPickupManager(Rigidbody objRb, bool hasThrown = false)
+    public void ObjectPickupManager(Rigidbody objRb, bool hasThrown = false)
     {
         if (heldObj == null)
         {
-            targetAnimator.SetTrigger("Grab");
             dragStore = objRb.drag;
             heldObj = rayForwardHit.collider.gameObject;
             Debug.Log("Pickup " + heldObj.name);
@@ -643,7 +642,6 @@ public class KaijuMovement : MonoBehaviour
 
             if (hasThrown)
             {
-                targetAnimator.SetTrigger("Throw");
                 objRb.AddForce(rootRb.transform.forward.x * throwPower, (throwPower/3), rootRb.transform.forward.z * throwPower, ForceMode.Impulse);
             }
 
