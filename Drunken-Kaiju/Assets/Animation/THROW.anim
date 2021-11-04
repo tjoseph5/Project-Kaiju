@@ -10170,7 +10170,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 4.983333
+  - time: 4.516667
     functionName: ObjectLayerReset
     data: 
     objectReferenceParameter: {fileID: 0}

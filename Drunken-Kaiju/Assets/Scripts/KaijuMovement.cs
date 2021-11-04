@@ -46,7 +46,7 @@ public class KaijuMovement : MonoBehaviour
 
     #region Pickup/Throwing variables
     Transform objectHolderTransform;
-    [HideInInspector] public GameObject heldObj;
+    public GameObject heldObj;
     bool isHolding;
     [SerializeField] float throwPower;
 
@@ -402,7 +402,7 @@ public class KaijuMovement : MonoBehaviour
                         {
                             targetAnimator.SetTrigger("Grab");
 
-                            if (targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("WALKGAME"))
+                            if (targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("WALKGAME") && !heldObj)
                             {
                                 KaijuEventReferencer.animReferencer.GrabReferencer();
                             }

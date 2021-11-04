@@ -5,13 +5,16 @@ using UnityEngine;
 public class DestructableObject : MonoBehaviour
 {
 
-    [Range(0,100)] [HideInInspector] public float health;
+
     public float breakForce;
 
     public enum BuildingTypes { billboard, factory, genericStore, hospital, house, nuclearSmokeStack, officeBuilding, skyscraper, smokeStack, warehouse, windTurbine };
     public BuildingTypes buildingTypes = BuildingTypes.house;
 
     [SerializeField]GameObject player;
+
+    public bool buildingHealth;
+    [Range(0, 100)] [HideInInspector] public int health;
 
     private void Awake()
     {
@@ -20,6 +23,7 @@ public class DestructableObject : MonoBehaviour
 
     void Start()
     {
+        health = 100;
 
         //player = GameObject.FindGameObjectWithTag("Player").transform;
         player = null;
@@ -83,12 +87,6 @@ public class DestructableObject : MonoBehaviour
         }
     }
 
-
-    void Update()
-    {
-
-    }
-
     void OnCollisionEnter(Collision col)
     {
 
@@ -103,7 +101,10 @@ public class DestructableObject : MonoBehaviour
 
         if(col.gameObject == player)
         {
-            Destruction();
+            if(!buildingHealth || buildingHealth && health <= 0)
+            {
+                Destruction();
+            }
         }
 
         if (col.gameObject.GetComponent<Rigidbody>() && col.gameObject.tag != "Player")
@@ -112,7 +113,15 @@ public class DestructableObject : MonoBehaviour
             {
                 if(col.gameObject.layer != 7)
                 {
-                    Destruction();
+                    if(buildingHealth && health > 0)
+                    {
+                        health -= 50;
+                    }
+
+                    if (!buildingHealth || buildingHealth && health <= 0)
+                    {
+                        Destruction();
+                    }
                 }
             }
         }

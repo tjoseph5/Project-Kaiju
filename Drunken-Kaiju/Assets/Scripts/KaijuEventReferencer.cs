@@ -40,6 +40,9 @@ public class KaijuEventReferencer : MonoBehaviour
 
     public void HeldObjectNull()
     {
-        KaijuMovement.singleton.heldObj = null;
+        if(KaijuMovement.singleton.heldObj.layer == 0)
+        {
+            KaijuMovement.singleton.heldObj = null;
+        }
     }
 }
