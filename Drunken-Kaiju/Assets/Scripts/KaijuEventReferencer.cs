@@ -27,4 +27,19 @@ public class KaijuEventReferencer : MonoBehaviour
             KaijuMovement.singleton.ObjectPickupManager(KaijuMovement.singleton.rayForwardHit.collider.gameObject.GetComponent<Rigidbody>());
         }
     }
+
+    public void ObjectLayerReset()
+    {
+        if (KaijuMovement.singleton.heldObj.layer == 8)
+        {
+            KaijuMovement.singleton.heldObj.layer = 0;
+        }
+
+        HeldObjectNull();
+    }
+
+    public void HeldObjectNull()
+    {
+        KaijuMovement.singleton.heldObj = null;
+    }
 }
