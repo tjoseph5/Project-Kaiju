@@ -28,14 +28,19 @@ public class KaijuEventReferencer : MonoBehaviour
         }
     }
 
+    
     public void ObjectLayerReset()
     {
-        if (KaijuMovement.singleton.heldObj.layer == 8)
+        
+        if(KaijuMovement.singleton.heldObj != null)
         {
-            KaijuMovement.singleton.heldObj.layer = 0;
+            if (KaijuMovement.singleton.heldObj.layer == 8)
+            {
+                KaijuMovement.singleton.heldObj.layer = 0;
+            }
         }
 
-        HeldObjectNull();
+        KaijuMovement.singleton.heldObj = null;
     }
 
     public void HeldObjectNull()
@@ -45,4 +50,5 @@ public class KaijuEventReferencer : MonoBehaviour
             KaijuMovement.singleton.heldObj = null;
         }
     }
+    
 }

@@ -400,11 +400,13 @@ public class KaijuMovement : MonoBehaviour
                     {
                         if (rayForwardHit.collider.gameObject.GetComponent<Rigidbody>())
                         {
-                            targetAnimator.SetTrigger("Grab");
-
-                            if (targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("WALKGAME") && !heldObj)
+                            if (!targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("WALKGAME"))
                             {
-                                KaijuEventReferencer.animReferencer.GrabReferencer();
+                                targetAnimator.SetTrigger("Grab");
+                            }
+                            else if (targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("WALKGAME"))
+                            {
+                                ObjectPickupManager(rayForwardHit.collider.gameObject.GetComponent<Rigidbody>());
                             }
                         }
 
@@ -640,20 +642,18 @@ public class KaijuMovement : MonoBehaviour
             objRb.useGravity = true;
             isHolding = false;
 
-            if (!targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("THROW"))
+            /*
+            if (heldObj.layer == 8)
             {
-                if (heldObj.layer == 8)
-                {
-                    heldObj.layer = 0;
-                }
+                 heldObj.layer = 0;
             }
+            */
 
             if (hasThrown)
             {
                 objRb.AddForce(rootRb.transform.forward.x * throwPower, (throwPower/3), rootRb.transform.forward.z * throwPower, ForceMode.Impulse);
             }
-
-            if (!targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("THROW"))
+            else
             {
                 heldObj = null;
             }
