@@ -82,6 +82,8 @@ public class PickupObjects : MonoBehaviour
 
         if (other.gameObject == player)
         {
+            ScoreManager.singleton.standardScore += 150;
+
             switch (pickupTypes)
             {
                 case PickupTypes.healthPickup:
@@ -97,7 +99,6 @@ public class PickupObjects : MonoBehaviour
                 case PickupTypes.clockPickup:
                     //Add Clock Pickup
                     Destroy(gameObject);
-
                     break;
             }
         }
@@ -110,5 +111,6 @@ public class PickupObjects : MonoBehaviour
         KaijuMovement.singleton.pukeAmount += 25;
         gameObject.GetComponent<Rigidbody>().useGravity = true;
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        ScoreManager.singleton.standardScore += 150;
     }
 }

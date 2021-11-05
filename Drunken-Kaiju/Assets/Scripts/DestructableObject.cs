@@ -14,12 +14,8 @@ public class DestructableObject : MonoBehaviour
     [SerializeField]GameObject player;
 
     public bool buildingHealth;
-    [Range(0, 100)] [HideInInspector] public int health;
-
-    private void Awake()
-    {
-        
-    }
+    [Range(0, 100)] public int health;
+    [HideInInspector] public bool recentlyHit;
 
     void Start()
     {
@@ -87,6 +83,23 @@ public class DestructableObject : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (buildingHealth && health <= 0)
+        {
+            if(player == null && !recentlyHit)
+            {
+                ScoreAddition(true, buildingHealth);
+            }
+            else if(player != null || recentlyHit)
+            {
+                ScoreAddition(false, buildingHealth);
+            }
+            Destruction();
+        }
+    }
+
+
     void OnCollisionEnter(Collision col)
     {
 
@@ -101,9 +114,15 @@ public class DestructableObject : MonoBehaviour
 
         if(col.gameObject == player)
         {
-            if(!buildingHealth || buildingHealth && health <= 0)
+            if(!buildingHealth)
             {
+                ScoreAddition(cRHit: false, buildingHealth);
                 Destruction();
+            }
+
+            if(buildingHealth && health > 0 && KaijuMovement.singleton.activateRagdoll)
+            {
+                health -= 5;
             }
         }
 
@@ -115,14 +134,27 @@ public class DestructableObject : MonoBehaviour
                 {
                     if(buildingHealth && health > 0)
                     {
+                        recentlyHit = false;
                         health -= 50;
                     }
 
                     if (!buildingHealth || buildingHealth && health <= 0)
                     {
+                        ScoreAddition(true, buildingHealth);
                         Destruction();
                     }
                 }
+            }
+        }
+    }
+
+    private void OnCollisionExit(Collision col)
+    {
+        if(col.gameObject == player)
+        {
+            if(player != null)
+            {
+                player = null;
             }
         }
     }
@@ -132,6 +164,7 @@ public class DestructableObject : MonoBehaviour
         if(col.gameObject.tag == "Puke")
         {
             Debug.Log("bruh");
+            ScoreAddition(true, buildingHealth);
             Destruction();
         }
     }
@@ -277,5 +310,33 @@ public class DestructableObject : MonoBehaviour
                 }
                 break;
         }
-    }   
+    }
+
+    void ScoreAddition(bool cRHit = false, bool isSpecial = false)
+    {
+        if (cRHit)
+        {
+            ScoreManager.singleton.chainReactionMultiplier += 1;
+            ScoreManager.singleton.tempCRScoreTimer = 3;
+
+            if(ScoreManager.singleton.tempCRScoreTimer > 0)
+            {
+                ScoreManager.singleton.tempCRMultiplier += 1;
+            }
+
+            if(ScoreManager.singleton.tempCRMultiplier > 0)
+            {
+                ScoreManager.singleton.standardScore += ScoreManager.singleton.defaultGivenScore * ScoreManager.singleton.tempCRMultiplier;
+            }
+        }
+        else
+        {
+            ScoreManager.singleton.standardScore += ScoreManager.singleton.defaultGivenScore;
+        }
+
+        if (isSpecial)
+        {
+            ScoreManager.singleton.specialBuildingMultiplier += 1;
+        }
+    }
 }

@@ -9,7 +9,7 @@ public class KaijuMovement : MonoBehaviour
 
     #region Rigidbody Setup
     Rigidbody rb; //Overall Rigidbody for Parent Object
-    [SerializeField] Rigidbody rootRb; //Root Rigidbody (recommended)
+    public Rigidbody rootRb; //Root Rigidbody (recommended)
     #endregion
 
     //New Input System References
@@ -87,12 +87,16 @@ public class KaijuMovement : MonoBehaviour
     [SerializeField] float rayDownLength;
     RaycastHit rayDownHit;
 
-    LayerMask playerLayerMask = 1 << 6;
+    [HideInInspector] public Vector3 rayAttackDir;
+    public float rayAttackLength;
+    [HideInInspector] public RaycastHit rayAttackHit;
+
+    [HideInInspector] public LayerMask playerLayerMask = 1 << 6;
     #endregion
 
     //Specific bools for player functions
     #region Bool States
-    bool activateRagdoll;
+    [HideInInspector] public bool activateRagdoll;
     bool dashAttack;
     bool isGrounded;
     bool isPuking;
@@ -264,9 +268,10 @@ public class KaijuMovement : MonoBehaviour
         {
             pukeAmount = 0;
             pukeFX.Stop();
+            isPuking = false;
             activateRagdoll = true;
             ActivateRagdoll(activateRagdoll);
-            isPuking = false;
+            Debug.Log(isPuking);
         }
         #endregion
 
@@ -318,8 +323,11 @@ public class KaijuMovement : MonoBehaviour
 
         rayDownDir = -rootRb.transform.up.normalized;
 
+        rayAttackDir = rootRb.transform.forward.normalized;
+
         Debug.DrawRay(rootRb.transform.position, rayForwardDir * rayForwardLength, Color.red); //raycast debug
-        Debug.DrawRay(rootRb.transform.position, rayDownDir * rayDownLength, Color.red); //raycast debug
+        Debug.DrawRay(rootRb.transform.position, rayDownDir * rayDownLength, Color.red);
+        Debug.DrawRay(rootRb.transform.position, rayAttackDir * rayAttackLength, Color.green);
 
 
 
@@ -368,7 +376,7 @@ public class KaijuMovement : MonoBehaviour
             }
 
 
-            if (Physics.Raycast(rootRb.transform.position, rayForwardDir, out rayForwardHit, rayForwardLength, ~playerLayerMask))
+            if (Physics.Raycast(rootRb.transform.position, rayAttackDir, out rayAttackHit, rayAttackLength, ~playerLayerMask))
             {
                 //Check if either punch left or punch right is playing and then check the frames that are active
             }

@@ -6589,6 +6589,12 @@ MonoBehaviour:
   groundSpeedCap: 4
   rayForwardLength: 5
   rayDownLength: 2.5
+  rayAttackDir: {x: 0, y: 0, z: 0}
+  rayAttackLength: 7.5
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  activateRagdoll: 0
 --- !u!95 &7055547111465377148
 Animator:
   serializedVersion: 3

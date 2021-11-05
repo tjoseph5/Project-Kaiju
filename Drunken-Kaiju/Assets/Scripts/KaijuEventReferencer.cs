@@ -42,4 +42,19 @@ public class KaijuEventReferencer : MonoBehaviour
 
         KaijuMovement.singleton.heldObj = null;
     }
+
+    public void AttackReferencer()
+    {
+        if (Physics.Raycast(KaijuMovement.singleton.rootRb.transform.position, KaijuMovement.singleton.rayAttackDir, out KaijuMovement.singleton.rayAttackHit, KaijuMovement.singleton.rayAttackLength, ~KaijuMovement.singleton.playerLayerMask))
+        {
+            if (KaijuMovement.singleton.rayAttackHit.collider.gameObject.GetComponent<DestructableObject>())
+            {
+                if(KaijuMovement.singleton.rayAttackHit.collider.gameObject.GetComponent<DestructableObject>().health > 0)
+                {
+                    KaijuMovement.singleton.rayAttackHit.collider.gameObject.GetComponent<DestructableObject>().health -= 25;
+                    KaijuMovement.singleton.rayAttackHit.collider.gameObject.GetComponent<DestructableObject>().recentlyHit = true;
+                }
+            }
+        }
+    }
 }
