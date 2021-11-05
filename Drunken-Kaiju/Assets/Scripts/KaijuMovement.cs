@@ -46,7 +46,7 @@ public class KaijuMovement : MonoBehaviour
 
     #region Pickup/Throwing variables
     Transform objectHolderTransform;
-    public GameObject heldObj;
+    [HideInInspector] public GameObject heldObj;
     bool isHolding;
     [SerializeField] float throwPower;
 
