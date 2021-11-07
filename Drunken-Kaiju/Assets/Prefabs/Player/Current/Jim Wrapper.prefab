@@ -6583,7 +6583,7 @@ MonoBehaviour:
   ragdollActivateSpeed: -10
   pukeFX: {fileID: 0}
   heldObj: {fileID: 0}
-  throwPower: 30
+  throwPower: 20
   targetAnimator: {fileID: 7055547111465377148}
   velocityCap: 60
   groundSpeedCap: 4

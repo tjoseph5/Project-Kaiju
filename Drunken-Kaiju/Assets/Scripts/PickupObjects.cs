@@ -23,7 +23,10 @@ public class PickupObjects : MonoBehaviour
             case PickupTypes.bottlePickup:
                 gameObject.name = "Bottle Pickup";
                 gameObject.tag = "Interactable";
-                //gameObject.layer = 8;
+                if(gameObject.GetComponent<Rigidbody>().isKinematic != true)
+                {
+                    gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                }
                 break;
             case PickupTypes.clockPickup:
                 gameObject.name = "Clock Pickup";

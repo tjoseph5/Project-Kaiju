@@ -8,10 +8,10 @@ public class DestructableObject : MonoBehaviour
 
     public float breakForce;
 
-    public enum BuildingTypes { billboard, factory, genericStore, hospital, house, nuclearSmokeStack, officeBuilding, skyscraper, smokeStack, warehouse, windTurbine };
+    public enum BuildingTypes { billboard, factory, genericStore, hospital, house, nuclearSmokeStack, officeBuilding, skyscraper, smokeStack, warehouse, windTurbine, apartment };
     public BuildingTypes buildingTypes = BuildingTypes.house;
 
-    [SerializeField]GameObject player;
+    GameObject player;
 
     public bool buildingHealth;
     [Range(0, 100)] public int health;
@@ -19,7 +19,15 @@ public class DestructableObject : MonoBehaviour
 
     void Start()
     {
-        health = 100;
+        if (buildingHealth)
+        {
+            health = 100;
+        }
+        else
+        {
+            health = 0;
+        }
+
 
         //player = GameObject.FindGameObjectWithTag("Player").transform;
         player = null;
@@ -78,6 +86,11 @@ public class DestructableObject : MonoBehaviour
 
             case BuildingTypes.windTurbine:
                 gameObject.name = "Wind Turbine";
+
+                break;
+
+            case BuildingTypes.apartment:
+                gameObject.name = "Apartment";
 
                 break;
         }
@@ -180,6 +193,11 @@ public class DestructableObject : MonoBehaviour
                 GameObject bD = Instantiate(BuildingManager.singleton.destroyedBuildings[0], this.transform.position, this.transform.rotation);
                 bD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
 
+                foreach (Renderer mat in bD.GetComponentsInChildren<Renderer>())
+                {
+                    mat.material = gameObject.GetComponent<Renderer>().material;
+                }
+
                 foreach (Rigidbody rb in bD.GetComponentsInChildren<Rigidbody>())
                 {
                     Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
@@ -242,6 +260,7 @@ public class DestructableObject : MonoBehaviour
 
                 GameObject nSSD = Instantiate(BuildingManager.singleton.destroyedBuildings[5], this.transform.position, this.transform.rotation);
                 nSSD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                KaijuMovement.singleton.pukeAmount = 100;
 
                 foreach (Rigidbody rb in nSSD.GetComponentsInChildren<Rigidbody>())
                 {
@@ -304,6 +323,18 @@ public class DestructableObject : MonoBehaviour
                 wTD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
 
                 foreach (Rigidbody rb in wTD.GetComponentsInChildren<Rigidbody>())
+                {
+                    Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
+                    rb.AddForce(force);
+                }
+                break;
+
+            case BuildingTypes.apartment:
+
+                GameObject aD = Instantiate(BuildingManager.singleton.destroyedBuildings[11], this.transform.position, this.transform.rotation);
+                aD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+
+                foreach (Rigidbody rb in aD.GetComponentsInChildren<Rigidbody>())
                 {
                     Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
                     rb.AddForce(force);

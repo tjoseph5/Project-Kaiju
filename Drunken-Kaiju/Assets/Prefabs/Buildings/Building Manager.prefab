@@ -57,6 +57,7 @@ MonoBehaviour:
   - {fileID: 4929824436972336007, guid: 5e406fc37ebde6d4fbaefb103aefbdb7, type: 3}
   - {fileID: 7212692260072574867, guid: b5fdb8f5fcf677940b4f6446e7f9d7e1, type: 3}
   - {fileID: 7584875798848473644, guid: 14f518f8f8d118f4c8c9834442771ef4, type: 3}
+  - {fileID: 7577260373520199471, guid: 48bec10140af3f2469a41f8c8bf87f96, type: 3}
 --- !u!114 &7426103660321536163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,3 +83,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d84c5126e4b8a4aa946d898feff096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalScore: 0
+  standardScore: 0
+  specialBuildingMultiplier: 0
+  chainReactionMultiplier: 0
+  tempCRScoreTimer: 0
+  tempCRMultiplier: 0
+  defaultGivenScore: 0
+  deathScore: 0

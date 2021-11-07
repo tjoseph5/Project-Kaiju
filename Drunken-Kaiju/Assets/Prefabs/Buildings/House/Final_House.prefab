@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3365402549595162029}
-  m_Mesh: {fileID: 3369316746193770658, guid: bfe23e3476d9cf645b2ffbd97366f1ed, type: 3}
+  m_Mesh: {fileID: -6914385821874501512, guid: 7c9cb74b449b07349a82fffaf32f7b40, type: 3}
 --- !u!23 &3869915591003333752
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: ac3af1fc21189a548af28e65d0cd5eb6, type: 3}
+  - {fileID: 2100000, guid: f27019b5d80f43844b464218c220b9d8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,7 +96,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 3369316746193770658, guid: bfe23e3476d9cf645b2ffbd97366f1ed, type: 3}
+  m_Mesh: {fileID: -6914385821874501512, guid: 7c9cb74b449b07349a82fffaf32f7b40, type: 3}
 --- !u!114 &2482932654478917168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419f171ee5b892c4abd80bc563f9f596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
   breakForce: 100
   buildingTypes: 4
+  player: {fileID: 0}
+  buildingHealth: 0
+  health: 0
+  recentlyHit: 0
