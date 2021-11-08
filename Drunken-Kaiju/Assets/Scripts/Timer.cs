@@ -28,7 +28,21 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        fullTimer = "0" + minutes + " : " + seconds.ToString("F0");
+        if(seconds > 10 && seconds < 59)
+        {
+            fullTimer = "0" + minutes + " : " + seconds.ToString("F0");
+        }
+        else if(seconds <= 9)
+        {
+            fullTimer = "0" + minutes + " : " + "0" + seconds.ToString("F0");
+        }
+        else if (seconds > 59)
+        {
+            fullTimer = "0" + minutes + " : "  + "00";
+        }
+
+
+
 
         if (timeStart)
         {

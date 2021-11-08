@@ -25,19 +25,19 @@ public class UIScoreCalculator : MonoBehaviour
         switch (scoreType)
         {
             case ScoreType.baseScore:
-                numberDisplay = ScoreManager.singleton.standardScore * 2;
+                numberDisplay = 0;
                 break;
 
             case ScoreType.specialScore:
-                numberDisplay = ScoreManager.singleton.specialBuildingMultiplier * 2;
+                numberDisplay = 0;
                 break;
 
             case ScoreType.chainScore:
-                numberDisplay = ScoreManager.singleton.chainReactionMultiplier * 2;
+                numberDisplay = 0;
                 break;
 
             case ScoreType.finalScore:
-                numberDisplay = ScoreManager.singleton.totalScore * 2;
+                numberDisplay = 0;
                 break;
         }
     }
@@ -55,11 +55,11 @@ public class UIScoreCalculator : MonoBehaviour
             switch (scoreType)
             {
                 case ScoreType.baseScore:
-                    if (numberDisplay > ScoreManager.singleton.standardScore)
+                    if (numberDisplay < ScoreManager.singleton.standardScore)
                     {
-                        numberDisplay -= (ScoreManager.singleton.standardScore / 100);
+                        numberDisplay += (ScoreManager.singleton.standardScore / 100);
                     }
-                    else if (numberDisplay <= ScoreManager.singleton.standardScore)
+                    else if (numberDisplay >= ScoreManager.singleton.standardScore)
                     {
                         numberDisplay = ScoreManager.singleton.standardScore;
                         this.pass = true;
@@ -67,11 +67,11 @@ public class UIScoreCalculator : MonoBehaviour
                     break;
 
                 case ScoreType.specialScore:
-                    if (numberDisplay > ScoreManager.singleton.specialBuildingMultiplier)
+                    if (numberDisplay < ScoreManager.singleton.specialBuildingMultiplier)
                     {
-                        numberDisplay -= 1;
+                        numberDisplay += 1;
                     }
-                    else if (numberDisplay <= ScoreManager.singleton.specialBuildingMultiplier)
+                    else if (numberDisplay >= ScoreManager.singleton.specialBuildingMultiplier)
                     {
                         numberDisplay = ScoreManager.singleton.specialBuildingMultiplier;
                         this.pass = true;
@@ -79,11 +79,11 @@ public class UIScoreCalculator : MonoBehaviour
                     break;
 
                 case ScoreType.chainScore:
-                    if (numberDisplay > ScoreManager.singleton.chainReactionMultiplier)
+                    if (numberDisplay < ScoreManager.singleton.chainReactionMultiplier)
                     {
-                        numberDisplay -= 1;
+                        numberDisplay += 1;
                     }
-                    else if (numberDisplay <= ScoreManager.singleton.chainReactionMultiplier)
+                    else if (numberDisplay >= ScoreManager.singleton.chainReactionMultiplier)
                     {
                         numberDisplay = ScoreManager.singleton.chainReactionMultiplier;
                         this.pass = true;
@@ -91,11 +91,11 @@ public class UIScoreCalculator : MonoBehaviour
                     break;
 
                 case ScoreType.finalScore:
-                    if (numberDisplay > ScoreManager.singleton.totalScore)
+                    if (numberDisplay < ScoreManager.singleton.totalScore)
                     {
-                        numberDisplay -= (ScoreManager.singleton.totalScore / 100);
+                        numberDisplay += (ScoreManager.singleton.totalScore / 100);
                     }
-                    else if (numberDisplay <= ScoreManager.singleton.totalScore)
+                    else if (numberDisplay >= ScoreManager.singleton.totalScore)
                     {
                         numberDisplay = ScoreManager.singleton.totalScore;
                         this.pass = true;
