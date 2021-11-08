@@ -21,6 +21,7 @@ public class KaijuMovement : MonoBehaviour
     public InputActionReference attackControl;
     public InputActionReference pukeControl;
     public InputActionReference pickup_throwControl;
+    public InputActionReference lookingControl;
     #endregion
 
     //Different Camera States
@@ -677,9 +678,10 @@ public class KaijuMovement : MonoBehaviour
         attackControl.action.Enable();
         pukeControl.action.Enable();
         pickup_throwControl.action.Enable();
+        lookingControl.action.Enable();
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         movementControl.action.Disable();
         jumpControl.action.Disable();
@@ -687,6 +689,7 @@ public class KaijuMovement : MonoBehaviour
         attackControl.action.Disable();
         pukeControl.action.Disable();
         pickup_throwControl.action.Disable();
+        lookingControl.action.Disable();
     }
     #endregion
 }

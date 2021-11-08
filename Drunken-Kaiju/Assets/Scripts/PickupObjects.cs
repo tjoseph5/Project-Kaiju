@@ -100,8 +100,12 @@ public class PickupObjects : MonoBehaviour
                     break;
 
                 case PickupTypes.clockPickup:
-                    //Add Clock Pickup
-                    Destroy(gameObject);
+                    if(Timer.singleton.gameOver == false)
+                    {
+                        Timer.singleton.minutes += 1;
+                        Destroy(gameObject);
+                    }
+
                     break;
             }
         }

@@ -18,7 +18,7 @@ public class ScoreManager : MonoBehaviour
     public int tempCRMultiplier;
 
     [HideInInspector] public int defaultGivenScore;
-    [HideInInspector] public int deathScore;
+    //[HideInInspector] public int deathScore;
 
     void Awake()
     {
@@ -41,6 +41,26 @@ public class ScoreManager : MonoBehaviour
         {
             tempCRScoreTimer = 0;
             tempCRMultiplier = 0;
+        }
+
+        if (Timer.singleton.gameOver)
+        {
+            if(specialBuildingMultiplier > 0 && chainReactionMultiplier > 0)
+            {
+                totalScore = standardScore * specialBuildingMultiplier * chainReactionMultiplier;
+            }
+            else if(specialBuildingMultiplier > 0 && chainReactionMultiplier <= 0)
+            {
+                totalScore = standardScore * specialBuildingMultiplier;
+            }
+            else if (specialBuildingMultiplier <= 0 && chainReactionMultiplier > 0)
+            {
+                totalScore = standardScore * chainReactionMultiplier;
+            }
+            else
+            {
+                totalScore = standardScore;
+            }
         }
     }
 }
