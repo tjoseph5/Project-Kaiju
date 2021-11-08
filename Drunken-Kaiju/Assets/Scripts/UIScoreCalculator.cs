@@ -12,6 +12,7 @@ public class UIScoreCalculator : MonoBehaviour
     int numberDisplay;
 
     bool pass;
+    bool stop;
 
     [SerializeField] enum ScoreType { baseScore, specialScore, chainScore, finalScore, rank};
     [SerializeField] ScoreType scoreType = ScoreType.baseScore;
@@ -139,9 +140,11 @@ public class UIScoreCalculator : MonoBehaviour
 
             if (this.pass && scoreType != ScoreType.rank)
             {
-                this.eGAnimator.SetTrigger("Game Over");
-                //this.GetComponent<UIScoreCalculator>().enabled = false;
-                //this.pass = false;
+                if (!this.stop)
+                {
+                    this.eGAnimator.SetTrigger("Game Over");
+                    stop = true;
+                }
             }
         }
     }

@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] TMPro.TextMeshProUGUI scoreDisplayText;
     [SerializeField] TMPro.TextMeshProUGUI tempCRMDisplay;
     [SerializeField] Slider tempCRSlider;
+    [SerializeField] GameObject buildingHealthUI;
+    [SerializeField] Slider buildingHealthSlider;
 
     public TMPro.TextMeshProUGUI timerText;
 
@@ -33,7 +35,7 @@ public class UIManager : MonoBehaviour
         inGameUI = gameObject.transform.GetChild(1).gameObject;
         endGameUI = gameObject.transform.GetChild(2).gameObject;
 
-        uiStatus = 2;
+        //uiStatus = 2;
         chainMultiplierDisplay = GameObject.Find("Chain Multiplier");
     }
 
@@ -44,6 +46,17 @@ public class UIManager : MonoBehaviour
         scoreDisplayText.text = ScoreManager.singleton.standardScore.ToString();
         tempCRMDisplay.text = ScoreManager.singleton.tempCRMultiplier.ToString();
         tempCRSlider.value = ScoreManager.singleton.tempCRScoreTimer;
+
+        if (KaijuMovement.singleton.building != null)
+        {
+            buildingHealthUI.SetActive(true);
+            buildingHealthSlider.value = KaijuMovement.singleton.building.health;
+        }
+        else
+        {
+            buildingHealthUI.SetActive(false);
+        }
+
         timerText.text = Timer.singleton.fullTimer;
 
         if (ScoreManager.singleton.tempCRMultiplier <= 1)

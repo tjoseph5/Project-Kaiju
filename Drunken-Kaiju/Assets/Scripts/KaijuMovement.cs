@@ -93,6 +93,8 @@ public class KaijuMovement : MonoBehaviour
     [HideInInspector] public RaycastHit rayAttackHit;
 
     [HideInInspector] public LayerMask playerLayerMask = 1 << 6;
+
+    [HideInInspector] public DestructableObject building;
     #endregion
 
     //Specific bools for player functions
@@ -331,6 +333,23 @@ public class KaijuMovement : MonoBehaviour
         Debug.DrawRay(rootRb.transform.position, rayAttackDir * rayAttackLength, Color.green);
 
 
+        if (Physics.Raycast(rootRb.transform.position, rayAttackDir, out rayAttackHit, rayAttackLength, ~playerLayerMask))
+        {
+            if (rayAttackHit.collider.GetComponent<DestructableObject>())
+            {
+                if (rayAttackHit.collider.GetComponent<DestructableObject>().buildingHealth)
+                {
+                    building = rayAttackHit.collider.GetComponent<DestructableObject>();
+                    Debug.Log("the building is now: " + building.name);
+                }
+            }
+        }
+        else
+        {
+            building = null;
+            Debug.Log("the building is nothing");
+        }
+
 
         if (movement.magnitude != 0)
         {
@@ -374,12 +393,6 @@ public class KaijuMovement : MonoBehaviour
             if (targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("L_PUNCH") || targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("R_PUNCH") || targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("L_PUNCH_WALK"))
             {
                 attackTimer = targetAnimator.GetCurrentAnimatorStateInfo(0).length;
-            }
-
-
-            if (Physics.Raycast(rootRb.transform.position, rayAttackDir, out rayAttackHit, rayAttackLength, ~playerLayerMask))
-            {
-                //Check if either punch left or punch right is playing and then check the frames that are active
             }
 
             if (isHolding)
