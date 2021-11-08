@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -11,6 +12,14 @@ public class UIManager : MonoBehaviour
     [HideInInspector] public GameObject endGameUI;
 
     [SerializeField] [Range(0,2)] int uiStatus;
+
+    [SerializeField] Slider pukeDisplay;
+    GameObject chainMultiplierDisplay;
+    [SerializeField] TMPro.TextMeshProUGUI scoreDisplayText;
+    [SerializeField] TMPro.TextMeshProUGUI tempCRMDisplay;
+    [SerializeField] Slider tempCRSlider;
+
+    public TMPro.TextMeshProUGUI timerText;
 
     private void Awake()
     {
@@ -25,11 +34,27 @@ public class UIManager : MonoBehaviour
         endGameUI = gameObject.transform.GetChild(2).gameObject;
 
         uiStatus = 2;
+        chainMultiplierDisplay = GameObject.Find("Chain Multiplier");
     }
 
     // Update is called once per frame
     void Update()
     {
+        pukeDisplay.value = KaijuMovement.singleton.pukeAmount;
+        scoreDisplayText.text = ScoreManager.singleton.standardScore.ToString();
+        tempCRMDisplay.text = ScoreManager.singleton.tempCRMultiplier.ToString();
+        tempCRSlider.value = ScoreManager.singleton.tempCRScoreTimer;
+        timerText.text = Timer.singleton.fullTimer;
+
+        if (ScoreManager.singleton.tempCRMultiplier <= 1)
+        {
+            chainMultiplierDisplay.SetActive(false);
+        }
+        else if (ScoreManager.singleton.tempCRMultiplier > 1)
+        {
+            chainMultiplierDisplay.SetActive(true);
+        }
+
         switch (uiStatus)
         {
             case 0:

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
@@ -14,7 +15,7 @@ public class ScoreManager : MonoBehaviour
     public int specialBuildingMultiplier; //Make sure to have a statement where score get multiplied by 1 instead of this variable if this variable equals 0 by the end of the game
     public int chainReactionMultiplier; //Make sure to have a statement where score get multiplied by 1 instead of this variable if this variable equals 0 by the end of the game
 
-    public float tempCRScoreTimer;
+    [Range(0, 3)] public float tempCRScoreTimer;
     public int tempCRMultiplier;
 
     [HideInInspector] public int defaultGivenScore;
