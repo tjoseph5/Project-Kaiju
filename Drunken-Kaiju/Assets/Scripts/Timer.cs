@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
     public string fullTimer;
     public bool gameOver;
     public bool timeStart;
+    public TMPro.TextMeshProUGUI text;
 
 
     void Awake()
@@ -28,17 +29,23 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
+        text.text = fullTimer;
+
         if(seconds > 10 && seconds < 59)
         {
-            fullTimer = "0" + minutes + " : " + seconds.ToString("F0");
+            fullTimer = "0" + minutes + ":" + seconds.ToString("F0");
         }
         else if(seconds <= 9)
         {
-            fullTimer = "0" + minutes + " : " + "0" + seconds.ToString("F0");
+            fullTimer = "0" + minutes + ":" + "0" + seconds.ToString("F0");
         }
-        else if (seconds > 59)
+        else if (seconds > 59 && minutes != 0)
         {
-            fullTimer = "0" + minutes + " : "  + "00";
+            fullTimer = "0" + minutes + ":"  + "00";
+        }
+        else if (seconds > 59 && minutes == 0)
+        {
+            fullTimer = "0" + minutes + ":" + "59";
         }
 
 
