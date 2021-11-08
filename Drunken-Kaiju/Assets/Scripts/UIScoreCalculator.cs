@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine;
 
 public class UIScoreCalculator : MonoBehaviour
 {
 
-    Animator eGAnimator;
-    public Text text;
+    public Animator eGAnimator;
+    public TextMeshProUGUI text;
     int numberDisplay;
 
     bool pass;
@@ -18,8 +19,8 @@ public class UIScoreCalculator : MonoBehaviour
 
     void Start()
     {
-        eGAnimator = UIManager.singleton.endGameUI.GetComponent<Animator>();
-        //gameObject.GetComponent<Text>().text = text.text;
+        //this.eGAnimator = UIManager.singleton.endGameUI.GetComponent<Animator>();
+        //text = gameObject.GetComponent<TextMeshProUGUI>();
 
         switch (scoreType)
         {
@@ -56,7 +57,7 @@ public class UIScoreCalculator : MonoBehaviour
                 case ScoreType.baseScore:
                     if (numberDisplay > ScoreManager.singleton.standardScore)
                     {
-                        numberDisplay -= ScoreManager.singleton.standardScore / 100;
+                        numberDisplay -= (ScoreManager.singleton.standardScore / 100);
                     }
                     else if (numberDisplay <= ScoreManager.singleton.standardScore)
                     {
@@ -92,7 +93,7 @@ public class UIScoreCalculator : MonoBehaviour
                 case ScoreType.finalScore:
                     if (numberDisplay > ScoreManager.singleton.totalScore)
                     {
-                        numberDisplay -= ScoreManager.singleton.totalScore / 100;
+                        numberDisplay -= (ScoreManager.singleton.totalScore / 100);
                     }
                     else if (numberDisplay <= ScoreManager.singleton.totalScore)
                     {
@@ -138,14 +139,10 @@ public class UIScoreCalculator : MonoBehaviour
 
             if (this.pass && scoreType != ScoreType.rank)
             {
-                eGAnimator.SetTrigger("Game Over");
-                this.GetComponent<UIScoreCalculator>().enabled = false;
-                this.pass = false;
+                this.eGAnimator.SetTrigger("Game Over");
+                //this.GetComponent<UIScoreCalculator>().enabled = false;
+                //this.pass = false;
             }
-        }
-        else
-        {
-            Debug.LogError("The gameOver bool in Timer script is set to false.");
         }
     }
 }
