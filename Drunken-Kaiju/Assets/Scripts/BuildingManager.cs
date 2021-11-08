@@ -15,6 +15,6 @@ public class BuildingManager : MonoBehaviour
 
     void Start()
     {
-        gameObject.hideFlags = HideFlags.HideInHierarchy;
+        //gameObject.hideFlags = HideFlags.HideInHierarchy;
     }
 }

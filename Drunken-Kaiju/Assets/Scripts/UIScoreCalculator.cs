@@ -12,7 +12,7 @@ public class UIScoreCalculator : MonoBehaviour
 
     bool pass;
 
-    [SerializeField] enum ScoreType { baseScore, specialScore, chainScore, finalScore};
+    [SerializeField] enum ScoreType { baseScore, specialScore, chainScore, finalScore, rank};
     [SerializeField] ScoreType scoreType = ScoreType.baseScore;
 
 
@@ -46,7 +46,10 @@ public class UIScoreCalculator : MonoBehaviour
     {
         if (Timer.singleton.gameOver)
         {
-            text.text = numberDisplay.ToString();
+            if(scoreType != ScoreType.rank)
+            {
+                text.text = numberDisplay.ToString();
+            }
 
             switch (scoreType)
             {
@@ -97,9 +100,43 @@ public class UIScoreCalculator : MonoBehaviour
                         this.pass = true;
                     }
                     break;
+
+                case ScoreType.rank:
+
+                    if(ScoreManager.singleton.totalScore >= 100000)
+                    {
+                        text.text = "S";
+                        text.color = new Color(1, 0.85f, 0);
+                    }
+                    else if(ScoreManager.singleton.totalScore >= 75000 && ScoreManager.singleton.totalScore < 100000)
+                    {
+                        text.text = "A";
+                        text.color = Color.red;
+                    }
+                    else if (ScoreManager.singleton.totalScore >= 50000 && ScoreManager.singleton.totalScore < 75000)
+                    {
+                        text.text = "B";
+                        text.color = Color.cyan;
+                    }
+                    else if (ScoreManager.singleton.totalScore >= 25000 && ScoreManager.singleton.totalScore < 50000)
+                    {
+                        text.text = "C";
+                        text.color = new Color(0.7169812f, 0.4876057f, 0.0703453f);
+                    }
+                    else if (ScoreManager.singleton.totalScore >= 10000 && ScoreManager.singleton.totalScore < 25000)
+                    {
+                        text.text = "D";
+                        text.color = Color.green;
+                    }
+                    else if (ScoreManager.singleton.totalScore < 10000)
+                    {
+                        text.text = "E";
+                        text.color = Color.black;
+                    }
+                    break;
             }
 
-            if (this.pass)
+            if (this.pass && scoreType != ScoreType.rank)
             {
                 eGAnimator.SetTrigger("Game Over");
                 this.GetComponent<UIScoreCalculator>().enabled = false;

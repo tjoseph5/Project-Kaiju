@@ -91,7 +91,6 @@ MonoBehaviour:
   tempCRScoreTimer: 0
   tempCRMultiplier: 0
   defaultGivenScore: 0
-  deathScore: 0
 --- !u!114 &1170852664813792743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,3 +106,5 @@ MonoBehaviour:
   seconds: 59
   minutes: 2
   fullTimer: 
+  gameOver: 0
+  timeStart: 1
