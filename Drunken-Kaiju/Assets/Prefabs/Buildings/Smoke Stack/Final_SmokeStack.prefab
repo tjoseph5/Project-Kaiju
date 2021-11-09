@@ -111,7 +111,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakForce: 100
   buildingTypes: 8
-  player: {fileID: 0}
-  buildingHealth: 0
+  buildingHealth: 1
   health: 0
   recentlyHit: 0
