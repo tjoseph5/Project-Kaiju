@@ -148,7 +148,15 @@ public class DestructableObject : MonoBehaviour
                     if(buildingHealth && health > 0)
                     {
                         recentlyHit = false;
-                        health -= 50;
+                        if(col.gameObject.GetComponent<Rigidbody>().mass <= 1)
+                        {
+                            health -= 50;
+                        }
+                        else if(col.gameObject.GetComponent<Rigidbody>().mass > 1)
+                        {
+                            health = 0;
+                        }
+                        
                     }
 
                     if (!buildingHealth || buildingHealth && health <= 0)
@@ -203,6 +211,9 @@ public class DestructableObject : MonoBehaviour
                     Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
                     rb.AddForce(force);
                 }
+
+                //ScoreManager.singleton.standardScore += 400;
+
                 break;
 
             case BuildingTypes.factory:
@@ -303,6 +314,9 @@ public class DestructableObject : MonoBehaviour
                     Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
                     rb.AddForce(force);
                 }
+
+                ScoreManager.singleton.standardScore += 900;
+
                 break;
 
             case BuildingTypes.warehouse:
@@ -372,6 +386,18 @@ public class DestructableObject : MonoBehaviour
         if (isSpecial)
         {
             ScoreManager.singleton.specialBuildingMultiplier += 1;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if(buildingTypes == BuildingTypes.warehouse)
+        {
+            gameObject.transform.GetChild(0).GetComponent<MeshCollider>().enabled = true;
+            gameObject.transform.GetChild(0).GetComponent<BoxCollider>().enabled = true;
+            gameObject.transform.GetChild(0).GetComponent<Rigidbody>().useGravity = true;
+            gameObject.transform.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
+            gameObject.transform.GetChild(0).parent = null;
         }
     }
 }
