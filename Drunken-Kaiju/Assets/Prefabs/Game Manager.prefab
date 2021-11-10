@@ -111,7 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seconds: 59
-  minutes: 2
+  minutes: 3
   fullTimer: 
   gameOver: 0
   timeStart: 1
+  rankFinished: 0

@@ -11,7 +11,7 @@ public class ShardSingular : MonoBehaviour
         Destroy(gameObject, 10f);
         if (gameObject.GetComponent<Rigidbody>())
         {
-            gameObject.GetComponent<Rigidbody>().mass = 0.001f;
+            gameObject.GetComponent<Rigidbody>().mass = 0.5f;
         }
 
     }
@@ -25,14 +25,23 @@ public class ShardSingular : MonoBehaviour
         {
             if(KaijuMovement.singleton.activateRagdoll == true)
             {
+                if (KaijuMovement.singleton.dashAttack)
+                {
+                    //Physics.IgnoreLayerCollision(6, 7, false);
+                    //gameObject.GetComponent<Rigidbody>().mass = 0.5f;
+                }
+
+                Physics.IgnoreLayerCollision(6, 7, false);
                 gameObject.GetComponent<Rigidbody>().mass = 0.5f;
             }
-            else
+
+            if (KaijuMovement.singleton.activateRagdoll == false)
             {
                 gameObject.GetComponent<Rigidbody>().mass = 0.001f;
+                Physics.IgnoreLayerCollision(6, 7, true);
             }
-            
         }
+
     }
 
     void OnDestroy()

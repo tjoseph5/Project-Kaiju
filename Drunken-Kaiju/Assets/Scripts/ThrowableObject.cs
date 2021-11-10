@@ -11,6 +11,7 @@ public class ThrowableObject : MonoBehaviour
     public ThrowableTypes throwableTypes = ThrowableTypes.car;
 
     [HideInInspector] public int objHealth;
+    [HideInInspector] public bool canBeHeld;
 
     Rigidbody rb;
     float yVelocity;
@@ -88,6 +89,11 @@ public class ThrowableObject : MonoBehaviour
             {
                 //objHealth -= 1;
             }
+        }
+
+        if(col.gameObject.layer != 6 && canBeHeld == false)
+        {
+            canBeHeld = true;
         }
     }
 

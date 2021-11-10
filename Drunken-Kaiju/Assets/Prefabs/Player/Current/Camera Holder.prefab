@@ -165,6 +165,14 @@ PrefabInstance:
       propertyPath: m_Orbits.Array.data[1].m_Radius
       value: 20.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3825692449164066024, guid: 8f960812b3651704188b87f3a0e4bbd4, type: 3}
+      propertyPath: m_Orbits.Array.data[2].m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3825692449164066024, guid: 8f960812b3651704188b87f3a0e4bbd4, type: 3}
+      propertyPath: m_Orbits.Array.data[2].m_Radius
+      value: 20.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3825692449164066026, guid: 8f960812b3651704188b87f3a0e4bbd4, type: 3}
       propertyPath: m_Name
       value: 3rd Person Camera
@@ -212,10 +220,6 @@ PrefabInstance:
     - target: {fileID: 3825692449164066039, guid: 8f960812b3651704188b87f3a0e4bbd4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5785225989334198575, guid: 8f960812b3651704188b87f3a0e4bbd4, type: 3}
-      propertyPath: m_Strategy
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f960812b3651704188b87f3a0e4bbd4, type: 3}
