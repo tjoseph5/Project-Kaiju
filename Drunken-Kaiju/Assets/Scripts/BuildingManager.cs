@@ -8,6 +8,8 @@ public class BuildingManager : MonoBehaviour
 
     public GameObject[] destroyedBuildings;
 
+    public GameObject[] destroyedThrowables;
+
     private void Awake()
     {
         singleton = this;

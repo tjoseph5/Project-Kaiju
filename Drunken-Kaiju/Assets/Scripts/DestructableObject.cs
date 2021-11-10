@@ -393,11 +393,14 @@ public class DestructableObject : MonoBehaviour
     {
         if(buildingTypes == BuildingTypes.warehouse)
         {
+            /*
             gameObject.transform.GetChild(0).GetComponent<MeshCollider>().enabled = true;
             gameObject.transform.GetChild(0).GetComponent<BoxCollider>().enabled = true;
             gameObject.transform.GetChild(0).GetComponent<Rigidbody>().useGravity = true;
             gameObject.transform.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
-            gameObject.transform.GetChild(0).parent = null;
+            */
+            //gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            //gameObject.transform.GetChild(0).parent = null;
         }
     }
 }
