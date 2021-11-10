@@ -677,6 +677,7 @@ public class KaijuMovement : MonoBehaviour
             }
             else
             {
+                heldObj.layer = 0;
                 heldObj = null;
             }
         }

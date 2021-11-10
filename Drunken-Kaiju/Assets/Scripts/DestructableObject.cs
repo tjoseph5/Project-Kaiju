@@ -164,6 +164,11 @@ public class DestructableObject : MonoBehaviour
                         ScoreAddition(true, buildingHealth);
                         Destruction();
                     }
+
+                    if (col.gameObject.GetComponent<ThrowableObject>())
+                    {
+                        col.gameObject.GetComponent<ThrowableObject>().objHealth -= 1;
+                    }
                 }
             }
         }
@@ -361,7 +366,7 @@ public class DestructableObject : MonoBehaviour
     {
         if (cRHit)
         {
-            ScoreManager.singleton.tempCRScoreTimer = 3;
+            ScoreManager.singleton.tempCRScoreTimer = 5;
 
             if(ScoreManager.singleton.tempCRScoreTimer > 0)
             {

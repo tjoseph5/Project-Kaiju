@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Developer/Tobey Scene.unity
-    guid: 088f724a9cdcf3249a636559ddd88628
+    path: Assets/Scenes/Important/Playground.unity
+    guid: fb6e7ff3f02f59c45bab88afd0d7a952
+  - enabled: 1
+    path: Assets/Scenes/Important/Title.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

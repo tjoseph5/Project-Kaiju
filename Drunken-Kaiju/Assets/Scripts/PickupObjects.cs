@@ -116,8 +116,10 @@ public class PickupObjects : MonoBehaviour
         hasDrank = true;
         //gameObject.layer = 8;
         KaijuMovement.singleton.pukeAmount += 25;
+        gameObject.GetComponent<ThrowableObject>().enabled = true;
         gameObject.GetComponent<Rigidbody>().useGravity = true;
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
         ScoreManager.singleton.standardScore += 150;
+
     }
 }

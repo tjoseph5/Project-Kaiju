@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
     public string fullTimer;
     public bool gameOver;
     public bool timeStart;
+    public bool rankFinished;
 
 
     void Awake()
@@ -22,7 +23,7 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        
+        rankFinished = false;
     }
 
 

@@ -135,6 +135,7 @@ public class UIScoreCalculator : MonoBehaviour
                         text.text = "E";
                         text.color = Color.black;
                     }
+                    this.pass = true;
                     break;
             }
 
@@ -145,6 +146,11 @@ public class UIScoreCalculator : MonoBehaviour
                     this.eGAnimator.SetTrigger("Game Over");
                     stop = true;
                 }
+            } 
+            
+            else if (this.pass && scoreType == ScoreType.rank)
+            {
+                Timer.singleton.rankFinished = true;
             }
         }
     }

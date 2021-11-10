@@ -59,6 +59,13 @@ MonoBehaviour:
   - {fileID: 7212692260072574867, guid: b5fdb8f5fcf677940b4f6446e7f9d7e1, type: 3}
   - {fileID: 7584875798848473644, guid: 14f518f8f8d118f4c8c9834442771ef4, type: 3}
   - {fileID: 7577260373520199471, guid: 48bec10140af3f2469a41f8c8bf87f96, type: 3}
+  destroyedThrowables:
+  - {fileID: 3540357942680266215, guid: b41a85368d8670c41a4c5a356305b269, type: 3}
+  - {fileID: 6606428874916317846, guid: 7fe84a349811c6f438e379b849da3ac0, type: 3}
+  - {fileID: 4391873921930114784, guid: 1073b01fcc3ae564cbe3b47cfb899e8f, type: 3}
+  - {fileID: 7846713503373462607, guid: c93ccd38734bfee4e8d179cfb7bc0a39, type: 3}
+  - {fileID: 3060453227433926570, guid: d3b2108f4007640499af4cc2c97811c8, type: 3}
+  - {fileID: 1283729972396756666, guid: 854de5a31c3981446917ef270836c436, type: 3}
 --- !u!114 &7426103660321536163
 MonoBehaviour:
   m_ObjectHideFlags: 0

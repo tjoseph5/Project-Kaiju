@@ -15,7 +15,7 @@ public class ScoreManager : MonoBehaviour
     public int specialBuildingMultiplier; //Make sure to have a statement where score get multiplied by 1 instead of this variable if this variable equals 0 by the end of the game
     public int chainReactionMultiplier; //Make sure to have a statement where score get multiplied by 1 instead of this variable if this variable equals 0 by the end of the game
 
-    [Range(0, 3)] public float tempCRScoreTimer;
+    [Range(0, 5)] public float tempCRScoreTimer;
     public int tempCRMultiplier;
 
     [HideInInspector] public int defaultGivenScore;
@@ -28,20 +28,28 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
-        defaultGivenScore = 100;
+        
     }
 
 
     void Update()
     {
+
+
         if (tempCRScoreTimer > 0)
         {
             tempCRScoreTimer -= Time.deltaTime;
+
+            if(tempCRScoreTimer > 0)
+            {
+                defaultGivenScore = 100 * chainReactionMultiplier;
+            }
         }
         else if (tempCRScoreTimer <= 0)
         {
             tempCRScoreTimer = 0;
             tempCRMultiplier = 0;
+            defaultGivenScore = 100;
         }
 
         if (Timer.singleton.gameOver)
