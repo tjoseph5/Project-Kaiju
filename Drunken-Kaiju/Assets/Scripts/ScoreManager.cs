@@ -28,7 +28,7 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
-        
+        defaultGivenScore = 100;
     }
 
 
@@ -40,15 +40,16 @@ public class ScoreManager : MonoBehaviour
         {
             tempCRScoreTimer -= Time.deltaTime;
 
-            if(tempCRScoreTimer > 0)
+            if(tempCRMultiplier > 0)
             {
-                defaultGivenScore = 100 * chainReactionMultiplier;
+                defaultGivenScore = 100 * tempCRMultiplier;
             }
         }
         else if (tempCRScoreTimer <= 0)
         {
             tempCRScoreTimer = 0;
             tempCRMultiplier = 0;
+
             defaultGivenScore = 100;
         }
 
