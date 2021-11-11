@@ -6587,11 +6587,12 @@ MonoBehaviour:
   throwPower: 20
   targetAnimator: {fileID: 7055547111465377148}
   velocityCap: 60
-  groundSpeedCap: 4
+  groundSpeedCap: 6.2
+  rayForwardDir: {x: 0, y: 0, z: 0}
   rayForwardLength: 5
   rayDownLength: 2.5
   rayAttackDir: {x: 0, y: 0, z: 0}
-  rayAttackLength: 7.5
+  rayAttackLength: 10
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 64
