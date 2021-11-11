@@ -24,7 +24,19 @@ public class KaijuEventReferencer : MonoBehaviour
     {
         if(KaijuMovement.singleton.heldObj == null)
         {
-            KaijuMovement.singleton.ObjectPickupManager(KaijuMovement.singleton.rayForwardHit.collider.gameObject.GetComponent<Rigidbody>());
+            if (Physics.Raycast(KaijuMovement.singleton.rootRb.transform.position, KaijuMovement.singleton.rayForwardDir, out KaijuMovement.singleton.rayForwardHit, KaijuMovement.singleton.rayForwardLength, ~KaijuMovement.singleton.playerLayerMask))
+            {
+                if (KaijuMovement.singleton.rayForwardHit.collider)
+                {
+                    Debug.Log("naked");
+                    KaijuMovement.singleton.ObjectPickupManager(KaijuMovement.singleton.rayForwardHit.collider.gameObject.GetComponent<Rigidbody>());
+                }
+                else if(KaijuMovement.singleton.rayForwardHit.collider == null)
+                {
+                    Debug.Log("nothing here");
+                }
+            }
+
         }
     }
 

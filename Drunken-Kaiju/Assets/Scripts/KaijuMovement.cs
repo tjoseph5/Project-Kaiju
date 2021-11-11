@@ -80,8 +80,8 @@ public class KaijuMovement : MonoBehaviour
     #endregion
 
     #region Raycast Setup
-    Vector3 rayForwardDir; //raycast vector that places the raycast's position
-    [SerializeField] float rayForwardLength; //length of raycast
+    [HideInInspector] public Vector3 rayForwardDir; //raycast vector that places the raycast's position
+    [HideInInspector] public float rayForwardLength; //length of raycast
     [HideInInspector] public RaycastHit rayForwardHit; //raycast collider
 
     Vector3 rayDownDir;
@@ -457,6 +457,12 @@ public class KaijuMovement : MonoBehaviour
         else if (!isHolding)
         {
             //Physics.IgnoreLayerCollision(6, 8, false);
+        }
+
+        if (isHolding && !heldObj.GetComponent<ThrowableObject>())
+        {
+            heldObj = null;
+            isHolding = false;
         }
     }
 
