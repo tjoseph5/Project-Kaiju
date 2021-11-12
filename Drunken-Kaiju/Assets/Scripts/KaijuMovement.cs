@@ -296,23 +296,21 @@ public class KaijuMovement : MonoBehaviour
         }
         if (Physics.Raycast(rootRb.transform.position, rayDownDir, out rayDownHit, rayDownLength, ~playerLayerMask))
         {
-            if (rayDownHit.collider.tag != "Interactable" && rayDownHit.collider.gameObject.layer != 7)
+
+            Debug.Log("hitsomething");
+
+            if (rayDownHit.collider && !activateRagdoll)
             {
-                Debug.Log("hitsomething");
+                isGrounded = true;
 
-                if (rayDownHit.collider && !activateRagdoll)
+                if (attackTimer == 0)
                 {
-                    isGrounded = true;
-
-                    if (attackTimer == 0)
+                    if (jumpControl.action.triggered && !activateRagdoll)
                     {
-                        if (jumpControl.action.triggered && !activateRagdoll)
-                        {
-                            Debug.Log("jump");
-                            this.rootRb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
-                            targetAnimator.SetTrigger("Jump");
-                            isGrounded = false;
-                        }
+                        Debug.Log("jump");
+                        this.rootRb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
+                        targetAnimator.SetTrigger("Jump");
+                        isGrounded = false;
                     }
                 }
             }
