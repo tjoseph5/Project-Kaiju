@@ -52,6 +52,14 @@ public class BuoyantObject : MonoBehaviour
         for (int i = 0; i < effectors.Length; i++) effectorProjections[i] = effectors[i].position;
     }
 
+    private void Start()
+    {
+        if(water == null)
+        {
+            water = GameObject.Find("Square Water (3)").GetComponent<StylizedWaterURP>();
+        }
+    }
+
     void OnDisable()
     {
         rb.useGravity = true;
@@ -118,6 +126,19 @@ public class BuoyantObject : MonoBehaviour
                 Gizmos.color = blue;
                 Gizmos.DrawLine(effectors[i].position, effectorProjections[i]);
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<StylizedWaterURP>())
+        {
+            if (!this.GetComponent<BuoyantObject>().enabled)
+            {
+                //this.GetComponent<BuoyantObject>().enabled = true;
+            }
+
+            water = other.gameObject.GetComponent<StylizedWaterURP>();
         }
     }
 }

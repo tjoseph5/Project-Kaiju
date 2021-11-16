@@ -6579,7 +6579,7 @@ MonoBehaviour:
   jumpHeight: 125
   dashDistance: 200
   dashHeight: 100
-  pukeAmount: 75
+  pukeAmount: 0
   pukeDepleteSpeed: 10
   ragdollActivateSpeed: -10
   pukeFX: {fileID: 0}
