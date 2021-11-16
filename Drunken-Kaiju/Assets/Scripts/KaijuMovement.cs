@@ -71,7 +71,7 @@ public class KaijuMovement : MonoBehaviour
     #region Velocity Caps
     [Header("Physics and Raycast Manager")]
     [Range(1, 60)] [SerializeField] float velocityCap;
-    [Range(1, 4)] [SerializeField] float groundSpeedCap;
+    [Range(1, 10)] [SerializeField] float groundSpeedCap;
     #endregion
 
     #region Movement Vectors
@@ -80,8 +80,8 @@ public class KaijuMovement : MonoBehaviour
     #endregion
 
     #region Raycast Setup
-    Vector3 rayForwardDir; //raycast vector that places the raycast's position
-    [SerializeField] float rayForwardLength; //length of raycast
+    [HideInInspector] public Vector3 rayForwardDir; //raycast vector that places the raycast's position
+    [HideInInspector] public float rayForwardLength; //length of raycast
     [HideInInspector] public RaycastHit rayForwardHit; //raycast collider
 
     Vector3 rayDownDir;
@@ -100,7 +100,7 @@ public class KaijuMovement : MonoBehaviour
     //Specific bools for player functions
     #region Bool States
     [HideInInspector] public bool activateRagdoll;
-    bool dashAttack;
+    [HideInInspector] public bool dashAttack;
     bool isGrounded;
     bool isPuking;
     #endregion
@@ -296,23 +296,21 @@ public class KaijuMovement : MonoBehaviour
         }
         if (Physics.Raycast(rootRb.transform.position, rayDownDir, out rayDownHit, rayDownLength, ~playerLayerMask))
         {
-            if (rayDownHit.collider.tag != "Interactable")
+
+            Debug.Log("hitsomething");
+
+            if (rayDownHit.collider && !activateRagdoll)
             {
-                Debug.Log("hitsomething");
+                isGrounded = true;
 
-                if (rayDownHit.collider && !activateRagdoll)
+                if (attackTimer == 0)
                 {
-                    isGrounded = true;
-
-                    if (attackTimer == 0)
+                    if (jumpControl.action.triggered && !activateRagdoll)
                     {
-                        if (jumpControl.action.triggered && !activateRagdoll)
-                        {
-                            Debug.Log("jump");
-                            this.rootRb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
-                            targetAnimator.SetTrigger("Jump");
-                            isGrounded = false;
-                        }
+                        Debug.Log("jump");
+                        this.rootRb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
+                        targetAnimator.SetTrigger("Jump");
+                        isGrounded = false;
                     }
                 }
             }
@@ -418,9 +416,9 @@ public class KaijuMovement : MonoBehaviour
             {
                 if (Physics.Raycast(rootRb.transform.position, rayForwardDir, out rayForwardHit, rayForwardLength, ~playerLayerMask))
                 {
-                    if (rayForwardHit.collider.tag == "Interactable")
+                    if (rayForwardHit.collider.tag == "Interactable" && rayForwardHit.collider.GetComponent<ThrowableObject>())
                     {
-                        if (rayForwardHit.collider.gameObject.GetComponent<Rigidbody>())
+                        if (rayForwardHit.collider.gameObject.GetComponent<Rigidbody>() && rayForwardHit.collider.GetComponent<ThrowableObject>().canBeHeld)
                         {
                             if (!targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("WALKGAME"))
                             {
@@ -428,7 +426,8 @@ public class KaijuMovement : MonoBehaviour
                             }
                             else if (targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("WALKGAME"))
                             {
-                                ObjectPickupManager(rayForwardHit.collider.gameObject.GetComponent<Rigidbody>());
+                                targetAnimator.SetTrigger("Grab");
+                                //ObjectPickupManager(rayForwardHit.collider.gameObject.GetComponent<Rigidbody>());
                             }
                         }
 
@@ -456,6 +455,12 @@ public class KaijuMovement : MonoBehaviour
         else if (!isHolding)
         {
             //Physics.IgnoreLayerCollision(6, 8, false);
+        }
+
+        if (isHolding && !heldObj.GetComponent<ThrowableObject>())
+        {
+            heldObj = null;
+            isHolding = false;
         }
     }
 
@@ -650,6 +655,7 @@ public class KaijuMovement : MonoBehaviour
             objRb.isKinematic = true;
             objRb.drag = 10;
             isHolding = true;
+            heldObj.GetComponent<ThrowableObject>().canBeHeld = false;
             objRb.transform.rotation = new Quaternion(0, 0, 0, 0);
 
             if(heldObj.layer != 8)

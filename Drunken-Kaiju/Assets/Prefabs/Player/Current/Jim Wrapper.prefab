@@ -837,7 +837,7 @@ ConstantForce:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3164804436808348296}
   m_Enabled: 1
-  m_Force: {x: 0, y: 15, z: 0}
+  m_Force: {x: 0, y: 20, z: 0}
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
@@ -5034,7 +5034,7 @@ ParticleSystem:
     serializedVersion: 4
     type: 1
     collisionMode: 0
-    colliderForce: 1
+    colliderForce: 20
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
     multiplyColliderForceByCollisionAngle: 1
@@ -5203,11 +5203,11 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 439
+      m_Bits: 311
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -6587,16 +6587,18 @@ MonoBehaviour:
   throwPower: 20
   targetAnimator: {fileID: 7055547111465377148}
   velocityCap: 60
-  groundSpeedCap: 4
+  groundSpeedCap: 6.2
+  rayForwardDir: {x: 0, y: 0, z: 0}
   rayForwardLength: 5
   rayDownLength: 2.5
   rayAttackDir: {x: 0, y: 0, z: 0}
-  rayAttackLength: 7.5
+  rayAttackLength: 10
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 64
   building: {fileID: 0}
   activateRagdoll: 0
+  dashAttack: 0
 --- !u!95 &7055547111465377148
 Animator:
   serializedVersion: 3

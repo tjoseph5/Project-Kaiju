@@ -45,7 +45,7 @@ public class Timer : MonoBehaviour
         }
         else if (seconds > 59 && minutes == 0)
         {
-            fullTimer = "0" + minutes + ":" + "59";
+            fullTimer = "0" + minutes + ":" + "00";
         }
 
 

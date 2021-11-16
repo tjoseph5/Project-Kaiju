@@ -24,14 +24,7 @@ public class Menu : MonoBehaviour
         {
             select.action.Disable();
 
-            if(scene.buildIndex == 0)
-            {
-                if(!Timer.singleton.timeStart && Timer.singleton.gameOver && Timer.singleton.rankFinished)
-                {
-                    SceneManager.LoadScene(0);
-                }
-
-            }
+            LevelLoader.loader.LoadLevel(1);
         }
     }
 

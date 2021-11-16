@@ -373,7 +373,7 @@ public class DestructableObject : MonoBehaviour
                 ScoreManager.singleton.tempCRMultiplier += 1;
             }
 
-            if (ScoreManager.singleton.tempCRScoreTimer >= 1)
+            if (ScoreManager.singleton.tempCRScoreTimer >= 1 && ScoreManager.singleton.tempCRMultiplier >= 2)
             {
                 ScoreManager.singleton.chainReactionMultiplier += 1;
             }
