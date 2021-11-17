@@ -1636,7 +1636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 258275724945851762, guid: ead18ba4fca619147afec293e28d07e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 79.77
+      value: 80.5
       objectReference: {fileID: 0}
     - target: {fileID: 258275724945851762, guid: ead18ba4fca619147afec293e28d07e2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3346,7 +3346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 258275724945851762, guid: ead18ba4fca619147afec293e28d07e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 79.77
+      value: 81.73
       objectReference: {fileID: 0}
     - target: {fileID: 258275724945851762, guid: ead18ba4fca619147afec293e28d07e2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -25073,7 +25073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 366268498896960585, guid: 9b37ca23bd24f7344943ce6792d02f7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 77.7
+      value: 78.23
       objectReference: {fileID: 0}
     - target: {fileID: 366268498896960585, guid: 9b37ca23bd24f7344943ce6792d02f7d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -25994,18 +25994,18 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
-  shallowColor: {r: 0, g: 0.3024181, b: 0.5, a: 0.5019608}
+  shallowColor: {r: 0, g: 0.30241796, b: 0.5, a: 0.5019608}
   deepColor: {r: 0, g: 0.6745098, b: 0.8509804, a: 1}
   colorDepth: 0
-  horizonColor: {r: 0.075397424, g: 0, b: 1, a: 1}
+  horizonColor: {r: 0.07539729, g: 0, b: 1, a: 1}
   horizonDistance: 20
   shoreFade: 1
-  shoreColor: {r: 0, g: 1, b: 0.30974412, a: 0.604}
+  shoreColor: {r: 0, g: 1, b: 0.30974397, a: 0.604}
   shoreStrength: 0.604
   shoreBlend: 1
   shoreDepth: 0.74
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.09474305, g: 0.29736933, b: 0.6981132, a: 0}
+  underwaterColor: {r: 0.09474289, g: 0.29736918, b: 0.6981132, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.163
   surfaceFoamTexture: {fileID: 2800000, guid: 772031b03d9d46e4ab03e15c8e17718c, type: 3}
@@ -26638,7 +26638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 366268498896960585, guid: 9b37ca23bd24f7344943ce6792d02f7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 77.7
+      value: 78.25
       objectReference: {fileID: 0}
     - target: {fileID: 366268498896960585, guid: 9b37ca23bd24f7344943ce6792d02f7d, type: 3}
       propertyPath: m_LocalPosition.z
