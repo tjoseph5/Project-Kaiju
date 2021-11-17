@@ -376,6 +376,7 @@ public class KaijuMovement : MonoBehaviour
         {
             if (dashControl.action.triggered)
             {
+                audioSource.PlayOneShot(JimSFXPool.singleton.audioClips[2]);
                 rootRb.AddForce(rootRb.transform.forward.x * dashDistance, dashHeight, rootRb.transform.forward.z * dashDistance, ForceMode.Impulse);
                 activateRagdoll = true;
                 ActivateRagdoll(activateRagdoll);
@@ -518,14 +519,6 @@ public class KaijuMovement : MonoBehaviour
                 }
 
                 break;
-        }
-    }
-
-    public void OnCollisionEnter(Collision col)
-    {
-        if(activateRagdoll == true)
-        {
-            //KaijuEventReferencer.animReferencer.WalkAudioReferencer(0.6f);
         }
     }
 
