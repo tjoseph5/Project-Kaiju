@@ -71,4 +71,16 @@ public class KaijuEventReferencer : MonoBehaviour
             }
         }
     }
+
+    public void WalkAudioReferencer()
+    {
+        //volume = KaijuMovement.singleton.audioSource.volume;
+
+        if (KaijuMovement.singleton.isGrounded)
+        {
+            //KaijuMovement.singleton.audioSource.clip = JimSFXPool.singleton.audioClips[0];
+            KaijuMovement.singleton.audioSource.volume = 0.3f;
+            KaijuMovement.singleton.audioSource.PlayOneShot(JimSFXPool.singleton.audioClips[0]);
+        }
+    }
 }

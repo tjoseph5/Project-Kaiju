@@ -351,11 +351,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 497604559027026203, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -0.016
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 497604559027026203, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -51.795
+      value: -11.766416
       objectReference: {fileID: 0}
     - target: {fileID: 497604559027026203, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -495,15 +495,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 594163979468758737, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -0.1940793
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 594163979468758737, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -1.3720965
+      value: -11.625976
       objectReference: {fileID: 0}
     - target: {fileID: 594163979468758737, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.0020279621
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 821317801761564987, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -535,15 +535,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 821317801761564987, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 1.615
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 821317801761564987, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 62.578
+      value: 29.559578
       objectReference: {fileID: 0}
     - target: {fileID: 821317801761564987, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 2.129
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1004269961680286386, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -575,15 +575,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1004269961680286386, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 1.2271715
+      value: -39.15909
       objectReference: {fileID: 0}
     - target: {fileID: 1004269961680286386, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 7.5166306
+      value: 7.6875143
       objectReference: {fileID: 0}
     - target: {fileID: 1004269961680286386, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 9.143532
+      value: 1.9062338
       objectReference: {fileID: 0}
     - target: {fileID: 2202782957736948429, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -591,15 +591,15 @@ PrefabInstance:
       objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 2505419562865165977, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0.08403484
+      value: 0.85216
       objectReference: {fileID: 0}
     - target: {fileID: 2505419562865165977, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -18.772913
+      value: -18.975367
       objectReference: {fileID: 0}
     - target: {fileID: 2505419562865165977, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -4.823332
+      value: -4.6915293
       objectReference: {fileID: 0}
     - target: {fileID: 3132571216111149381, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -631,27 +631,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3132571216111149381, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 5.865
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3132571216111149381, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -66.922
+      value: -32.748604
       objectReference: {fileID: 0}
     - target: {fileID: 3132571216111149381, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -1.96
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3152313050496871431, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: l_Foot
+      value: 
+      objectReference: {fileID: 724625841}
+    - target: {fileID: 3152313050496871431, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: r_Foot
+      value: 
+      objectReference: {fileID: 578784074}
     - target: {fileID: 5339568488221378083, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0.5737948
+      value: 37.340607
       objectReference: {fileID: 0}
     - target: {fileID: 5339568488221378083, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 4.21149
+      value: -0.00021842626
       objectReference: {fileID: 0}
     - target: {fileID: 5339568488221378083, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -8.804439
+      value: -0.000035786063
       objectReference: {fileID: 0}
     - target: {fileID: 5379572344317247817, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -683,15 +691,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5379572344317247817, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -0.012
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5379572344317247817, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 105.112
+      value: -16.749544
       objectReference: {fileID: 0}
     - target: {fileID: 5379572344317247817, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 7.772
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5945267419924432977, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -715,7 +723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5945267419924432977, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 14.454
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6346868018077394698, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -955,15 +963,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448194444672607921, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0.36155757
+      value: 22.488031
       objectReference: {fileID: 0}
     - target: {fileID: 7448194444672607921, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -2.7472267
+      value: 0.0003182564
       objectReference: {fileID: 0}
     - target: {fileID: 7448194444672607921, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 8.804841
+      value: 0.00008590916
       objectReference: {fileID: 0}
     - target: {fileID: 7691569011259871589, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -995,18 +1003,119 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7691569011259871589, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 5.55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7691569011259871589, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -104.797
+      value: -17.060719
       objectReference: {fileID: 0}
     - target: {fileID: 7691569011259871589, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -10.636
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+--- !u!1 &13114660 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3164804436808348296, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+  m_PrefabInstance: {fileID: 13114659}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &13114661
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13114660}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &19850624
 GameObject:
   m_ObjectHideFlags: 0
@@ -6008,7 +6117,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh92906
+  m_Name: pb_Mesh51858
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11061,6 +11170,17 @@ PrefabInstance:
       objectReference: {fileID: 1431247005}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dd47e370d217814faae8726b0519df2, type: 3}
+--- !u!114 &578784074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5666634171294849667, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+  m_PrefabInstance: {fileID: 13114659}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21fcc0415e70854fa201890962bd1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &581044635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13202,6 +13322,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da215e28b9216f840aa6fdf07095be93, type: 3}
+--- !u!114 &724625841 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3544641696261539117, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+  m_PrefabInstance: {fileID: 13114659}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21fcc0415e70854fa201890962bd1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &725283210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21275,10 +21406,10 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 2800000, guid: 3c92b878fe7d7e44f903be9fdfc75b00, type: 3}
-  shallowColor: {r: 0.25878522, g: 0.8509804, b: 0.29971817, a: 0.5019608}
-  deepColor: {r: 0, g: 0.084883474, b: 0.0035211036, a: 1}
+  shallowColor: {r: 0.25878006, g: 0.8509804, b: 0.29971302, a: 0.5019608}
+  deepColor: {r: 0, g: 0.08487918, b: 0.0035211036, a: 1}
   colorDepth: 4
-  horizonColor: {r: 0.08564558, g: 0.8, b: 0, a: 1}
+  horizonColor: {r: 0.08564133, g: 0.8, b: 0, a: 1}
   horizonDistance: 20
   shoreFade: 1
   shoreColor: {r: 1, g: 1, b: 1, a: 0}
@@ -21286,7 +21417,7 @@ MonoBehaviour:
   shoreBlend: 1
   shoreDepth: 0
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.17554912, g: 0.6792453, b: 0.29222965, a: 0}
+  underwaterColor: {r: 0.17554423, g: 0.6792453, b: 0.2922245, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}
@@ -21294,7 +21425,7 @@ MonoBehaviour:
   surfaceFoamCutoff: 0.62
   surfaceFoamDistortion: 0
   surfaceFoamBlend: 1
-  surfaceFoamColor1: {r: 0.45625633, g: 0.9811321, b: 0.26283315, a: 0.3215686}
+  surfaceFoamColor1: {r: 0.45625633, g: 0.9811321, b: 0.262828, a: 0.3215686}
   surfaceFoamColor2: {r: 0.7304496, g: 1, b: 0.61698115, a: 0.7294118}
   surfaceFoamMovement: {x: 0.7, y: 0, z: 0.47, w: 0.01}
   surfaceFoamDirection1: 0.7
@@ -25994,18 +26125,18 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
-  shallowColor: {r: 0, g: 0.30241886, b: 0.5, a: 0.5019608}
+  shallowColor: {r: 0, g: 0.3024137, b: 0.5, a: 0.5019608}
   deepColor: {r: 0, g: 0.6745098, b: 0.8509804, a: 1}
   colorDepth: 0
-  horizonColor: {r: 0.075397976, g: 0, b: 1, a: 1}
+  horizonColor: {r: 0.075394236, g: 0, b: 1, a: 1}
   horizonDistance: 20
   shoreFade: 1
-  shoreColor: {r: 0, g: 1, b: 0.3097449, a: 0.604}
+  shoreColor: {r: 0, g: 1, b: 0.30973974, a: 0.604}
   shoreStrength: 0.604
   shoreBlend: 1
   shoreDepth: 0.74
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.094743796, g: 0.2973701, b: 0.6981132, a: 0}
+  underwaterColor: {r: 0.09473867, g: 0.29736495, b: 0.6981132, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.163
   surfaceFoamTexture: {fileID: 2800000, guid: 772031b03d9d46e4ab03e15c8e17718c, type: 3}
@@ -38040,10 +38171,10 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 2800000, guid: 3c92b878fe7d7e44f903be9fdfc75b00, type: 3}
-  shallowColor: {r: 0.2588047, g: 0.8449912, b: 0.8509804, a: 0.5019608}
-  deepColor: {r: 0.08165761, g: 0.58524245, b: 0.6981132, a: 0.62352943}
+  shallowColor: {r: 0.25879955, g: 0.8449912, b: 0.8509804, a: 0.5019608}
+  deepColor: {r: 0.081653394, g: 0.58524245, b: 0.6981132, a: 0.62352943}
   colorDepth: 4
-  horizonColor: {r: 0, g: 0.34043542, b: 0.49056596, a: 1}
+  horizonColor: {r: 0, g: 0.34043026, b: 0.49056596, a: 1}
   horizonDistance: 20
   shoreFade: 1
   shoreColor: {r: 1, g: 1, b: 1, a: 0}
@@ -38051,7 +38182,7 @@ MonoBehaviour:
   shoreBlend: 1
   shoreDepth: 0
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.17553678, g: 0.6792453, b: 0.29221666, a: 0}
+  underwaterColor: {r: 0.1755319, g: 0.6792453, b: 0.2922115, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}

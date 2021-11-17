@@ -63,7 +63,7 @@ public class KaijuMovement : MonoBehaviour
     //Animator Bools and Setup
     #region Animation Setup
     [SerializeField] Animator targetAnimator; //Jim Animator
-    bool walk = false;
+    public bool walk = false;
     bool inAir = false;
     bool isAttacking = false;
     #endregion
@@ -101,9 +101,11 @@ public class KaijuMovement : MonoBehaviour
     #region Bool States
     [HideInInspector] public bool activateRagdoll;
     [HideInInspector] public bool dashAttack;
-    bool isGrounded;
+    public bool isGrounded;
     bool isPuking;
     #endregion
+
+    public AudioSource audioSource;
 
 
     void Awake()
@@ -128,6 +130,8 @@ public class KaijuMovement : MonoBehaviour
         pukeFX = rootRb.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<ParticleSystem>();
 
         heldObj = null;
+
+        audioSource = gameObject.GetComponent<AudioSource>();
 
         #region Config Joint Setup
 
@@ -516,6 +520,15 @@ public class KaijuMovement : MonoBehaviour
                 break;
         }
     }
+
+    public void OnCollisionEnter(Collision col)
+    {
+        if(activateRagdoll == true)
+        {
+            //KaijuEventReferencer.animReferencer.WalkAudioReferencer(0.6f);
+        }
+    }
+
 
     #region ActivateRagdoll
     public void ActivateRagdoll(bool activated)
