@@ -105,7 +105,22 @@ public class UIScoreCalculator : MonoBehaviour
 
                 case ScoreType.rank:
 
-                    if(ScoreManager.singleton.totalScore >= 100000)
+                    if (ScoreManager.singleton.totalScore >= 1500000)
+                    {
+                        text.text = "S+++";
+                        text.color = new Color(1, 0.85f, 0);
+                    }
+                    else if (ScoreManager.singleton.totalScore >= 1000000 && ScoreManager.singleton.totalScore < 1500000)
+                    {
+                        text.text = "S++";
+                        text.color = new Color(1, 0.85f, 0);
+                    }
+                    else if (ScoreManager.singleton.totalScore >= 500000 && ScoreManager.singleton.totalScore < 1000000)
+                    {
+                        text.text = "S+";
+                        text.color = new Color(1, 0.85f, 0);
+                    }
+                    else if (ScoreManager.singleton.totalScore >= 100000 && ScoreManager.singleton.totalScore < 500000)
                     {
                         text.text = "S";
                         text.color = new Color(1, 0.85f, 0);

@@ -21275,10 +21275,10 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 2800000, guid: 3c92b878fe7d7e44f903be9fdfc75b00, type: 3}
-  shallowColor: {r: 0.25878656, g: 0.8509804, b: 0.2997195, a: 0.5019608}
-  deepColor: {r: 0, g: 0.08488456, b: 0.0035211036, a: 1}
+  shallowColor: {r: 0.25878522, g: 0.8509804, b: 0.29971817, a: 0.5019608}
+  deepColor: {r: 0, g: 0.084883474, b: 0.0035211036, a: 1}
   colorDepth: 4
-  horizonColor: {r: 0.0856467, g: 0.8, b: 0, a: 1}
+  horizonColor: {r: 0.08564558, g: 0.8, b: 0, a: 1}
   horizonDistance: 20
   shoreFade: 1
   shoreColor: {r: 1, g: 1, b: 1, a: 0}
@@ -21286,7 +21286,7 @@ MonoBehaviour:
   shoreBlend: 1
   shoreDepth: 0
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.1755504, g: 0.6792453, b: 0.29223102, a: 0}
+  underwaterColor: {r: 0.17554912, g: 0.6792453, b: 0.29222965, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}
@@ -21294,7 +21294,7 @@ MonoBehaviour:
   surfaceFoamCutoff: 0.62
   surfaceFoamDistortion: 0
   surfaceFoamBlend: 1
-  surfaceFoamColor1: {r: 0.45625633, g: 0.9811321, b: 0.2628345, a: 0.3215686}
+  surfaceFoamColor1: {r: 0.45625633, g: 0.9811321, b: 0.26283315, a: 0.3215686}
   surfaceFoamColor2: {r: 0.7304496, g: 1, b: 0.61698115, a: 0.7294118}
   surfaceFoamMovement: {x: 0.7, y: 0, z: 0.47, w: 0.01}
   surfaceFoamDirection1: 0.7
@@ -25994,18 +25994,18 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
-  shallowColor: {r: 0, g: 0.30242023, b: 0.5, a: 0.5019608}
+  shallowColor: {r: 0, g: 0.30241886, b: 0.5, a: 0.5019608}
   deepColor: {r: 0, g: 0.6745098, b: 0.8509804, a: 1}
   colorDepth: 0
-  horizonColor: {r: 0.075398915, g: 0, b: 1, a: 1}
+  horizonColor: {r: 0.075397976, g: 0, b: 1, a: 1}
   horizonDistance: 20
   shoreFade: 1
-  shoreColor: {r: 0, g: 1, b: 0.30974624, a: 0.604}
+  shoreColor: {r: 0, g: 1, b: 0.3097449, a: 0.604}
   shoreStrength: 0.604
   shoreBlend: 1
   shoreDepth: 0.74
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.09474514, g: 0.29737145, b: 0.6981132, a: 0}
+  underwaterColor: {r: 0.094743796, g: 0.2973701, b: 0.6981132, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.163
   surfaceFoamTexture: {fileID: 2800000, guid: 772031b03d9d46e4ab03e15c8e17718c, type: 3}
@@ -38040,10 +38040,10 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 2800000, guid: 3c92b878fe7d7e44f903be9fdfc75b00, type: 3}
-  shallowColor: {r: 0.25880605, g: 0.8449912, b: 0.8509804, a: 0.5019608}
-  deepColor: {r: 0.08165873, g: 0.58524245, b: 0.6981132, a: 0.62352943}
+  shallowColor: {r: 0.2588047, g: 0.8449912, b: 0.8509804, a: 0.5019608}
+  deepColor: {r: 0.08165761, g: 0.58524245, b: 0.6981132, a: 0.62352943}
   colorDepth: 4
-  horizonColor: {r: 0, g: 0.34043676, b: 0.49056596, a: 1}
+  horizonColor: {r: 0, g: 0.34043542, b: 0.49056596, a: 1}
   horizonDistance: 20
   shoreFade: 1
   shoreColor: {r: 1, g: 1, b: 1, a: 0}
@@ -38051,7 +38051,7 @@ MonoBehaviour:
   shoreBlend: 1
   shoreDepth: 0
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.17553806, g: 0.6792453, b: 0.292218, a: 0}
+  underwaterColor: {r: 0.17553678, g: 0.6792453, b: 0.29221666, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}

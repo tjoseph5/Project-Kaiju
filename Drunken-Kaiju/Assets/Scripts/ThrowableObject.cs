@@ -179,7 +179,6 @@ public class ThrowableObject : MonoBehaviour
 
                 GameObject bottleD = Instantiate(BuildingManager.singleton.destroyedThrowables[5], this.transform.position, this.transform.rotation);
                 bottleD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
-                KaijuMovement.singleton.pukeAmount = 100;
 
                 foreach (Rigidbody rb in bottleD.GetComponentsInChildren<Rigidbody>())
                 {

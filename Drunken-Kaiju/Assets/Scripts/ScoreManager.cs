@@ -57,15 +57,15 @@ public class ScoreManager : MonoBehaviour
         {
             if(specialBuildingMultiplier > 0 && chainReactionMultiplier > 0)
             {
-                totalScore = standardScore * specialBuildingMultiplier * chainReactionMultiplier;
+                totalScore = standardScore + (standardScore * specialBuildingMultiplier) + (standardScore * chainReactionMultiplier);
             }
             else if(specialBuildingMultiplier > 0 && chainReactionMultiplier <= 0)
             {
-                totalScore = standardScore * specialBuildingMultiplier;
+                totalScore = standardScore + (standardScore * specialBuildingMultiplier);
             }
             else if (specialBuildingMultiplier <= 0 && chainReactionMultiplier > 0)
             {
-                totalScore = standardScore * chainReactionMultiplier;
+                totalScore = standardScore + (standardScore * chainReactionMultiplier);
             }
             else
             {

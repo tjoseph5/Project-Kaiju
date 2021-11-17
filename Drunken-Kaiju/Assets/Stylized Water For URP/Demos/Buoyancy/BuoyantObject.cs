@@ -38,6 +38,11 @@ public class BuoyantObject : MonoBehaviour
 
     void Awake()
     {
+        if (water == null)
+        {
+            water = GameObject.Find("Square Water (3)").GetComponent<StylizedWaterURP>();
+        }
+
         // Get wave properties from water
         steepness = water.GetWaveSteepness();
         wavelength = water.GetWaveLength();
@@ -54,7 +59,7 @@ public class BuoyantObject : MonoBehaviour
 
     private void Start()
     {
-        if(water == null)
+        if (water == null)
         {
             water = GameObject.Find("Square Water (3)").GetComponent<StylizedWaterURP>();
         }
@@ -62,7 +67,11 @@ public class BuoyantObject : MonoBehaviour
 
     void OnDisable()
     {
-        rb.useGravity = true;
+        if(rb != null)
+        {
+            rb.useGravity = true;
+        }
+
     }
     
     void FixedUpdate()
