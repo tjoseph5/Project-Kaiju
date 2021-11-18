@@ -11,6 +11,8 @@ public class PickupObjects : MonoBehaviour
 
     [HideInInspector] public bool hasDrank;
 
+    public float rotateSpeed;
+
     void Start()
     {
         player = null;
@@ -36,7 +38,7 @@ public class PickupObjects : MonoBehaviour
 
     void Update()
     {
-        
+        this.transform.Rotate(0f, rotateSpeed, 0f);
     }
 
     public void OnCollisionEnter(Collision col)

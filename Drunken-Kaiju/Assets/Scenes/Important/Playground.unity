@@ -14328,22 +14328,6 @@ PrefabInstance:
       value: -862.5815
       objectReference: {fileID: 0}
     - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
@@ -17347,22 +17331,6 @@ PrefabInstance:
       value: -906.5
       objectReference: {fileID: 0}
     - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
@@ -18724,10 +18692,10 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 2800000, guid: 3c92b878fe7d7e44f903be9fdfc75b00, type: 3}
-  shallowColor: {r: 0.2587747, g: 0.8509804, b: 0.29970768, a: 0.5019608}
-  deepColor: {r: 0, g: 0.08487477, b: 0.0035211036, a: 1}
+  shallowColor: {r: 0.25877413, g: 0.8509804, b: 0.2997071, a: 0.5019608}
+  deepColor: {r: 0, g: 0.084874295, b: 0.0035211036, a: 1}
   colorDepth: 4
-  horizonColor: {r: 0.08563692, g: 0.8, b: 0, a: 1}
+  horizonColor: {r: 0.08563643, g: 0.8, b: 0, a: 1}
   horizonDistance: 20
   shoreFade: 1
   shoreColor: {r: 1, g: 1, b: 1, a: 0}
@@ -18735,7 +18703,7 @@ MonoBehaviour:
   shoreBlend: 1
   shoreDepth: 0
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.17553917, g: 0.6792453, b: 0.29221916, a: 0}
+  underwaterColor: {r: 0.17553863, g: 0.6792453, b: 0.2922186, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}
@@ -18743,7 +18711,7 @@ MonoBehaviour:
   surfaceFoamCutoff: 0.62
   surfaceFoamDistortion: 0
   surfaceFoamBlend: 1
-  surfaceFoamColor1: {r: 0.45625633, g: 0.9811321, b: 0.26282263, a: 0.3215686}
+  surfaceFoamColor1: {r: 0.45625633, g: 0.9811321, b: 0.26282206, a: 0.3215686}
   surfaceFoamColor2: {r: 0.7304496, g: 1, b: 0.61698115, a: 0.7294118}
   surfaceFoamMovement: {x: 0.7, y: 0, z: 0.47, w: 0.01}
   surfaceFoamDirection1: 0.7
@@ -22991,18 +22959,18 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
-  shallowColor: {r: 0, g: 0.30238608, b: 0.5, a: 0.5019608}
+  shallowColor: {r: 0, g: 0.3023855, b: 0.5, a: 0.5019608}
   deepColor: {r: 0, g: 0.6745098, b: 0.8509804, a: 1}
   colorDepth: 0
-  horizonColor: {r: 0.07537422, g: 0, b: 1, a: 1}
+  horizonColor: {r: 0.07537379, g: 0, b: 1, a: 1}
   horizonDistance: 20
   shoreFade: 1
-  shoreColor: {r: 0, g: 1, b: 0.30971208, a: 0.604}
+  shoreColor: {r: 0, g: 1, b: 0.30971152, a: 0.604}
   shoreStrength: 0.604
   shoreBlend: 1
   shoreDepth: 0.74
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.10753054, g: 0.611, b: 1, a: 0}
+  underwaterColor: {r: 0.107529975, g: 0.611, b: 1, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.232
   surfaceFoamTexture: {fileID: 2800000, guid: 772031b03d9d46e4ab03e15c8e17718c, type: 3}
@@ -23354,22 +23322,6 @@ PrefabInstance:
     - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
       propertyPath: m_LocalPosition.z
       value: -735.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -24215,22 +24167,6 @@ PrefabInstance:
     - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
       propertyPath: m_LocalPosition.z
       value: -487.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -26647,22 +26583,6 @@ PrefabInstance:
       value: -677.7
       objectReference: {fileID: 0}
     - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
@@ -26877,22 +26797,6 @@ PrefabInstance:
     - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
       propertyPath: m_LocalPosition.z
       value: -639.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6933077836449467335, guid: c8c7db983d2a15a468b8fcfb00e0a9a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -36496,10 +36400,10 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 2800000, guid: 3c92b878fe7d7e44f903be9fdfc75b00, type: 3}
-  shallowColor: {r: 0.2587942, g: 0.8449912, b: 0.8509804, a: 0.5019608}
-  deepColor: {r: 0.08164898, g: 0.58524245, b: 0.6981132, a: 0.62352943}
+  shallowColor: {r: 0.25879362, g: 0.8449912, b: 0.8509804, a: 0.5019608}
+  deepColor: {r: 0.081648506, g: 0.58524245, b: 0.6981132, a: 0.62352943}
   colorDepth: 4
-  horizonColor: {r: 0, g: 0.34042493, b: 0.49056596, a: 1}
+  horizonColor: {r: 0, g: 0.34042436, b: 0.49056596, a: 1}
   horizonDistance: 20
   shoreFade: 1
   shoreColor: {r: 1, g: 1, b: 1, a: 0}
@@ -36507,7 +36411,7 @@ MonoBehaviour:
   shoreBlend: 1
   shoreDepth: 0
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.17552683, g: 0.6792453, b: 0.29220614, a: 0}
+  underwaterColor: {r: 0.17552629, g: 0.6792453, b: 0.29220557, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}

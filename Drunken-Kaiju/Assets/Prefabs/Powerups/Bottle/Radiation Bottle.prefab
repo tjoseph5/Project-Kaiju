@@ -362,6 +362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupTypes: 1
   hasDrank: 0
+  rotateSpeed: 1
 --- !u!114 &3603289250983777448
 MonoBehaviour:
   m_ObjectHideFlags: 0
