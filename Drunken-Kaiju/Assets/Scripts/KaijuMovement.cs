@@ -303,15 +303,15 @@ public class KaijuMovement : MonoBehaviour
 
             Debug.Log("hitsomething");
 
-            if (rayDownHit.collider && !activateRagdoll)
+            if (rayDownHit.collider.gameObject.layer == 9 && !activateRagdoll || rayDownHit.collider.gameObject.layer == 13 && !activateRagdoll)
             {
                 isGrounded = true;
 
                 if (attackTimer == 0)
                 {
-                    if (jumpControl.action.triggered && !activateRagdoll)
+                    if (jumpControl.action.triggered && !activateRagdoll && isGrounded)
                     {
-                        Debug.Log("jump");
+                        //Debug.Log("jump");
                         this.rootRb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
                         targetAnimator.SetTrigger("Jump");
                         isGrounded = false;

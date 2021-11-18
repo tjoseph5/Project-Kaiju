@@ -11,7 +11,7 @@ public class StepAudioReference : MonoBehaviour
     {
         isGrounded = true;
 
-        if (KaijuMovement.singleton.walk && isGrounded)
+        if (KaijuMovement.singleton.walk && isGrounded && collision.gameObject.layer == 9)
         {
             KaijuEventReferencer.animReferencer.WalkAudioReferencer();
         }
