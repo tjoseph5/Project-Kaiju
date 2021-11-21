@@ -129,7 +129,7 @@ Material:
     m_Colors:
     - Color_141ce323b50042b2b1038f7c31ebd2a0: {r: 1, g: 1, b: 1, a: 0}
     - Color_f8330460df024488a55fcd4092f1c905: {r: 0, g: 0, b: 0, a: 0}
-    - Toon_Ramp_Tint: {r: 0.8666667, g: 0.36879042, b: 0.12549019, a: 0}
+    - Toon_Ramp_Tint: {r: 0.8679245, g: 0.12691349, b: 0.4419479, a: 0}
     - Vector2_959a5b2864a34e4abf910e7be46853f6: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
