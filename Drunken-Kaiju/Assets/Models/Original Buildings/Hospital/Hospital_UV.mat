@@ -100,7 +100,7 @@ Material:
     - Brightness_Rim: 2
     - Rim_Power: 3.12
     - Toon_Ramp_Offset: 0.5
-    - Toon_Ramp_Smoothness: 0.5
+    - Toon_Ramp_Smoothness: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -130,7 +130,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Toon_Ramp_Tint: {r: 0, g: 0.640625, b: 1, a: 0}
+    - Toon_Ramp_Tint: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_959a5b2864a34e4abf910e7be46853f6: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}

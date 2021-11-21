@@ -117,10 +117,10 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Toon_Ramp_Tint: {r: 0.69803923, g: 0.6460741, b: 0.5568628, a: 0}
+    - Toon_Ramp_Tint: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_959a5b2864a34e4abf910e7be46853f6: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.6, g: 0.65901953, b: 0.7529412, a: 1}
+    - _Color: {r: 0.45631897, g: 0.6396941, b: 0.6415094, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
