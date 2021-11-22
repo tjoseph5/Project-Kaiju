@@ -544,6 +544,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.9062338
       objectReference: {fileID: 0}
+    - target: {fileID: 1006177596701530392, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8185395592441280768, guid: a74338b4bc73b5140a1fa640750a49a0, type: 3}
     - target: {fileID: 2202782957736948429, guid: aa7e6b96c9ecf244dad2dbe4e121af6b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -18734,10 +18738,10 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 2800000, guid: 3c92b878fe7d7e44f903be9fdfc75b00, type: 3}
-  shallowColor: {r: 0.2587697, g: 0.8509804, b: 0.29970264, a: 0.5019608}
-  deepColor: {r: 0, g: 0.084870644, b: 0.0035211036, a: 1}
+  shallowColor: {r: 0.25876954, g: 0.8509804, b: 0.29970253, a: 0.5019608}
+  deepColor: {r: 0, g: 0.084870525, b: 0.0035211036, a: 1}
   colorDepth: 4
-  horizonColor: {r: 0.08563287, g: 0.8, b: 0, a: 1}
+  horizonColor: {r: 0.085632764, g: 0.8, b: 0, a: 1}
   horizonDistance: 20
   shoreFade: 1
   shoreColor: {r: 1, g: 1, b: 1, a: 0}
@@ -18745,7 +18749,7 @@ MonoBehaviour:
   shoreBlend: 1
   shoreDepth: 0
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.1755344, g: 0.6792453, b: 0.29221413, a: 0}
+  underwaterColor: {r: 0.17553428, g: 0.6792453, b: 0.292214, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}
@@ -18753,7 +18757,7 @@ MonoBehaviour:
   surfaceFoamCutoff: 0.62
   surfaceFoamDistortion: 0
   surfaceFoamBlend: 1
-  surfaceFoamColor1: {r: 0.45625633, g: 0.9811321, b: 0.26281762, a: 0.3215686}
+  surfaceFoamColor1: {r: 0.45625633, g: 0.9811321, b: 0.26281747, a: 0.3215686}
   surfaceFoamColor2: {r: 0.7304496, g: 1, b: 0.61698115, a: 0.7294118}
   surfaceFoamMovement: {x: 0.7, y: 0, z: 0.47, w: 0.01}
   surfaceFoamDirection1: 0.7
@@ -23005,18 +23009,18 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
-  shallowColor: {r: 0, g: 0.30238104, b: 0.5, a: 0.5019608}
+  shallowColor: {r: 0, g: 0.30238092, b: 0.5, a: 0.5019608}
   deepColor: {r: 0, g: 0.6745098, b: 0.8509804, a: 1}
   colorDepth: 0
-  horizonColor: {r: 0.07537057, g: 0, b: 1, a: 1}
+  horizonColor: {r: 0.0753705, g: 0, b: 1, a: 1}
   horizonDistance: 20
   shoreFade: 1
-  shoreColor: {r: 0, g: 1, b: 0.30970705, a: 0.604}
+  shoreColor: {r: 0, g: 1, b: 0.30970693, a: 0.604}
   shoreStrength: 0.604
   shoreBlend: 1
   shoreDepth: 0.74
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.10752552, g: 0.611, b: 1, a: 0}
+  underwaterColor: {r: 0.107525386, g: 0.611, b: 1, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.232
   surfaceFoamTexture: {fileID: 2800000, guid: 772031b03d9d46e4ab03e15c8e17718c, type: 3}
@@ -36465,10 +36469,10 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 2800000, guid: 3c92b878fe7d7e44f903be9fdfc75b00, type: 3}
-  shallowColor: {r: 0.25878918, g: 0.8449912, b: 0.8509804, a: 0.5019608}
-  deepColor: {r: 0.081644855, g: 0.58524245, b: 0.6981132, a: 0.62352943}
+  shallowColor: {r: 0.25878903, g: 0.8449912, b: 0.8509804, a: 0.5019608}
+  deepColor: {r: 0.081644736, g: 0.58524245, b: 0.6981132, a: 0.62352943}
   colorDepth: 4
-  horizonColor: {r: 0, g: 0.3404199, b: 0.49056596, a: 1}
+  horizonColor: {r: 0, g: 0.34041977, b: 0.49056596, a: 1}
   horizonDistance: 20
   shoreFade: 1
   shoreColor: {r: 1, g: 1, b: 1, a: 0}
@@ -36476,7 +36480,7 @@ MonoBehaviour:
   shoreBlend: 1
   shoreDepth: 0
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.17552206, g: 0.6792453, b: 0.29220113, a: 0}
+  underwaterColor: {r: 0.17552194, g: 0.6792453, b: 0.29220098, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}
