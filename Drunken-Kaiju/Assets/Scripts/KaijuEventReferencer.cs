@@ -79,7 +79,7 @@ public class KaijuEventReferencer : MonoBehaviour
         if (KaijuMovement.singleton.isGrounded)
         {
             //KaijuMovement.singleton.audioSource.clip = JimSFXPool.singleton.audioClips[0];
-            KaijuMovement.singleton.audioSource.volume = 0.3f;
+            KaijuMovement.singleton.audioSource.volume = 0.1f;
             KaijuMovement.singleton.audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[0]);
         }
     }

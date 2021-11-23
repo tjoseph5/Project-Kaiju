@@ -314,6 +314,7 @@ public class KaijuMovement : MonoBehaviour
                         //Debug.Log("jump");
                         this.rootRb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
                         targetAnimator.SetTrigger("Jump");
+                        audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[1]);
                         isGrounded = false;
                     }
                 }
@@ -369,6 +370,7 @@ public class KaijuMovement : MonoBehaviour
             {
                 activateRagdoll = false;
                 ActivateRagdoll(activateRagdoll);
+                audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[2]);
             }
         }
 

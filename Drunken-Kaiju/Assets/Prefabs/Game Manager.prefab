@@ -129,8 +129,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c325888ed2bda49a32d9dd2129259d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClips:
-  - {fileID: 8300000, guid: a5209552426a9bc4e84b40050f88b8e0, type: 3}
-  - {fileID: 8300000, guid: 477c5a69a7b18bf41b5bac33201b600f, type: 3}
-  - {fileID: 8300000, guid: 24564f936d0365b4581a7efba89466de, type: 3}
-  - {fileID: 8300000, guid: 51cb476495381d0448e854fb5402d4d0, type: 3}
+  jimClips:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  buildingClips: []
