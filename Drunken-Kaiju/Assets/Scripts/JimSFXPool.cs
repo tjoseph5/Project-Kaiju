@@ -7,8 +7,11 @@ public class JimSFXPool : MonoBehaviour
     public static JimSFXPool singleton;
 
     //Audio Clips
-    [Header("SFXs Clip")]
-    public List<AudioClip> audioClips = new List<AudioClip>();
+    [Header("Jim Clips")]
+    public List<AudioClip> jimClips = new List<AudioClip>();
+
+    [Header("Building Clips")]
+    public List<AudioClip> buildingClips = new List<AudioClip>();
 
     private void Awake()
     {

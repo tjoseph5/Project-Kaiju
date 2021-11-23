@@ -376,7 +376,7 @@ public class KaijuMovement : MonoBehaviour
         {
             if (dashControl.action.triggered)
             {
-                audioSource.PlayOneShot(JimSFXPool.singleton.audioClips[2]);
+                audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[2]);
                 rootRb.AddForce(rootRb.transform.forward.x * dashDistance, dashHeight, rootRb.transform.forward.z * dashDistance, ForceMode.Impulse);
                 activateRagdoll = true;
                 ActivateRagdoll(activateRagdoll);

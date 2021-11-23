@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7426103660321536163}
   - component: {fileID: 1179864503161182207}
   - component: {fileID: 1170852664813792743}
+  - component: {fileID: 1445278973499404207}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -116,3 +117,20 @@ MonoBehaviour:
   gameOver: 0
   timeStart: 1
   rankFinished: 0
+--- !u!114 &1445278973499404207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687992434590320908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c325888ed2bda49a32d9dd2129259d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: a5209552426a9bc4e84b40050f88b8e0, type: 3}
+  - {fileID: 8300000, guid: 477c5a69a7b18bf41b5bac33201b600f, type: 3}
+  - {fileID: 8300000, guid: 24564f936d0365b4581a7efba89466de, type: 3}
+  - {fileID: 8300000, guid: 51cb476495381d0448e854fb5402d4d0, type: 3}
