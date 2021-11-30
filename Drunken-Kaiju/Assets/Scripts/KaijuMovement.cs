@@ -168,6 +168,9 @@ public class KaijuMovement : MonoBehaviour
         playerJointSprings[13] = playerJoints[13].angularXDrive.positionSpring;  //Tail Spring
 
         #endregion
+
+        audioSource.volume = 0.1f;
+        audioSource.pitch = 1f;
     }
 
     void Update()
@@ -314,6 +317,7 @@ public class KaijuMovement : MonoBehaviour
                         //Debug.Log("jump");
                         this.rootRb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
                         targetAnimator.SetTrigger("Jump");
+                        audioSource.volume = 0.1f;
                         audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[1]);
                         isGrounded = false;
                     }
@@ -370,7 +374,14 @@ public class KaijuMovement : MonoBehaviour
             {
                 activateRagdoll = false;
                 ActivateRagdoll(activateRagdoll);
+                audioSource.volume = 0.1f;
+                audioSource.pitch = 1f;
                 audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[2]);
+
+                foreach(ConfigurableJoint hit in playerJoints)
+                {
+                    hit.gameObject.GetComponent<GroundSFXHit>().hitGround = false;
+                }
             }
         }
 
@@ -378,6 +389,7 @@ public class KaijuMovement : MonoBehaviour
         {
             if (dashControl.action.triggered)
             {
+                audioSource.volume = 0.1f;
                 audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[2]);
                 rootRb.AddForce(rootRb.transform.forward.x * dashDistance, dashHeight, rootRb.transform.forward.z * dashDistance, ForceMode.Impulse);
                 activateRagdoll = true;

@@ -112,7 +112,6 @@ public class DestructableObject : MonoBehaviour
         }
     }
 
-
     void OnCollisionEnter(Collision col)
     {
 
@@ -131,10 +130,19 @@ public class DestructableObject : MonoBehaviour
             {
                 ScoreAddition(cRHit: false, buildingHealth);
                 Destruction();
+
+                if (KaijuMovement.singleton.activateRagdoll)
+                {
+                    KaijuMovement.singleton.audioSource.volume = 0.1f;
+                    KaijuMovement.singleton.audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[6]);
+                }
             }
 
             if(buildingHealth && health > 0 && KaijuMovement.singleton.activateRagdoll)
             {
+                KaijuMovement.singleton.audioSource.volume = 0.1f;
+                KaijuMovement.singleton.audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[6]);
+
                 health -= 5;
             }
         }

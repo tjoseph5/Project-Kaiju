@@ -252,8 +252,8 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   shadows:
-    m_OverrideState: 0
-    m_Value: {r: 0.4318975, g: 0.66392905, b: 0.6792453, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.29393023, g: 0.4517433, b: 0.46226418, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
