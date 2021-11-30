@@ -130,8 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jimClips:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: a5209552426a9bc4e84b40050f88b8e0, type: 3}
+  - {fileID: 8300000, guid: 3829ba0903ac321479e238aa12678eef, type: 3}
+  - {fileID: 8300000, guid: 7477149bc8ce50f47b6da9c0ac101159, type: 3}
   buildingClips: []
