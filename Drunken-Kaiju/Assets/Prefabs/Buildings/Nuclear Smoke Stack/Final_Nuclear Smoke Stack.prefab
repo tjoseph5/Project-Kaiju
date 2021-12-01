@@ -109,9 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419f171ee5b892c4abd80bc563f9f596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breakForce: 100
+  breakForce: 300
   buildingTypes: 5
-  player: {fileID: 0}
   buildingHealth: 1
   health: 0
   recentlyHit: 0

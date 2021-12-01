@@ -84,6 +84,28 @@ public class PickupObjects : MonoBehaviour
         }
     }
 
+    void OnCollisionStay(Collision col)
+    {
+        if(pickupTypes == PickupTypes.bottlePickup)
+        {
+            if (col.gameObject.layer == 9)
+            {
+                if (gameObject.GetComponent<Rigidbody>().velocity.magnitude > 1)
+                {
+                    if(audioSource.isPlaying == false)
+                    {
+                        PlayBottleAudio(1, 0.05f, true);
+                    }
+                }
+                else
+                {
+                    audioSource.loop = false;
+                    audioSource.Stop();
+                }     
+            }
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(pickupTypes == PickupTypes.clockPickup || pickupTypes == PickupTypes.healthPickup && KaijuMovement.singleton.health < 100)
@@ -139,8 +161,9 @@ public class PickupObjects : MonoBehaviour
         ScoreManager.singleton.standardScore += 150;    
     }
 
-    void PlayBottleAudio(int clip, float volume = 0.45f)
+    void PlayBottleAudio(int clip, float volume = 0.45f, bool looping = false)
     {
+        audioSource.loop = looping;
         audioSource.volume = volume;
         audioSource.PlayOneShot(JimSFXPool.singleton.bottleClips[clip]);
     }
