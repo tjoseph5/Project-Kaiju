@@ -68,8 +68,7 @@ public class KaijuEventReferencer : MonoBehaviour
                     KaijuMovement.singleton.rayAttackHit.collider.gameObject.GetComponent<DestructableObject>().health -= 25;
                     KaijuMovement.singleton.rayAttackHit.collider.gameObject.GetComponent<DestructableObject>().recentlyHit = true;
 
-                    KaijuMovement.singleton.audioSource.volume = 0.1f;
-                    KaijuMovement.singleton.audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[7]);
+                    KaijuMovement.singleton.PlayAudio(7);
                 }
             }
         }
@@ -81,27 +80,22 @@ public class KaijuEventReferencer : MonoBehaviour
 
         if (KaijuMovement.singleton.isGrounded)
         {
-            //KaijuMovement.singleton.audioSource.clip = JimSFXPool.singleton.audioClips[0];
-            KaijuMovement.singleton.audioSource.volume = 0.1f;
-            KaijuMovement.singleton.audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[0]);
+            KaijuMovement.singleton.PlayAudio(0);
         }
     }
 
     public void GrabP1AudioReferencer()
     {
-        KaijuMovement.singleton.audioSource.volume = 0.1f;
-        KaijuMovement.singleton.audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[3]);
+        KaijuMovement.singleton.PlayAudio(3);
     }
 
     public void GrabP2AudioReferencer()
     {
-        KaijuMovement.singleton.audioSource.volume = 0.1f;
-        KaijuMovement.singleton.audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[4]);
+        KaijuMovement.singleton.PlayAudio(4);
     }
 
     public void ThrowAudioReferencer()
     {
-        KaijuMovement.singleton.audioSource.volume = 0.1f;
-        KaijuMovement.singleton.audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[5]);
+        KaijuMovement.singleton.PlayAudio(5);
     }
 }

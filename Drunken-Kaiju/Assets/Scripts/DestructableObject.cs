@@ -133,15 +133,13 @@ public class DestructableObject : MonoBehaviour
 
                 if (KaijuMovement.singleton.activateRagdoll)
                 {
-                    KaijuMovement.singleton.audioSource.volume = 0.1f;
-                    KaijuMovement.singleton.audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[6]);
+                    KaijuMovement.singleton.PlayAudio(6);
                 }
             }
 
             if(buildingHealth && health > 0 && KaijuMovement.singleton.activateRagdoll)
             {
-                KaijuMovement.singleton.audioSource.volume = 0.1f;
-                KaijuMovement.singleton.audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[6]);
+                KaijuMovement.singleton.PlayAudio(6);
 
                 health -= 5;
             }
@@ -284,7 +282,7 @@ public class DestructableObject : MonoBehaviour
 
                 GameObject nSSD = Instantiate(BuildingManager.singleton.destroyedBuildings[5], this.transform.position, this.transform.rotation);
                 nSSD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
-                KaijuMovement.singleton.pukeAmount = 25;
+                KaijuMovement.singleton.pukeAmount += 25;
 
                 foreach (Rigidbody rb in nSSD.GetComponentsInChildren<Rigidbody>())
                 {

@@ -140,3 +140,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 39ae09dae8fd56141a89579752b16bf0, type: 3}
   buildingClips: []
   vehicleClips: []
+  bottleClips:
+  - {fileID: 8300000, guid: 4d3cf314c75dd054bab8d4b91fc45eb9, type: 3}
+  - {fileID: 8300000, guid: c455f006b1644924f801f0193efab65d, type: 3}
+  - {fileID: 8300000, guid: b12859cbe401f8241b496448463d6a15, type: 3}
+  - {fileID: 8300000, guid: c546196007b924142a96a76ca60192dd, type: 3}

@@ -13,6 +13,8 @@ public class PickupObjects : MonoBehaviour
 
     public float rotateSpeed;
 
+    AudioSource audioSource;
+
     void Start()
     {
         player = null;
@@ -34,11 +36,14 @@ public class PickupObjects : MonoBehaviour
                 gameObject.name = "Clock Pickup";
                 break;
         }
+
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
     {
         this.transform.Rotate(0f, rotateSpeed, 0f);
+
     }
 
     public void OnCollisionEnter(Collision col)
@@ -67,6 +72,14 @@ public class PickupObjects : MonoBehaviour
                         BottlePickup();
                     }
                 }
+            }
+        }
+
+        if (pickupTypes == PickupTypes.bottlePickup)
+        {
+            if (hasDrank)
+            {
+                PlayBottleAudio(0, 0.2f);
             }
         }
     }
@@ -115,13 +128,20 @@ public class PickupObjects : MonoBehaviour
 
     public void BottlePickup()
     {
+        PlayBottleAudio(3);
+
         hasDrank = true;
         //gameObject.layer = 8;
         KaijuMovement.singleton.pukeAmount += 25;
         gameObject.GetComponent<ThrowableObject>().enabled = true;
         gameObject.GetComponent<Rigidbody>().useGravity = true;
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
-        ScoreManager.singleton.standardScore += 150;
+        ScoreManager.singleton.standardScore += 150;    
+    }
 
+    void PlayBottleAudio(int clip, float volume = 0.45f)
+    {
+        audioSource.volume = volume;
+        audioSource.PlayOneShot(JimSFXPool.singleton.bottleClips[clip]);
     }
 }

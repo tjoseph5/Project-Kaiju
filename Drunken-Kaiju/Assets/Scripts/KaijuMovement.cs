@@ -317,8 +317,7 @@ public class KaijuMovement : MonoBehaviour
                         //Debug.Log("jump");
                         this.rootRb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
                         targetAnimator.SetTrigger("Jump");
-                        audioSource.volume = 0.1f;
-                        audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[1]);
+                        PlayAudio(1);
                         isGrounded = false;
                     }
                 }
@@ -374,9 +373,7 @@ public class KaijuMovement : MonoBehaviour
             {
                 activateRagdoll = false;
                 ActivateRagdoll(activateRagdoll);
-                audioSource.volume = 0.1f;
-                audioSource.pitch = 1f;
-                audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[2]);
+                PlayAudio(2);
 
                 foreach(ConfigurableJoint hit in playerJoints)
                 {
@@ -389,8 +386,7 @@ public class KaijuMovement : MonoBehaviour
         {
             if (dashControl.action.triggered)
             {
-                audioSource.volume = 0.1f;
-                audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[2]);
+                PlayAudio(2);
                 rootRb.AddForce(rootRb.transform.forward.x * dashDistance, dashHeight, rootRb.transform.forward.z * dashDistance, ForceMode.Impulse);
                 activateRagdoll = true;
                 ActivateRagdoll(activateRagdoll);
@@ -707,6 +703,13 @@ public class KaijuMovement : MonoBehaviour
                 heldObj = null;
             }
         }
+    }
+
+    public void PlayAudio(int sfxValue, float volume = 0.1f, float pitch = 1)
+    {
+        audioSource.volume = volume;
+        audioSource.pitch = pitch;
+        audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[sfxValue]);
     }
 
     #region Input Enable / Disable stuff
