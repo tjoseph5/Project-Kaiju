@@ -180,6 +180,11 @@ public class ThrowableObject : MonoBehaviour
                 GameObject bottleD = Instantiate(BuildingManager.singleton.destroyedThrowables[5], this.transform.position, this.transform.rotation);
                 bottleD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
 
+                foreach (Renderer mat in bottleD.GetComponentsInChildren<Renderer>())
+                {
+                    mat.material = gameObject.GetComponent<Renderer>().material;
+                }
+
                 foreach (Rigidbody rb in bottleD.GetComponentsInChildren<Rigidbody>())
                 {
                     Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;

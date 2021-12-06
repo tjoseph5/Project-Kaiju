@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7426103660321536163}
   - component: {fileID: 1179864503161182207}
   - component: {fileID: 1170852664813792743}
+  - component: {fileID: 1445278973499404207}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -116,3 +117,31 @@ MonoBehaviour:
   gameOver: 0
   timeStart: 1
   rankFinished: 0
+--- !u!114 &1445278973499404207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687992434590320908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c325888ed2bda49a32d9dd2129259d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jimClips:
+  - {fileID: 8300000, guid: a5209552426a9bc4e84b40050f88b8e0, type: 3}
+  - {fileID: 8300000, guid: 3829ba0903ac321479e238aa12678eef, type: 3}
+  - {fileID: 8300000, guid: 7477149bc8ce50f47b6da9c0ac101159, type: 3}
+  - {fileID: 8300000, guid: 870e7470645cdbf4a92ac270406a6262, type: 3}
+  - {fileID: 8300000, guid: acc991fa4f491eb459eaeff2a14315a6, type: 3}
+  - {fileID: 8300000, guid: f0097db37083b494caeda4518d43f695, type: 3}
+  - {fileID: 8300000, guid: c69ce7a7bf9baa8498caec51391c6080, type: 3}
+  - {fileID: 8300000, guid: 39ae09dae8fd56141a89579752b16bf0, type: 3}
+  buildingClips: []
+  vehicleClips: []
+  bottleClips:
+  - {fileID: 8300000, guid: 4d3cf314c75dd054bab8d4b91fc45eb9, type: 3}
+  - {fileID: 8300000, guid: c455f006b1644924f801f0193efab65d, type: 3}
+  - {fileID: 8300000, guid: b12859cbe401f8241b496448463d6a15, type: 3}
+  - {fileID: 8300000, guid: c546196007b924142a96a76ca60192dd, type: 3}

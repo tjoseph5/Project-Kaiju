@@ -16,11 +16,11 @@ MonoBehaviour:
   m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
-    m_Value: 0.95
+    m_Value: 0.8
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.45
+    m_Value: 0.1
     min: 0
   scatter:
     m_OverrideState: 1
@@ -33,7 +33,7 @@ MonoBehaviour:
     min: 0
   tint:
     m_OverrideState: 1
-    m_Value: {r: 0.9283019, g: 1, b: 0.9951863, a: 1}
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
@@ -68,13 +68,13 @@ MonoBehaviour:
   m_AdvancedMode: 0
   lift:
     m_OverrideState: 1
-    m_Value: {x: 0.9637206, y: 1, z: 0.87489593, w: 0}
+    m_Value: {x: 1, y: 0.980234, z: 0.98368776, w: 0}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 0.92113906, y: 0.89978707, z: 1, w: 0}
+    m_Value: {x: 1, y: 0.9386418, z: 0.9055388, w: 0}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.77845085, z: 0.69033474, w: 0}
+    m_Value: {x: 0.84659916, y: 0.9218881, z: 1, w: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +134,7 @@ MonoBehaviour:
     max: 100
   tint:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 37
     min: -100
     max: 100
 --- !u!114 &3641996828215843707
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
@@ -234,7 +234,7 @@ MonoBehaviour:
     max: 180
   saturation:
     m_OverrideState: 1
-    m_Value: 5
+    m_Value: 50
     min: -100
     max: 100
 --- !u!114 &5080676246654313645
@@ -252,20 +252,20 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   shadows:
-    m_OverrideState: 0
-    m_Value: {r: 0.4318975, g: 0.66392905, b: 0.6792453, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.29393023, g: 0.4517433, b: 0.46226418, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
   highlights:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 0.33490568, b: 0.6798953, a: 1}
+    m_Value: {r: 0.9216538, g: 0.61148095, b: 0.9339623, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
   balance:
     m_OverrideState: 1
-    m_Value: -47.1
+    m_Value: -47.7
     min: -100
     max: 100
 --- !u!114 &6247479520647624316

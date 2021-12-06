@@ -63,7 +63,7 @@ public class KaijuMovement : MonoBehaviour
     //Animator Bools and Setup
     #region Animation Setup
     [SerializeField] Animator targetAnimator; //Jim Animator
-    bool walk = false;
+    public bool walk = false;
     bool inAir = false;
     bool isAttacking = false;
     #endregion
@@ -101,9 +101,11 @@ public class KaijuMovement : MonoBehaviour
     #region Bool States
     [HideInInspector] public bool activateRagdoll;
     [HideInInspector] public bool dashAttack;
-    bool isGrounded;
+    public bool isGrounded;
     bool isPuking;
     #endregion
+
+    public AudioSource audioSource;
 
 
     void Awake()
@@ -128,6 +130,8 @@ public class KaijuMovement : MonoBehaviour
         pukeFX = rootRb.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<ParticleSystem>();
 
         heldObj = null;
+
+        audioSource = gameObject.GetComponent<AudioSource>();
 
         #region Config Joint Setup
 
@@ -164,6 +168,9 @@ public class KaijuMovement : MonoBehaviour
         playerJointSprings[13] = playerJoints[13].angularXDrive.positionSpring;  //Tail Spring
 
         #endregion
+
+        audioSource.volume = 0.1f;
+        audioSource.pitch = 1f;
     }
 
     void Update()
@@ -299,17 +306,18 @@ public class KaijuMovement : MonoBehaviour
 
             Debug.Log("hitsomething");
 
-            if (rayDownHit.collider && !activateRagdoll)
+            if (rayDownHit.collider.gameObject.layer == 9 && !activateRagdoll || rayDownHit.collider.gameObject.layer == 13 && !activateRagdoll)
             {
                 isGrounded = true;
 
                 if (attackTimer == 0)
                 {
-                    if (jumpControl.action.triggered && !activateRagdoll)
+                    if (jumpControl.action.triggered && !activateRagdoll && isGrounded)
                     {
-                        Debug.Log("jump");
+                        //Debug.Log("jump");
                         this.rootRb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
                         targetAnimator.SetTrigger("Jump");
+                        PlayAudio(1);
                         isGrounded = false;
                     }
                 }
@@ -365,6 +373,12 @@ public class KaijuMovement : MonoBehaviour
             {
                 activateRagdoll = false;
                 ActivateRagdoll(activateRagdoll);
+                PlayAudio(2);
+
+                foreach(ConfigurableJoint hit in playerJoints)
+                {
+                    hit.gameObject.GetComponent<GroundSFXHit>().hitGround = false;
+                }
             }
         }
 
@@ -372,6 +386,7 @@ public class KaijuMovement : MonoBehaviour
         {
             if (dashControl.action.triggered)
             {
+                PlayAudio(2);
                 rootRb.AddForce(rootRb.transform.forward.x * dashDistance, dashHeight, rootRb.transform.forward.z * dashDistance, ForceMode.Impulse);
                 activateRagdoll = true;
                 ActivateRagdoll(activateRagdoll);
@@ -516,6 +531,7 @@ public class KaijuMovement : MonoBehaviour
                 break;
         }
     }
+
 
     #region ActivateRagdoll
     public void ActivateRagdoll(bool activated)
@@ -687,6 +703,13 @@ public class KaijuMovement : MonoBehaviour
                 heldObj = null;
             }
         }
+    }
+
+    public void PlayAudio(int sfxValue, float volume = 0.1f, float pitch = 1)
+    {
+        audioSource.volume = volume;
+        audioSource.pitch = pitch;
+        audioSource.PlayOneShot(JimSFXPool.singleton.jimClips[sfxValue]);
     }
 
     #region Input Enable / Disable stuff

@@ -67,8 +67,35 @@ public class KaijuEventReferencer : MonoBehaviour
                 {
                     KaijuMovement.singleton.rayAttackHit.collider.gameObject.GetComponent<DestructableObject>().health -= 25;
                     KaijuMovement.singleton.rayAttackHit.collider.gameObject.GetComponent<DestructableObject>().recentlyHit = true;
+
+                    KaijuMovement.singleton.PlayAudio(7);
                 }
             }
         }
+    }
+
+    public void WalkAudioReferencer()
+    {
+        //volume = KaijuMovement.singleton.audioSource.volume;
+
+        if (KaijuMovement.singleton.isGrounded)
+        {
+            KaijuMovement.singleton.PlayAudio(0);
+        }
+    }
+
+    public void GrabP1AudioReferencer()
+    {
+        KaijuMovement.singleton.PlayAudio(3);
+    }
+
+    public void GrabP2AudioReferencer()
+    {
+        KaijuMovement.singleton.PlayAudio(4);
+    }
+
+    public void ThrowAudioReferencer()
+    {
+        KaijuMovement.singleton.PlayAudio(5);
     }
 }
