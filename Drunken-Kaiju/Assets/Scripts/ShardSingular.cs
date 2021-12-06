@@ -5,12 +5,14 @@ using UnityEngine;
 public class ShardSingular : MonoBehaviour
 {
 
-    bool landed;
     AudioSource audioSource;
+
+    Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = gameObject.GetComponent<Rigidbody>();
         ShardManager.singleton.shards.Add(gameObject);
         Destroy(gameObject, 10f);
         if (gameObject.GetComponent<Rigidbody>())
@@ -19,7 +21,6 @@ public class ShardSingular : MonoBehaviour
         }
 
         audioSource = gameObject.GetComponent<AudioSource>();
-        landed = false;
     }
 
     // Update is called once per frame
@@ -57,10 +58,8 @@ public class ShardSingular : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        if(/*col.gameObject.layer == 9 &&*/ !landed)
+        if(col.gameObject.layer == 9 && rb.velocity.sqrMagnitude > 1)
         {
-            landed = true;
-            //audioSource.volume = 0.5f;
             audioSource.Play();
         }
     }

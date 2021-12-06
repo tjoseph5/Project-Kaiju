@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3472974335216561021}
   - component: {fileID: 8061296784819063353}
   - component: {fileID: 2213679158106776023}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: shard1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 5
   MinDistance: 1
-  MaxDistance: 15
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 3472974334627063118}
   - component: {fileID: 8418671168791449139}
   - component: {fileID: 633587932694905161}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: shard3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -372,7 +372,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 5
   MinDistance: 1
-  MaxDistance: 15
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 3472974334570371334}
   - component: {fileID: 6421609042642496736}
   - component: {fileID: 4646668015517130239}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: shard5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +746,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 5
   MinDistance: 1
-  MaxDistance: 15
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -836,7 +836,7 @@ GameObject:
   - component: {fileID: 3472974335428448417}
   - component: {fileID: 4489733649193493678}
   - component: {fileID: 8948653884744922308}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: shard2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -970,7 +970,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 5
   MinDistance: 1
-  MaxDistance: 15
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -1060,7 +1060,7 @@ GameObject:
   - component: {fileID: 3472974334459733726}
   - component: {fileID: 6215893442853132095}
   - component: {fileID: 3748581333816482795}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: shard8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1193,7 +1193,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 5
   MinDistance: 1
-  MaxDistance: 15
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -1283,7 +1283,7 @@ GameObject:
   - component: {fileID: 3472974334998634333}
   - component: {fileID: 1629402527335128660}
   - component: {fileID: 1874258076232021711}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: shard9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1417,7 +1417,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 5
   MinDistance: 1
-  MaxDistance: 15
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -1507,7 +1507,7 @@ GameObject:
   - component: {fileID: 3472974334935643050}
   - component: {fileID: 2991000227903901792}
   - component: {fileID: 5435158964889174655}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: shard7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1640,7 +1640,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 5
   MinDistance: 1
-  MaxDistance: 15
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -1730,7 +1730,7 @@ GameObject:
   - component: {fileID: 3472974335063273118}
   - component: {fileID: 521652352536493196}
   - component: {fileID: 1099869318709778782}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: shard6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1864,7 +1864,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 5
   MinDistance: 1
-  MaxDistance: 15
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -1954,7 +1954,7 @@ GameObject:
   - component: {fileID: 3472974334184775868}
   - component: {fileID: 4305931437050183830}
   - component: {fileID: 5910806919677689027}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: shard4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2088,7 +2088,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 5
   MinDistance: 1
-  MaxDistance: 15
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0

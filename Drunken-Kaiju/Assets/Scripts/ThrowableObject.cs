@@ -112,6 +112,24 @@ public class ThrowableObject : MonoBehaviour
         {
             canBeHeld = true;
         }
+
+        if (col.gameObject.GetComponent<Rigidbody>() && col.gameObject.tag != "Player")
+        {
+            if (col.gameObject.GetComponent<Rigidbody>().velocity.sqrMagnitude > 5)
+            {
+                if (col.gameObject.layer != 7)
+                {
+                    objHealth -= 1;
+                }
+
+                if(col.gameObject.layer != 7 && objHealth >= 1)
+                {
+                    ScoreManager.singleton.standardScore += 50;
+                }
+
+            }
+        }
+
     }
 
     private void OnParticleCollision(GameObject col)
