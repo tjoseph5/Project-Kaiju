@@ -15,6 +15,8 @@ public class PickupObjects : MonoBehaviour
 
     AudioSource audioSource;
 
+    [SerializeField] GameObject pickupVFX;
+
     void Start()
     {
         player = null;
@@ -137,10 +139,18 @@ public class PickupObjects : MonoBehaviour
                     break;
 
                 case PickupTypes.clockPickup:
-                    if(Timer.singleton.gameOver == false)
+                    if(Timer.singleton.gameOver == false && Timer.singleton.minutes < 3)
                     {
                         Timer.singleton.minutes += 1;
                         Destroy(gameObject);
+                        GameObject vFX = Instantiate(pickupVFX, transform.position, transform.rotation, null);
+                    }
+                    else if(Timer.singleton.gameOver == false && Timer.singleton.minutes >= 3)
+                    {
+                        Timer.singleton.minutes = 3;
+                        Timer.singleton.seconds = 59;
+                        Destroy(gameObject);
+                        GameObject vFX = Instantiate(pickupVFX, transform.position, transform.rotation, null);
                     }
 
                     break;
@@ -158,7 +168,8 @@ public class PickupObjects : MonoBehaviour
         gameObject.GetComponent<ThrowableObject>().enabled = true;
         gameObject.GetComponent<Rigidbody>().useGravity = true;
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
-        ScoreManager.singleton.standardScore += 150;    
+        ScoreManager.singleton.standardScore += 150;
+        GameObject vFX = Instantiate(pickupVFX, transform.position, transform.rotation, null);
     }
 
     void PlayBottleAudio(int clip, float volume = 0.45f, bool looping = false)

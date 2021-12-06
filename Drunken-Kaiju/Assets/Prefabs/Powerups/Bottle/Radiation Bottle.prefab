@@ -364,6 +364,7 @@ MonoBehaviour:
   pickupTypes: 1
   hasDrank: 0
   rotateSpeed: 1
+  pickupVFX: {fileID: 6909998197678830824, guid: de577c99aa499804f883c72f84fe8bf5, type: 3}
 --- !u!114 &3603289250983777448
 MonoBehaviour:
   m_ObjectHideFlags: 0

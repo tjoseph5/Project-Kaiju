@@ -171,6 +171,9 @@ public class KaijuMovement : MonoBehaviour
 
         audioSource.volume = 0.1f;
         audioSource.pitch = 1f;
+
+        activateRagdoll = true;
+        ActivateRagdoll(activateRagdoll);
     }
 
     void Update()
