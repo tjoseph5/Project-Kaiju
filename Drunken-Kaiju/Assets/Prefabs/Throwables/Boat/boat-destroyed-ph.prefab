@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5336504429608219703}
   - component: {fileID: 2767896782417255940}
   - component: {fileID: 9195868169294717015}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: shard2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,20 +138,20 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e0c6f038ca86772448ecde4a86de6f9b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 5
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -184,7 +184,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.75
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -199,7 +199,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 1842775399320606624}
   - component: {fileID: 5456967720534876469}
   - component: {fileID: 4929587037218952961}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: shard1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,20 +362,20 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e0c6f038ca86772448ecde4a86de6f9b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 5
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -408,7 +408,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.75
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -423,7 +423,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 4387803321189892822}
   - component: {fileID: 1636150068579053618}
   - component: {fileID: 8214707891054131138}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: shard4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -586,20 +586,20 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e0c6f038ca86772448ecde4a86de6f9b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 5
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -632,7 +632,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.75
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -647,7 +647,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -706,6 +706,7 @@ Transform:
   - {fileID: 296501006645826940}
   - {fileID: 7928001950272927077}
   - {fileID: 7882526292900523421}
+  - {fileID: 3980502223418980628}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -740,7 +741,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 2.65
+  DopplerLevel: 5
   MinDistance: 1
   MaxDistance: 100
   Pan2D: 0
@@ -777,7 +778,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.65
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -792,7 +793,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -832,7 +833,7 @@ GameObject:
   - component: {fileID: 919010381379666798}
   - component: {fileID: 3396495956340933093}
   - component: {fileID: 2107700837545651043}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: shard5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -955,20 +956,20 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e0c6f038ca86772448ecde4a86de6f9b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 5
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1001,7 +1002,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.75
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1016,7 +1017,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1056,7 +1057,7 @@ GameObject:
   - component: {fileID: 6396469102118796513}
   - component: {fileID: 4779841644957012886}
   - component: {fileID: 6849447407233012383}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: shard3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,20 +1180,20 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e0c6f038ca86772448ecde4a86de6f9b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 5
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1225,7 +1226,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.75
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1240,7 +1241,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1265,3 +1266,73 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &3545241549240501606
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4209230016736722781}
+    m_Modifications:
+    - target: {fileID: 436479493602147442, guid: f538b4d8e3972a74693121154fbb1544, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 436479493602147442, guid: f538b4d8e3972a74693121154fbb1544, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 39.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 436479493602147442, guid: f538b4d8e3972a74693121154fbb1544, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 39.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 436479493602147442, guid: f538b4d8e3972a74693121154fbb1544, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 39.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 436479493602147442, guid: f538b4d8e3972a74693121154fbb1544, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436479493602147442, guid: f538b4d8e3972a74693121154fbb1544, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436479493602147442, guid: f538b4d8e3972a74693121154fbb1544, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436479493602147442, guid: f538b4d8e3972a74693121154fbb1544, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 436479493602147442, guid: f538b4d8e3972a74693121154fbb1544, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436479493602147442, guid: f538b4d8e3972a74693121154fbb1544, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436479493602147442, guid: f538b4d8e3972a74693121154fbb1544, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436479493602147442, guid: f538b4d8e3972a74693121154fbb1544, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646701056660822068, guid: f538b4d8e3972a74693121154fbb1544, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646701056660822068, guid: f538b4d8e3972a74693121154fbb1544, type: 3}
+      propertyPath: simulationSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f538b4d8e3972a74693121154fbb1544, type: 3}
+--- !u!4 &3980502223418980628 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 436479493602147442, guid: f538b4d8e3972a74693121154fbb1544, type: 3}
+  m_PrefabInstance: {fileID: 3545241549240501606}
+  m_PrefabAsset: {fileID: 0}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3293651715182421040}
   - component: {fileID: 8297436490800310792}
   - component: {fileID: 366746635458671894}
+  - component: {fileID: 8696529911560329101}
   m_Layer: 0
   m_Name: SPLASH
   m_TagString: Untagged
@@ -46,7 +47,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -4920,3 +4921,15 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &8696529911560329101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007489918812164893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed282afb43dbb774e8c160256d73b2b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

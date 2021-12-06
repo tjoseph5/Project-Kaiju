@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4066697495062084785}
   - component: {fileID: 3287960503230207219}
   - component: {fileID: 4493053129422524883}
+  - component: {fileID: 1340484736462993981}
   m_Layer: 0
   m_Name: Turbine
   m_TagString: Untagged
@@ -110,6 +111,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7938724794075651150, guid: 64d18648070892743898518b600450dd, type: 3}
+--- !u!114 &1340484736462993981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2553316290601868644}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86473b8c7d535c942bc624a58bbd94d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3615240645880014671
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419f171ee5b892c4abd80bc563f9f596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breakForce: 50
+  breakForce: 100
   buildingTypes: 10
   buildingHealth: 0
   health: 0

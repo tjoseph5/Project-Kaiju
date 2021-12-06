@@ -17,6 +17,8 @@ public class DestructableObject : MonoBehaviour
     [Range(0, 100)] public int health;
     [HideInInspector] public bool recentlyHit;
 
+    GameObject smokeFX;
+
     void Start()
     {
         if (buildingHealth)
@@ -28,6 +30,15 @@ public class DestructableObject : MonoBehaviour
             health = 0;
         }
 
+        if(this.buildingHealth && gameObject.transform.GetChild(0))
+        {
+            smokeFX = gameObject.transform.GetChild(0).gameObject;
+            smokeFX.SetActive(false);
+        }
+        else
+        {
+            smokeFX = null;
+        }
 
         //player = GameObject.FindGameObjectWithTag("Player").transform;
         player = null;
@@ -109,6 +120,11 @@ public class DestructableObject : MonoBehaviour
                 ScoreAddition(false, buildingHealth);
             }
             Destruction();
+        }
+
+        if (buildingHealth && health <= 50)
+        {
+            smokeFX.SetActive(true);
         }
     }
 
@@ -340,9 +356,20 @@ public class DestructableObject : MonoBehaviour
                     Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
                     rb.AddForce(force);
                 }
+
+                gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Stop();
+                gameObject.transform.GetChild(0).parent = null;
                 break;
 
             case BuildingTypes.windTurbine:
+
+                /*
+                transform.GetChild(0).gameObject.GetComponent<FanSpin>().speed = 0;
+                transform.GetChild(0).gameObject.GetComponent<ShardSingular>().enabled = true;
+                transform.GetChild(0).gameObject.AddComponent<Rigidbody>();
+                transform.GetChild(0).gameObject.layer = 7;
+                transform.GetChild(0).parent = null;
+                */
 
                 GameObject wTD = Instantiate(BuildingManager.singleton.destroyedBuildings[10], this.transform.position, this.transform.rotation);
                 wTD.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);

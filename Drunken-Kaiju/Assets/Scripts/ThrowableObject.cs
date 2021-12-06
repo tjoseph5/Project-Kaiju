@@ -16,9 +16,21 @@ public class ThrowableObject : MonoBehaviour
     Rigidbody rb;
     float yVelocity;
 
+    GameObject smokeFX;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+
+        if (transform.GetChild(0).GetComponent<ParticleSystem>())
+        {
+            smokeFX = transform.GetChild(0).gameObject;
+            smokeFX.SetActive(false);
+        }
+        else
+        {
+            smokeFX = null;
+        }
 
         switch (throwableTypes)
         {
@@ -72,6 +84,11 @@ public class ThrowableObject : MonoBehaviour
         {
             //gameObject.layer = 0;
         }
+
+        if(objHealth == 1 && smokeFX != null)
+        {
+            smokeFX.SetActive(true);
+        }
     }
 
     void OnCollisionEnter(Collision col)
@@ -95,6 +112,24 @@ public class ThrowableObject : MonoBehaviour
         {
             canBeHeld = true;
         }
+
+        if (col.gameObject.GetComponent<Rigidbody>() && col.gameObject.tag != "Player")
+        {
+            if (col.gameObject.GetComponent<Rigidbody>().velocity.sqrMagnitude > 5)
+            {
+                if (col.gameObject.layer != 7)
+                {
+                    objHealth -= 1;
+                }
+
+                if(col.gameObject.layer != 7 && objHealth >= 1)
+                {
+                    ScoreManager.singleton.standardScore += 50;
+                }
+
+            }
+        }
+
     }
 
     private void OnParticleCollision(GameObject col)
@@ -109,6 +144,12 @@ public class ThrowableObject : MonoBehaviour
     void Destruction()
     {
         Destroy(gameObject);
+
+        if (objHealth == 1 && smokeFX != null)
+        {
+            gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Stop();
+            gameObject.transform.GetChild(0).parent = null;
+        }
 
         switch (throwableTypes)
         {

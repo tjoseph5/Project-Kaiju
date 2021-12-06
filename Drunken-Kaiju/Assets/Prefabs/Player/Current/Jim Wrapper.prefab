@@ -6754,6 +6754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4af62a3c33f224ca3828998099a0f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkDustVFX: {fileID: 2056565004006252355, guid: c84d11beb6736204aa698222eff985d1, type: 3}
 --- !u!54 &7055547111656701733
 Rigidbody:
   m_ObjectHideFlags: 0

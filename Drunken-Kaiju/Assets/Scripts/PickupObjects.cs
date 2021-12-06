@@ -15,6 +15,8 @@ public class PickupObjects : MonoBehaviour
 
     AudioSource audioSource;
 
+    [SerializeField] GameObject pickupVFX;
+
     void Start()
     {
         player = null;
@@ -84,6 +86,28 @@ public class PickupObjects : MonoBehaviour
         }
     }
 
+    void OnCollisionStay(Collision col)
+    {
+        if(pickupTypes == PickupTypes.bottlePickup)
+        {
+            if (col.gameObject.layer == 9)
+            {
+                if (gameObject.GetComponent<Rigidbody>().velocity.magnitude > 1)
+                {
+                    if(audioSource.isPlaying == false)
+                    {
+                        PlayBottleAudio(1, 0.05f, true);
+                    }
+                }
+                else
+                {
+                    audioSource.loop = false;
+                    audioSource.Stop();
+                }     
+            }
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(pickupTypes == PickupTypes.clockPickup || pickupTypes == PickupTypes.healthPickup && KaijuMovement.singleton.health < 100)
@@ -115,10 +139,18 @@ public class PickupObjects : MonoBehaviour
                     break;
 
                 case PickupTypes.clockPickup:
-                    if(Timer.singleton.gameOver == false)
+                    if(Timer.singleton.gameOver == false && Timer.singleton.minutes < 3)
                     {
                         Timer.singleton.minutes += 1;
                         Destroy(gameObject);
+                        GameObject vFX = Instantiate(pickupVFX, transform.position, transform.rotation, null);
+                    }
+                    else if(Timer.singleton.gameOver == false && Timer.singleton.minutes >= 3)
+                    {
+                        Timer.singleton.minutes = 3;
+                        Timer.singleton.seconds = 59;
+                        Destroy(gameObject);
+                        GameObject vFX = Instantiate(pickupVFX, transform.position, transform.rotation, null);
                     }
 
                     break;
@@ -136,11 +168,13 @@ public class PickupObjects : MonoBehaviour
         gameObject.GetComponent<ThrowableObject>().enabled = true;
         gameObject.GetComponent<Rigidbody>().useGravity = true;
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
-        ScoreManager.singleton.standardScore += 150;    
+        ScoreManager.singleton.standardScore += 150;
+        GameObject vFX = Instantiate(pickupVFX, transform.position, transform.rotation, null);
     }
 
-    void PlayBottleAudio(int clip, float volume = 0.45f)
+    void PlayBottleAudio(int clip, float volume = 0.45f, bool looping = false)
     {
+        audioSource.loop = looping;
         audioSource.volume = volume;
         audioSource.PlayOneShot(JimSFXPool.singleton.bottleClips[clip]);
     }
