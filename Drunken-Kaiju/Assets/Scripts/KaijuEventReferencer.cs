@@ -6,6 +6,8 @@ public class KaijuEventReferencer : MonoBehaviour
 {
     public static KaijuEventReferencer animReferencer;
 
+    public GameObject walkDustVFX;
+
     void Awake()
     {
         animReferencer = this;

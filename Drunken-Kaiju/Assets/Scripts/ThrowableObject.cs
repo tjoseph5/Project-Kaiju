@@ -16,9 +16,21 @@ public class ThrowableObject : MonoBehaviour
     Rigidbody rb;
     float yVelocity;
 
+    GameObject smokeFX;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+
+        if (transform.GetChild(0).GetComponent<ParticleSystem>())
+        {
+            smokeFX = transform.GetChild(0).gameObject;
+            smokeFX.SetActive(false);
+        }
+        else
+        {
+            smokeFX = null;
+        }
 
         switch (throwableTypes)
         {
@@ -72,6 +84,11 @@ public class ThrowableObject : MonoBehaviour
         {
             //gameObject.layer = 0;
         }
+
+        if(objHealth == 1 && smokeFX != null)
+        {
+            smokeFX.SetActive(true);
+        }
     }
 
     void OnCollisionEnter(Collision col)
@@ -109,6 +126,12 @@ public class ThrowableObject : MonoBehaviour
     void Destruction()
     {
         Destroy(gameObject);
+
+        if (objHealth == 1 && smokeFX != null)
+        {
+            gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Stop();
+            gameObject.transform.GetChild(0).parent = null;
+        }
 
         switch (throwableTypes)
         {

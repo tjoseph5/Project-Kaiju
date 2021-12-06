@@ -433,7 +433,7 @@ public class KaijuMovement : MonoBehaviour
                 {
                     if (rayForwardHit.collider.tag == "Interactable" && rayForwardHit.collider.GetComponent<ThrowableObject>())
                     {
-                        if (rayForwardHit.collider.gameObject.GetComponent<Rigidbody>() && rayForwardHit.collider.GetComponent<ThrowableObject>().canBeHeld)
+                        if (rayForwardHit.collider.gameObject.GetComponent<Rigidbody>() && rayForwardHit.collider.GetComponent<ThrowableObject>().canBeHeld && heldObj == null)
                         {
                             if (!targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("WALKGAME"))
                             {
