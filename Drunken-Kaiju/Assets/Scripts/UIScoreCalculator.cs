@@ -17,11 +17,17 @@ public class UIScoreCalculator : MonoBehaviour
     [SerializeField] enum ScoreType { baseScore, specialScore, chainScore, finalScore, rank};
     [SerializeField] ScoreType scoreType = ScoreType.baseScore;
 
+    AudioSource audioSource;
+
+    [SerializeField] AudioClip click;
+    [SerializeField] AudioClip final;
 
     void Start()
     {
         //this.eGAnimator = UIManager.singleton.endGameUI.GetComponent<Animator>();
         //text = gameObject.GetComponent<TextMeshProUGUI>();
+
+        audioSource = eGAnimator.gameObject.GetComponent<AudioSource>();
 
         switch (scoreType)
         {
