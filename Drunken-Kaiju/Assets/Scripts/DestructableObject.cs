@@ -305,6 +305,11 @@ public class DestructableObject : MonoBehaviour
                     Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
                     rb.AddForce(force);
                 }
+
+                gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Stop();
+                gameObject.transform.GetChild(0).GetComponent<AutoCleaner>().enabled = true;
+                gameObject.transform.GetChild(0).parent = null;
+
                 break;
 
             case BuildingTypes.officeBuilding:
@@ -342,6 +347,10 @@ public class DestructableObject : MonoBehaviour
                     rb.AddForce(force);
                 }
 
+                gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Stop();
+                gameObject.transform.GetChild(0).GetComponent<AutoCleaner>().enabled = true;
+                gameObject.transform.GetChild(0).parent = null;
+
                 ScoreManager.singleton.standardScore += 900;
 
                 break;
@@ -358,6 +367,7 @@ public class DestructableObject : MonoBehaviour
                 }
 
                 gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Stop();
+                gameObject.transform.GetChild(0).GetComponent<AutoCleaner>().enabled = true;
                 gameObject.transform.GetChild(0).parent = null;
                 break;
 
@@ -424,21 +434,6 @@ public class DestructableObject : MonoBehaviour
         if (isSpecial)
         {
             ScoreManager.singleton.specialBuildingMultiplier += 1;
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if(buildingTypes == BuildingTypes.warehouse)
-        {
-            /*
-            gameObject.transform.GetChild(0).GetComponent<MeshCollider>().enabled = true;
-            gameObject.transform.GetChild(0).GetComponent<BoxCollider>().enabled = true;
-            gameObject.transform.GetChild(0).GetComponent<Rigidbody>().useGravity = true;
-            gameObject.transform.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
-            */
-            //gameObject.transform.GetChild(0).gameObject.SetActive(true);
-            //gameObject.transform.GetChild(0).parent = null;
         }
     }
 }

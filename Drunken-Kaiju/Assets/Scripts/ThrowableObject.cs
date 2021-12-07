@@ -148,6 +148,7 @@ public class ThrowableObject : MonoBehaviour
         if (objHealth == 1 && smokeFX != null)
         {
             gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Stop();
+            gameObject.transform.GetChild(0).GetComponent<AutoCleaner>().enabled = true;
             gameObject.transform.GetChild(0).parent = null;
         }
 
@@ -233,5 +234,17 @@ public class ThrowableObject : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    public void OnDestroy()
+    {
+        if (KaijuMovement.singleton.isHolding)
+        {
+            if (gameObject == KaijuMovement.singleton.heldObj)
+            {
+                KaijuMovement.singleton.ObjectPickupManager(KaijuMovement.singleton.heldObj.GetComponent<Rigidbody>());
+            }
+        }
+        
     }
 }

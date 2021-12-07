@@ -20,6 +20,7 @@ public class PickupObjects : MonoBehaviour
     void Start()
     {
         player = null;
+        hasDrank = false;
 
         switch (pickupTypes)
         { 
