@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419f171ee5b892c4abd80bc563f9f596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breakForce: 100
+  breakForce: 200
   buildingTypes: 7
   buildingHealth: 0
   health: 0

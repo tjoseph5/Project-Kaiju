@@ -48,7 +48,7 @@ public class KaijuMovement : MonoBehaviour
     #region Pickup/Throwing variables
     Transform objectHolderTransform;
     [HideInInspector] public GameObject heldObj;
-    bool isHolding;
+    public bool isHolding;
     [SerializeField] float throwPower;
 
     float dragStore;
@@ -171,6 +171,9 @@ public class KaijuMovement : MonoBehaviour
 
         audioSource.volume = 0.1f;
         audioSource.pitch = 1f;
+
+        //activateRagdoll = true;
+        //ActivateRagdoll(activateRagdoll);
     }
 
     void Update()
@@ -433,7 +436,7 @@ public class KaijuMovement : MonoBehaviour
                 {
                     if (rayForwardHit.collider.tag == "Interactable" && rayForwardHit.collider.GetComponent<ThrowableObject>())
                     {
-                        if (rayForwardHit.collider.gameObject.GetComponent<Rigidbody>() && rayForwardHit.collider.GetComponent<ThrowableObject>().canBeHeld)
+                        if (rayForwardHit.collider.gameObject.GetComponent<Rigidbody>() && rayForwardHit.collider.GetComponent<ThrowableObject>().canBeHeld && heldObj == null)
                         {
                             if (!targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("WALKGAME"))
                             {
