@@ -234,10 +234,17 @@ public class ThrowableObject : MonoBehaviour
                 }
                 break;
         }
+    }
 
-        if (KaijuMovement.singleton.heldObj == gameObject)
+    public void OnDestroy()
+    {
+        if (KaijuMovement.singleton.isHolding)
         {
-            KaijuMovement.singleton.heldObj = null;
+            if (gameObject == KaijuMovement.singleton.heldObj)
+            {
+                KaijuMovement.singleton.ObjectPickupManager(KaijuMovement.singleton.heldObj.GetComponent<Rigidbody>());
+            }
         }
+        
     }
 }
