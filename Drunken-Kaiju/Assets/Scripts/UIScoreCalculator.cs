@@ -65,6 +65,9 @@ public class UIScoreCalculator : MonoBehaviour
                     if (numberDisplay < ScoreManager.singleton.standardScore)
                     {
                         numberDisplay += (ScoreManager.singleton.standardScore / 100);
+
+                        audioSource.clip = click;
+                        audioSource.Play();
                     }
                     else if (numberDisplay >= ScoreManager.singleton.standardScore)
                     {
@@ -77,6 +80,9 @@ public class UIScoreCalculator : MonoBehaviour
                     if (numberDisplay < ScoreManager.singleton.specialBuildingMultiplier)
                     {
                         numberDisplay += 1;
+
+                        audioSource.clip = click;
+                        audioSource.Play();
                     }
                     else if (numberDisplay >= ScoreManager.singleton.specialBuildingMultiplier)
                     {
@@ -89,6 +95,9 @@ public class UIScoreCalculator : MonoBehaviour
                     if (numberDisplay < ScoreManager.singleton.chainReactionMultiplier)
                     {
                         numberDisplay += 1;
+
+                        audioSource.clip = click;
+                        audioSource.Play();
                     }
                     else if (numberDisplay >= ScoreManager.singleton.chainReactionMultiplier)
                     {
@@ -101,6 +110,9 @@ public class UIScoreCalculator : MonoBehaviour
                     if (numberDisplay < ScoreManager.singleton.totalScore)
                     {
                         numberDisplay += (ScoreManager.singleton.totalScore / 100);
+
+                        audioSource.clip = click;
+                        audioSource.Play();
                     }
                     else if (numberDisplay >= ScoreManager.singleton.totalScore)
                     {
