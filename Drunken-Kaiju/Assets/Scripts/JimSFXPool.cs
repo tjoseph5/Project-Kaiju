@@ -16,8 +16,11 @@ public class JimSFXPool : MonoBehaviour
     [Header("Vehicle Clips")]
     public List<AudioClip> vehicleClips = new List<AudioClip>();
 
-    [Header("Radiation Bottle Clip")]
+    [Header("Radiation Bottle Clips")]
     public List<AudioClip> bottleClips = new List<AudioClip>();
+
+    [Header("Menu UI Clips")]
+    public List<AudioClip> menuClips = new List<AudioClip>();
 
     private void Awake()
     {

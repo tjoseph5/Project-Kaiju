@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] [Range(0,2)] int uiStatus;
 
     [SerializeField] Slider pukeDisplay;
+    [SerializeField] TMPro.TextMeshProUGUI pukeNumber;
     GameObject chainMultiplierDisplay;
     [SerializeField] TMPro.TextMeshProUGUI scoreDisplayText;
     [SerializeField] TMPro.TextMeshProUGUI tempCRMDisplay;
@@ -43,6 +44,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         pukeDisplay.value = KaijuMovement.singleton.pukeAmount;
+        pukeNumber.text = KaijuMovement.singleton.pukeAmount.ToString() + " /100";
         scoreDisplayText.text = ScoreManager.singleton.standardScore.ToString();
         tempCRMDisplay.text = ScoreManager.singleton.tempCRMultiplier.ToString();
         tempCRSlider.value = ScoreManager.singleton.tempCRScoreTimer;
