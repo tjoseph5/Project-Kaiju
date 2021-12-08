@@ -50,6 +50,8 @@ public class Timer : MonoBehaviour
         else if (seconds > 59 && minutes == 0)
         {
             fullTimer = "01" + ":" + "00";
+
+            musicPlayer.time = 60;
         }
 
         if(minutes == 0)
