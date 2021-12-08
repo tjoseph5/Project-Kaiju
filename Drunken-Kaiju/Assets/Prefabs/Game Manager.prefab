@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1179864503161182207}
   - component: {fileID: 1170852664813792743}
   - component: {fileID: 1445278973499404207}
+  - component: {fileID: 5659397195618212641}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -153,6 +154,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b4d9dcaa681cbe74b859b001c92ad88a, type: 3}
   - {fileID: 8300000, guid: a810f0603d3a4a54ea2fcf16386d86e9, type: 3}
   - {fileID: 8300000, guid: ef614b0bcf6ba31408e14a7cce2dd048, type: 3}
+--- !u!114 &5659397195618212641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687992434590320908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b65154adc9179448c9e0ed96306eba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  select: {fileID: 2723289676080018070, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
+  startButton: {fileID: -1167849609692074537, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
+  exitPause: {fileID: -5782410236364971451, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
+  navigate: {fileID: 7017272571281466457, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
 --- !u!1 &8165019346892693903
 GameObject:
   m_ObjectHideFlags: 0

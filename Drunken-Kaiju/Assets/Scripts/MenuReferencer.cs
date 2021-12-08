@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MenuAudioReferencer : MonoBehaviour
+public class MenuReferencer : MonoBehaviour
 {
 
     AudioSource audioSource;
@@ -16,5 +16,10 @@ public class MenuAudioReferencer : MonoBehaviour
     {
         audioSource.volume = 0.5f;
         audioSource.PlayOneShot(JimSFXPool.singleton.menuClips[2]);
+    }
+
+    public void ResumeGame()
+    {
+        Menu.singleton.Resume();
     }
 }

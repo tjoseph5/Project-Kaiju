@@ -4757,6 +4757,8 @@ GameObject:
   - component: {fileID: 4286615751363414714}
   - component: {fileID: 568601076089709446}
   - component: {fileID: 6117967123817966355}
+  - component: {fileID: 4202287159783841610}
+  - component: {fileID: 8726512598652955465}
   m_Layer: 0
   m_Name: Pause Canvas
   m_TagString: Untagged
@@ -4845,3 +4847,34 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!95 &4202287159783841610
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9000488980575774176}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5552bef9232a39548ad6886166589957, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8726512598652955465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9000488980575774176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74fa3eef830594c439c8304a58c60d47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

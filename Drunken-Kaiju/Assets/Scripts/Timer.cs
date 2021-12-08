@@ -63,11 +63,11 @@ public class Timer : MonoBehaviour
             seconds -= Time.deltaTime;
             gameOver = false;
 
-            //musicPlayer.UnPause();
+            KaijuMovement.singleton.OnEnable();
         }
         else
         {
-            //musicPlayer.Pause();
+            KaijuMovement.singleton.OnDisable();
         }
 
         if (seconds <= 0 && minutes > 0)
@@ -87,5 +87,17 @@ public class Timer : MonoBehaviour
             timeStart = false;
             KaijuMovement.singleton.OnDisable();
         }
+
+        if(GameObject.Find("Game Manager"))
+        {
+            if (timeStart || !timeStart && !gameOver && !rankFinished)
+            {
+                Menu.singleton.menuStates = Menu.MenuStates.inGame;
+            }
+            else if (gameOver)
+            {
+                Menu.singleton.menuStates = Menu.MenuStates.endGame;
+            }
+        } 
     }
 }

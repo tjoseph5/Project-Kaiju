@@ -716,7 +716,7 @@ public class KaijuMovement : MonoBehaviour
     }
 
     #region Input Enable / Disable stuff
-    private void OnEnable()
+    public void OnEnable()
     {
         movementControl.action.Enable();
         jumpControl.action.Enable();

@@ -57,7 +57,10 @@ public class ShardSingular : MonoBehaviour
 
     void OnDestroy()
     {
-        ShardManager.singleton.shards.Remove(gameObject);
+        if(GameObject.Find("Game Manager"))
+        {
+            ShardManager.singleton.shards.Remove(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision col)

@@ -361,7 +361,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f5af0960-899a-40a0-a2bf-f5b55fa13b23"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""path"": ""<Keyboard>/backspace"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
