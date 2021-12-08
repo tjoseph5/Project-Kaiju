@@ -98,6 +98,7 @@ MonoBehaviour:
   pickupTypes: 2
   hasDrank: 0
   rotateSpeed: 1
+  audioSource: {fileID: 0}
   pickupVFX: {fileID: 6909998197678830824, guid: 4dc161a89d052cf4692f2b603e16e8f1, type: 3}
 --- !u!64 &7305005122791522658
 MeshCollider:

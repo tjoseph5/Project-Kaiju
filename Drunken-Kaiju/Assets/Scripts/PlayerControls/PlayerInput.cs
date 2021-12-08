@@ -287,6 +287,30 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Start Button"",
+                    ""type"": ""Button"",
+                    ""id"": ""118dabb4-139a-4fb9-a9a7-5a623ed2c92d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Exit Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""62643d60-693f-47f0-ae07-94d74efc4c5c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Menu Movement"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""162f18c3-c571-405d-8597-2ed2e8faadc2"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -311,6 +335,171 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""588a2dc8-b23d-467c-89cb-e0446dc41861"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Start Button"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d6eea367-7b11-4b62-a0cc-9da72b900b96"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Start Button"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f5af0960-899a-40a0-a2bf-f5b55fa13b23"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a1e4f783-8b17-4f33-9f83-a75319652080"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fdee5be7-2556-4b5e-8ecc-7f1e8aa6e43d"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""f4586f7a-1abc-4efd-9025-52c75a1d6edf"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""c9a4b82d-c97e-42c4-9140-909e15b8824d"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""1d2a087e-68d6-4c55-a0c7-2638b17cd137"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""a303b9d8-768a-412d-bdd5-aab0275dc178"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""25a766ca-fe48-4ac9-8aab-fa340089ae2f"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Arrows"",
+                    ""id"": ""f9094ec0-ad7c-4c8c-b218-a05fd2e0211d"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""b20c5380-1b3c-437e-8a10-5cbc7644087e"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""e5078b54-bdd9-4a9a-ba5c-4490157d8f29"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""6d484e74-0b08-4920-879b-e44bdf75e834"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""2b6d13f2-2e00-48a7-b15b-2262617254f7"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -329,6 +518,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_Select = m_Menu.FindAction("Select", throwIfNotFound: true);
+        m_Menu_StartButton = m_Menu.FindAction("Start Button", throwIfNotFound: true);
+        m_Menu_ExitPause = m_Menu.FindAction("Exit Pause", throwIfNotFound: true);
+        m_Menu_MenuMovement = m_Menu.FindAction("Menu Movement", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -460,11 +652,17 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Menu;
     private IMenuActions m_MenuActionsCallbackInterface;
     private readonly InputAction m_Menu_Select;
+    private readonly InputAction m_Menu_StartButton;
+    private readonly InputAction m_Menu_ExitPause;
+    private readonly InputAction m_Menu_MenuMovement;
     public struct MenuActions
     {
         private @PlayerInput m_Wrapper;
         public MenuActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Select => m_Wrapper.m_Menu_Select;
+        public InputAction @StartButton => m_Wrapper.m_Menu_StartButton;
+        public InputAction @ExitPause => m_Wrapper.m_Menu_ExitPause;
+        public InputAction @MenuMovement => m_Wrapper.m_Menu_MenuMovement;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -477,6 +675,15 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Select.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
                 @Select.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
                 @Select.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
+                @StartButton.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnStartButton;
+                @StartButton.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnStartButton;
+                @StartButton.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnStartButton;
+                @ExitPause.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnExitPause;
+                @ExitPause.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnExitPause;
+                @ExitPause.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnExitPause;
+                @MenuMovement.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMenuMovement;
+                @MenuMovement.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMenuMovement;
+                @MenuMovement.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMenuMovement;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -484,6 +691,15 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Select.started += instance.OnSelect;
                 @Select.performed += instance.OnSelect;
                 @Select.canceled += instance.OnSelect;
+                @StartButton.started += instance.OnStartButton;
+                @StartButton.performed += instance.OnStartButton;
+                @StartButton.canceled += instance.OnStartButton;
+                @ExitPause.started += instance.OnExitPause;
+                @ExitPause.performed += instance.OnExitPause;
+                @ExitPause.canceled += instance.OnExitPause;
+                @MenuMovement.started += instance.OnMenuMovement;
+                @MenuMovement.performed += instance.OnMenuMovement;
+                @MenuMovement.canceled += instance.OnMenuMovement;
             }
         }
     }
@@ -501,5 +717,8 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     public interface IMenuActions
     {
         void OnSelect(InputAction.CallbackContext context);
+        void OnStartButton(InputAction.CallbackContext context);
+        void OnExitPause(InputAction.CallbackContext context);
+        void OnMenuMovement(InputAction.CallbackContext context);
     }
 }

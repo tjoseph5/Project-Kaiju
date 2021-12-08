@@ -11,20 +11,32 @@ public class Menu : MonoBehaviour
 
     Scene scene;
 
+    int sceneID;
+
     // Start is called before the first frame update
     void Start()
     {
         scene = SceneManager.GetActiveScene();
+
+        sceneID = scene.buildIndex;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (select.action.triggered)
+        switch (sceneID)
         {
-            select.action.Disable();
+            case 0:
+                if (select.action.triggered)
+                {
+                    select.action.Disable();
 
-            LevelLoader.loader.LoadLevel(1);
+                    LevelLoader.loader.LoadLevel(1);
+                }
+                break;
+
+            case 1:
+                break;
         }
     }
 

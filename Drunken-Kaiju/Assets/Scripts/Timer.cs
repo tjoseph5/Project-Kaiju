@@ -14,6 +14,9 @@ public class Timer : MonoBehaviour
     public bool timeStart;
     public bool rankFinished;
 
+    public string fullMusicTimer;
+
+    [HideInInspector] public AudioSource musicPlayer;
 
     void Awake()
     {
@@ -24,12 +27,13 @@ public class Timer : MonoBehaviour
     void Start()
     {
         rankFinished = false;
+        musicPlayer = transform.GetChild(0).gameObject.GetComponent<AudioSource>();
     }
 
 
     void Update()
     {
-       
+        fullMusicTimer = ((int)musicPlayer.time).ToString();
 
         if(seconds > 10 && seconds < 59)
         {
@@ -41,20 +45,29 @@ public class Timer : MonoBehaviour
         }
         else if (seconds > 59 && minutes != 0)
         {
-            fullTimer = "0" + minutes + ":"  + "00";
+            fullTimer = "0" + (minutes + 1) + ":"  + "00";
         }
         else if (seconds > 59 && minutes == 0)
         {
-            fullTimer = "0" + minutes + ":" + "00";
+            fullTimer = "01" + ":" + "00";
         }
 
-
+        if(minutes == 0)
+        {
+            UIManager.singleton.timerText.color = Color.red;
+        }
 
 
         if (timeStart)
         {
             seconds -= Time.deltaTime;
             gameOver = false;
+
+            //musicPlayer.UnPause();
+        }
+        else
+        {
+            //musicPlayer.Pause();
         }
 
         if (seconds <= 0 && minutes > 0)

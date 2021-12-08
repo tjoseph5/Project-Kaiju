@@ -121,12 +121,6 @@ public class ThrowableObject : MonoBehaviour
                 {
                     objHealth -= 1;
                 }
-
-                if(col.gameObject.layer != 7 && objHealth >= 1)
-                {
-                    ScoreManager.singleton.standardScore += 50;
-                }
-
             }
         }
 
@@ -136,7 +130,7 @@ public class ThrowableObject : MonoBehaviour
     {
         if (col.gameObject.tag == "Puke")
         {
-            Debug.Log("bruh");
+            //Debug.Log("bruh");
             Destruction();
         }
     }
@@ -245,6 +239,10 @@ public class ThrowableObject : MonoBehaviour
                 KaijuMovement.singleton.ObjectPickupManager(KaijuMovement.singleton.heldObj.GetComponent<Rigidbody>());
             }
         }
-        
+
+        ScoreManager.singleton.standardScore += 50;
+
+        //Debug.Log(gameObject.name + " " + Time.realtimeSinceStartup + " " + gameObject.transform.position);
+
     }
 }

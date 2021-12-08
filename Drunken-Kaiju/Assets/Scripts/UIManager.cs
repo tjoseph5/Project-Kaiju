@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         pukeDisplay.value = KaijuMovement.singleton.pukeAmount;
-        pukeNumber.text = KaijuMovement.singleton.pukeAmount.ToString() + " /100";
+        pukeNumber.text = ((int)KaijuMovement.singleton.pukeAmount).ToString() + " /100";
         scoreDisplayText.text = ScoreManager.singleton.standardScore.ToString();
         tempCRMDisplay.text = ScoreManager.singleton.tempCRMultiplier.ToString();
         tempCRSlider.value = ScoreManager.singleton.tempCRScoreTimer;

@@ -13,7 +13,7 @@ public class PickupObjects : MonoBehaviour
 
     public float rotateSpeed;
 
-    AudioSource audioSource;
+    public AudioSource audioSource;
 
     [SerializeField] GameObject pickupVFX;
 
@@ -143,6 +143,8 @@ public class PickupObjects : MonoBehaviour
                     if(Timer.singleton.gameOver == false && Timer.singleton.minutes < 3)
                     {
                         Timer.singleton.minutes += 1;
+                        Timer.singleton.musicPlayer.time -= 60;
+                        KaijuMovement.singleton.audioSource.PlayOneShot(JimSFXPool.singleton.pickupClips[0]);
                         Destroy(gameObject);
                         GameObject vFX = Instantiate(pickupVFX, transform.position, transform.rotation, null);
                     }
@@ -150,6 +152,8 @@ public class PickupObjects : MonoBehaviour
                     {
                         Timer.singleton.minutes = 3;
                         Timer.singleton.seconds = 59;
+                        Timer.singleton.musicPlayer.time = 0;
+                        KaijuMovement.singleton.audioSource.PlayOneShot(JimSFXPool.singleton.pickupClips[0]);
                         Destroy(gameObject);
                         GameObject vFX = Instantiate(pickupVFX, transform.position, transform.rotation, null);
                     }

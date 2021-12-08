@@ -12,15 +12,19 @@ public class ShardSingular : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (gameObject.GetComponent<AudioSource>())
+        {
+            audioSource = gameObject.GetComponent<AudioSource>();
+        }
+
         rb = gameObject.GetComponent<Rigidbody>();
         ShardManager.singleton.shards.Add(gameObject);
         Destroy(gameObject, 10f);
         if (gameObject.GetComponent<Rigidbody>())
         {
             gameObject.GetComponent<Rigidbody>().mass = 0.5f;
-        }
-
-        audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.volume = 0.15f;
+        }  
     }
 
     // Update is called once per frame

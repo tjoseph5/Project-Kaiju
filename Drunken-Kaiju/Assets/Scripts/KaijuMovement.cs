@@ -169,7 +169,7 @@ public class KaijuMovement : MonoBehaviour
 
         #endregion
 
-        audioSource.volume = 0.1f;
+        audioSource.volume = 0.2f;
         audioSource.pitch = 1f;
 
         //activateRagdoll = true;
@@ -284,7 +284,7 @@ public class KaijuMovement : MonoBehaviour
             isPuking = false;
             activateRagdoll = true;
             ActivateRagdoll(activateRagdoll);
-            Debug.Log(isPuking);
+            //Debug.Log(isPuking);
         }
         #endregion
 
@@ -307,7 +307,7 @@ public class KaijuMovement : MonoBehaviour
         if (Physics.Raycast(rootRb.transform.position, rayDownDir, out rayDownHit, rayDownLength, ~playerLayerMask))
         {
 
-            Debug.Log("hitsomething");
+            //Debug.Log("hitsomething");
 
             if (rayDownHit.collider.gameObject.layer == 9 && !activateRagdoll || rayDownHit.collider.gameObject.layer == 13 && !activateRagdoll)
             {
@@ -349,14 +349,14 @@ public class KaijuMovement : MonoBehaviour
                 if (rayAttackHit.collider.GetComponent<DestructableObject>().buildingHealth)
                 {
                     building = rayAttackHit.collider.GetComponent<DestructableObject>();
-                    Debug.Log("the building is now: " + building.name);
+                    //Debug.Log("the building is now: " + building.name);
                 }
             }
         }
         else
         {
             building = null;
-            Debug.Log("the building is nothing");
+            //Debug.Log("the building is nothing");
         }
 
 
@@ -511,7 +511,7 @@ public class KaijuMovement : MonoBehaviour
                 if (rootRb.velocity.magnitude > groundSpeedCap)
                 {
                     rootRb.velocity = Vector3.ClampMagnitude(rootRb.velocity, groundSpeedCap);
-                    Debug.Log("Clamped Ground Speed");
+                    //Debug.Log("Clamped Ground Speed");
                 }
 
                 break;
@@ -519,7 +519,7 @@ public class KaijuMovement : MonoBehaviour
             case false:
 
                 rootRb.velocity = Vector3.ClampMagnitude(rootRb.velocity, velocityCap);
-                Debug.Log("Clamped Overall Speed");
+                //Debug.Log("Clamped Overall Speed");
 
                 this.walk = false;
                 this.inAir = true;
@@ -669,7 +669,7 @@ public class KaijuMovement : MonoBehaviour
         {
             dragStore = objRb.drag;
             heldObj = rayForwardHit.collider.gameObject;
-            Debug.Log("Pickup " + heldObj.name);
+            //Debug.Log("Pickup " + heldObj.name);
             objRb.useGravity = false;
             objRb.isKinematic = true;
             objRb.drag = 10;
@@ -708,7 +708,7 @@ public class KaijuMovement : MonoBehaviour
         }
     }
 
-    public void PlayAudio(int sfxValue, float volume = 0.1f, float pitch = 1)
+    public void PlayAudio(int sfxValue, float volume = 0.2f, float pitch = 1)
     {
         audioSource.volume = volume;
         audioSource.pitch = pitch;

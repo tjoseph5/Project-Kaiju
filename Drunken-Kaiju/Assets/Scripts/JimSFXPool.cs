@@ -10,8 +10,8 @@ public class JimSFXPool : MonoBehaviour
     [Header("Jim Clips")]
     public List<AudioClip> jimClips = new List<AudioClip>();
 
-    [Header("Building Clips")]
-    public List<AudioClip> buildingClips = new List<AudioClip>();
+    [Header("Pickup Clips")]
+    public List<AudioClip> pickupClips = new List<AudioClip>();
 
     [Header("Vehicle Clips")]
     public List<AudioClip> vehicleClips = new List<AudioClip>();
