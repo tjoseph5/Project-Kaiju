@@ -62,7 +62,7 @@ public class KaijuMovement : MonoBehaviour
 
     //Animator Bools and Setup
     #region Animation Setup
-    [SerializeField] Animator targetAnimator; //Jim Animator
+    public Animator targetAnimator; //Jim Animator
     public bool walk = false;
     bool inAir = false;
     bool isAttacking = false;
@@ -438,14 +438,9 @@ public class KaijuMovement : MonoBehaviour
                     {
                         if (rayForwardHit.collider.gameObject.GetComponent<Rigidbody>() && rayForwardHit.collider.GetComponent<ThrowableObject>().canBeHeld && heldObj == null)
                         {
-                            if (!targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("WALKGAME"))
+                            if (!targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("GRAB"))
                             {
                                 targetAnimator.SetTrigger("Grab");
-                            }
-                            else if (targetAnimator.GetCurrentAnimatorStateInfo(0).IsName("WALKGAME"))
-                            {
-                                targetAnimator.SetTrigger("Grab");
-                                //ObjectPickupManager(rayForwardHit.collider.gameObject.GetComponent<Rigidbody>());
                             }
                         }
 

@@ -100,4 +100,10 @@ public class KaijuEventReferencer : MonoBehaviour
     {
         KaijuMovement.singleton.PlayAudio(5);
     }
+
+    public void PickupTriggerReset()
+    {
+        KaijuMovement.singleton.targetAnimator.ResetTrigger("Grab");
+        KaijuMovement.singleton.targetAnimator.ResetTrigger("Throw");
+    }
 }
