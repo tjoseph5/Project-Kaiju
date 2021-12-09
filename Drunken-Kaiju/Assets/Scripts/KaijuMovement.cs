@@ -541,7 +541,7 @@ public class KaijuMovement : MonoBehaviour
     {
         //The Universal Joint Drive's spring Position amount for when the player enters a Ragdoll state
         JointDrive deactiveRagdollDrive = playerJoints[0].angularXDrive;
-        deactiveRagdollDrive.positionSpring = 35;
+        deactiveRagdollDrive.positionSpring = 50;
 
         //This setups each JointDrive Variable to equal the stored float of each joint's spring position
         #region Joint Drive Setup

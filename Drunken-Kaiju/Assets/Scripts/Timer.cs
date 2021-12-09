@@ -28,10 +28,12 @@ public class Timer : MonoBehaviour
     {
         rankFinished = false;
         musicPlayer = transform.GetChild(0).gameObject.GetComponent<AudioSource>();
+
+        musicPlayer.Play();
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         fullMusicTimer = ((int)musicPlayer.time).ToString();
 
@@ -51,25 +53,19 @@ public class Timer : MonoBehaviour
         {
             fullTimer = "01" + ":" + "00";
 
-            musicPlayer.time = 60;
+            if(musicPlayer.time < 180)
+            {
+                musicPlayer.time = 180;
+            }
         }
 
         if(minutes == 0)
         {
             UIManager.singleton.timerText.color = Color.red;
         }
-
-
-        if (timeStart)
-        {
-            seconds -= Time.deltaTime;
-            gameOver = false;
-
-            KaijuMovement.singleton.OnEnable();
-        }
         else
         {
-            KaijuMovement.singleton.OnDisable();
+            UIManager.singleton.timerText.color = Color.black;
         }
 
         if (seconds <= 0 && minutes > 0)
@@ -101,5 +97,20 @@ public class Timer : MonoBehaviour
                 Menu.singleton.menuStates = Menu.MenuStates.endGame;
             }
         } 
+    }
+
+    void Update()
+    {
+        if (timeStart)
+        {
+            seconds -= Time.deltaTime;
+            gameOver = false;
+
+            KaijuMovement.singleton.OnEnable();
+        }
+        else
+        {
+            KaijuMovement.singleton.OnDisable();
+        }
     }
 }
