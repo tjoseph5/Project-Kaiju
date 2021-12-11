@@ -837,7 +837,7 @@ ConstantForce:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3164804436808348296}
   m_Enabled: 1
-  m_Force: {x: 0, y: 20, z: 0}
+  m_Force: {x: 0, y: 40, z: 0}
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
@@ -6705,6 +6705,7 @@ MonoBehaviour:
   ragdollActivateSpeed: -10
   pukeFX: {fileID: 0}
   heldObj: {fileID: 0}
+  isHolding: 0
   throwPower: 20
   targetAnimator: {fileID: 7055547111465377148}
   walk: 0
