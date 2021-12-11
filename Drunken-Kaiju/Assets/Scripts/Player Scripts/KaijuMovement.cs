@@ -372,7 +372,7 @@ public class KaijuMovement : MonoBehaviour
 
         if (jumpControl.action.triggered && activateRagdoll) //Resets player after ragdolled
         {
-            if (rootRb.velocity.magnitude < 0.2)
+            if (rootRb.velocity.magnitude < 0.5f)
             {
                 activateRagdoll = false;
                 ActivateRagdoll(activateRagdoll);
@@ -463,6 +463,7 @@ public class KaijuMovement : MonoBehaviour
         if (isHolding)
         {
             heldObj.transform.position = objectHolderTransform.transform.position;
+            heldObj.transform.rotation = objectHolderTransform.transform.rotation;
             //Physics.IgnoreLayerCollision(6, 8, true);
         }
         else if (!isHolding)

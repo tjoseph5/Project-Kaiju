@@ -6,15 +6,15 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
+    //THIS SCRIPT SHOULD BE WORKED UPON AND SHOULD BE ONLY FOR DETECTING WHICH SCENE THE GAME IS IN, PAUSING AND UNPAUSING, AND LOADING/STARTING AND QUITTING THE GAME
+
     public static Menu singleton;
 
     [Header("Control Setup")]
-    [SerializeField] InputActionReference select;
-    [SerializeField] InputActionReference startButton;
-    [SerializeField] InputActionReference exitPause;
-    [SerializeField] InputActionReference navigate;
-
-    Vector2 navigationVector;
+    public InputActionReference select;
+    public InputActionReference startButton;
+    public InputActionReference exitPause;
+    public InputActionReference navigate;
 
     Scene scene;
 
@@ -48,7 +48,7 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        navigationVector = navigate.action.ReadValue<Vector2>().normalized;
+        
 
         switch (sceneID)
         {
