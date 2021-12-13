@@ -4104,18 +4104,18 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
-  shallowColor: {r: 0, g: 0.30231452, b: 0.5, a: 0.5019608}
+  shallowColor: {r: 0, g: 0.30231377, b: 0.5, a: 0.5019608}
   deepColor: {r: 0, g: 0.6745098, b: 0.8509804, a: 1}
   colorDepth: 0
-  horizonColor: {r: 0.07532271, g: 0, b: 1, a: 1}
+  horizonColor: {r: 0.07532223, g: 0, b: 1, a: 1}
   horizonDistance: 20
   shoreFade: 1
-  shoreColor: {r: 0, g: 1, b: 0.30964053, a: 0.604}
+  shoreColor: {r: 0, g: 1, b: 0.3096398, a: 0.604}
   shoreStrength: 0.604
   shoreBlend: 1
   shoreDepth: 0.74
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.10745899, g: 0.611, b: 1, a: 0}
+  underwaterColor: {r: 0.10745827, g: 0.611, b: 1, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.232
   surfaceFoamTexture: {fileID: 2800000, guid: 772031b03d9d46e4ab03e15c8e17718c, type: 3}
@@ -13270,7 +13270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &777929999
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14875,10 +14875,10 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 2800000, guid: 3c92b878fe7d7e44f903be9fdfc75b00, type: 3}
-  shallowColor: {r: 0.25872427, g: 0.8449912, b: 0.8509804, a: 0.5019608}
-  deepColor: {r: 0.0815916, g: 0.58524245, b: 0.6981132, a: 0.62352943}
+  shallowColor: {r: 0.25872356, g: 0.8449912, b: 0.8509804, a: 0.5019608}
+  deepColor: {r: 0.081591, g: 0.58524245, b: 0.6981132, a: 0.62352943}
   colorDepth: 4
-  horizonColor: {r: 0, g: 0.34035498, b: 0.49056596, a: 1}
+  horizonColor: {r: 0, g: 0.34035426, b: 0.49056596, a: 1}
   horizonDistance: 20
   shoreFade: 1
   shoreColor: {r: 1, g: 1, b: 1, a: 0}
@@ -14886,7 +14886,7 @@ MonoBehaviour:
   shoreBlend: 1
   shoreDepth: 0
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.17546055, g: 0.6792453, b: 0.29213622, a: 0}
+  underwaterColor: {r: 0.17545986, g: 0.6792453, b: 0.2921355, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}
@@ -17481,10 +17481,10 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 2800000, guid: 3c92b878fe7d7e44f903be9fdfc75b00, type: 3}
-  shallowColor: {r: 0.25868547, g: 0.8509804, b: 0.29961845, a: 0.5019608}
-  deepColor: {r: 0, g: 0.08480113, b: 0.0035211036, a: 1}
+  shallowColor: {r: 0.25868475, g: 0.8509804, b: 0.2996177, a: 0.5019608}
+  deepColor: {r: 0, g: 0.08480055, b: 0.0035211036, a: 1}
   colorDepth: 4
-  horizonColor: {r: 0.08556483, g: 0.8, b: 0, a: 1}
+  horizonColor: {r: 0.0855642, g: 0.8, b: 0, a: 1}
   horizonDistance: 20
   shoreFade: 1
   shoreColor: {r: 1, g: 1, b: 1, a: 0}
@@ -17492,7 +17492,7 @@ MonoBehaviour:
   shoreBlend: 1
   shoreDepth: 0
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.17545459, g: 0.6792453, b: 0.29212993, a: 0}
+  underwaterColor: {r: 0.1754539, g: 0.6792453, b: 0.29212922, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}
@@ -17500,7 +17500,7 @@ MonoBehaviour:
   surfaceFoamCutoff: 0.62
   surfaceFoamDistortion: 0
   surfaceFoamBlend: 1
-  surfaceFoamColor1: {r: 0.45625633, g: 0.9811321, b: 0.2627334, a: 0.3215686}
+  surfaceFoamColor1: {r: 0.45625633, g: 0.9811321, b: 0.26273268, a: 0.3215686}
   surfaceFoamColor2: {r: 0.7304496, g: 1, b: 0.61698115, a: 0.7294118}
   surfaceFoamMovement: {x: 0.7, y: 0, z: 0.47, w: 0.01}
   surfaceFoamDirection1: 0.7
@@ -17523,7 +17523,7 @@ MonoBehaviour:
   foamMovement: 0
   intersectionFoamDepth: 0.6
   intersectionFoamTexture: {fileID: 2800000, guid: 86ed7ce9e52fd71459c3ce9ac144d310, type: 3}
-  intersectionFoamColor: {r: 0.2313154, g: 0.5058824, b: 0.10974676, a: 1}
+  intersectionFoamColor: {r: 0.23131469, g: 0.5058824, b: 0.10974603, a: 1}
   intersectionFoamMovement: {x: 0, y: 0}
   intersectionFoamDirection: 0
   intersectionFoamSpeed: 0
@@ -17541,7 +17541,7 @@ MonoBehaviour:
   shoreFoamBreakupScale: 31.2
   lighting: 0
   lightingSmoothness: 1
-  lightingSpecularColor: {r: 0.37598678, g: 0.9433962, b: 0.3683858, a: 0}
+  lightingSpecularColor: {r: 0.37598607, g: 0.9433962, b: 0.36838508, a: 0}
   lightingDiffuseColor: {r: 0, g: 0, b: 0, a: 0}
   lightingHardness: 1
   normalsTexture: {fileID: 2800000, guid: a41da5f5671718b47bbc71e9ef691103, type: 3}
@@ -62967,7 +62967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &7570456338386869186
 GameObject:
   m_ObjectHideFlags: 0
@@ -62989,7 +62989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &7570456338549080967
 GameObject:
   m_ObjectHideFlags: 0
@@ -63011,7 +63011,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &7570456338836251459
 GameObject:
   m_ObjectHideFlags: 0
@@ -63033,7 +63033,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &7570456339186918409
 GameObject:
   m_ObjectHideFlags: 0
@@ -63055,7 +63055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &7570456339235418202
 GameObject:
   m_ObjectHideFlags: 0
@@ -63077,7 +63077,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &7570456339321872480
 GameObject:
   m_ObjectHideFlags: 0
@@ -63099,7 +63099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &7570456339533234851
 GameObject:
   m_ObjectHideFlags: 0
@@ -63121,7 +63121,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &7570456339881893430
 GameObject:
   m_ObjectHideFlags: 0
@@ -63144,7 +63144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &7570456340063365294
 GameObject:
   m_ObjectHideFlags: 0
@@ -63166,7 +63166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &7570456340275120287
 GameObject:
   m_ObjectHideFlags: 0
@@ -63188,7 +63188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7818090224170347799
 Transform:
   m_ObjectHideFlags: 0
