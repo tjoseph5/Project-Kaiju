@@ -58,6 +58,43 @@ public class MenuSelectUI : MonoBehaviour
             optionInt = tempOptionIntStore;
         }
 
+        switch (optionInt)
+        {
+            case 0:
+                dynamicCameras[1].SetActive(true);
+                dynamicCameras[2].SetActive(false);
+                dynamicCameras[3].SetActive(false);
+                dynamicCameras[4].SetActive(false);
+
+                break;
+
+            case 1:
+                dynamicCameras[1].SetActive(false);
+                dynamicCameras[2].SetActive(true);
+                dynamicCameras[3].SetActive(false);
+                dynamicCameras[4].SetActive(false);
+
+                break;
+
+            case 2:
+                dynamicCameras[1].SetActive(false);
+                dynamicCameras[2].SetActive(false);
+                dynamicCameras[3].SetActive(true);
+                dynamicCameras[4].SetActive(false);
+
+                break;
+
+            case 3:
+                dynamicCameras[1].SetActive(false);
+                dynamicCameras[2].SetActive(false);
+                dynamicCameras[3].SetActive(false);
+                dynamicCameras[4].SetActive(true);
+
+                break;
+        }
+
+
+
         switch (Menu.singleton.sceneID)
         {
             case 0:

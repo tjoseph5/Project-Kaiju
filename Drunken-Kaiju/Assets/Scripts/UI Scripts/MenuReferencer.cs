@@ -22,4 +22,21 @@ public class MenuReferencer : MonoBehaviour
     {
         Menu.singleton.Resume();
     }
+
+    public void TitleNext()
+    {
+        Animator anim = gameObject.GetComponent<Animator>();
+
+        anim.SetTrigger("next");
+    }
+
+    public void TitleSelectEnable()
+    {
+        GameObject.Find("Clock UI").GetComponent<MenuSelectUI>().enabled = true;
+    }
+
+    public void TitleStopRotatingCamera()
+    {
+        GameObject.Find("Background Rotation Camera").SetActive(false);
+    }
 }

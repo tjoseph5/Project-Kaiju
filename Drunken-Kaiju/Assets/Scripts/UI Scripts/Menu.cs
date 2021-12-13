@@ -46,10 +46,7 @@ public class Menu : MonoBehaviour
 
         sceneID = scene.buildIndex;
 
-        if(sceneID == 0)
-        {
-            pauseAnimator = null;
-        }
+        titleStarted = false;
     }
 
     // Update is called once per frame
@@ -60,11 +57,16 @@ public class Menu : MonoBehaviour
         switch (sceneID)
         {
             case 0:
-                if (select.action.triggered)
+                if (startButton.action.triggered)
                 {
-                    select.action.Disable();
+                    //LevelLoader.loader.LoadLevel(1);
+                    pauseAnimator.SetTrigger("next");
 
-                    LevelLoader.loader.LoadLevel(1);
+                    if (pauseAnimator.GetCurrentAnimatorStateInfo(0).IsName("PlayGlowng"))
+                    {
+                        startButton.action.Disable();
+                        titleStarted = true;
+                    }
                 }
                 break;
 
