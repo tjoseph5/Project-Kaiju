@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/PlayerControls/PlayerInput.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/Player Scripts/PlayerControls/PlayerInput.inputactions'
 
 using System;
 using System.Collections;
@@ -305,10 +305,34 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Menu Movement"",
-                    ""type"": ""PassThrough"",
+                    ""name"": ""(U) Menu Movement"",
+                    ""type"": ""Button"",
+                    ""id"": ""f7e72550-e500-47c4-8d2b-4e5beb7bf9c2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""(D) Menu Movement"",
+                    ""type"": ""Button"",
+                    ""id"": ""12a62470-bc51-4259-b7b1-fae759826674"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""(L) Menu Movement"",
+                    ""type"": ""Button"",
                     ""id"": ""162f18c3-c571-405d-8597-2ed2e8faadc2"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""(R) Menu Movement"",
+                    ""type"": ""Button"",
+                    ""id"": ""01672f5c-8cc6-406b-8597-9c2b4f40ba99"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -382,124 +406,179 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""fdee5be7-2556-4b5e-8ecc-7f1e8aa6e43d"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
+                    ""id"": ""b34db769-aec7-454e-834c-c3f6342f60b9"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": ""Press"",
+                    ""processors"": ""Normalize(min=1,max=1)"",
                     ""groups"": """",
-                    ""action"": ""Menu Movement"",
+                    ""action"": ""(L) Menu Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""WASD"",
-                    ""id"": ""f4586f7a-1abc-4efd-9025-52c75a1d6edf"",
-                    ""path"": ""2DVector"",
+                    ""name"": """",
+                    ""id"": ""403cb7ae-b80b-4194-ae0a-d242bbe919bf"",
+                    ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Menu Movement"",
-                    ""isComposite"": true,
+                    ""action"": ""(L) Menu Movement"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""c9a4b82d-c97e-42c4-9140-909e15b8824d"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Menu Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""1d2a087e-68d6-4c55-a0c7-2638b17cd137"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Menu Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""a303b9d8-768a-412d-bdd5-aab0275dc178"",
+                    ""name"": """",
+                    ""id"": ""0fe55750-ff0e-4a15-85e7-4efc182c39b1"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Menu Movement"",
+                    ""action"": ""(L) Menu Movement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""25a766ca-fe48-4ac9-8aab-fa340089ae2f"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Menu Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Arrows"",
-                    ""id"": ""f9094ec0-ad7c-4c8c-b218-a05fd2e0211d"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Menu Movement"",
-                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""b20c5380-1b3c-437e-8a10-5cbc7644087e"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Menu Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""e5078b54-bdd9-4a9a-ba5c-4490157d8f29"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Menu Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""6d484e74-0b08-4920-879b-e44bdf75e834"",
+                    ""name"": """",
+                    ""id"": ""a62c7ede-f2eb-4a7e-b6da-3ca310b803ae"",
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Menu Movement"",
+                    ""action"": ""(L) Menu Movement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""right"",
-                    ""id"": ""2b6d13f2-2e00-48a7-b15b-2262617254f7"",
+                    ""name"": """",
+                    ""id"": ""cd329e74-aa32-4a04-a61a-d785b1fcb739"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": ""Press"",
+                    ""processors"": ""Normalize(min=1,max=1)"",
+                    ""groups"": """",
+                    ""action"": ""(R) Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a183431d-df30-4ce1-9e9a-b2f1d115b526"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""(R) Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6837ebf1-33f8-4e8d-9572-4172de8d8246"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""(R) Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""445c1a3c-e417-4878-81e0-e3f65d70343f"",
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Menu Movement"",
+                    ""action"": ""(R) Menu Movement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6dff4853-238c-4709-8170-0df0924c6f95"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": ""Press"",
+                    ""processors"": ""Normalize(min=1,max=1)"",
+                    ""groups"": """",
+                    ""action"": ""(U) Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""60c124e9-a1b7-4577-8224-c98149678320"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""(U) Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9025b8e0-4b42-4489-82cd-47bcdd3b98e6"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""(U) Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3c86ba00-6d05-42aa-835c-f742492873e4"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""(U) Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1bd5524c-ef99-4ab9-ac27-5b5960730ba6"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": ""Press"",
+                    ""processors"": ""Normalize(min=1,max=1)"",
+                    ""groups"": """",
+                    ""action"": ""(D) Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""16d341ff-8a6e-4a6b-adf1-e5417fbe1bb5"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""(D) Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e76e7ac-61d0-470c-922f-125711b255e9"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""(D) Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d0e093cf-a4f4-44b3-b6c1-09149fb9fed6"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""(D) Menu Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -520,7 +599,10 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         m_Menu_Select = m_Menu.FindAction("Select", throwIfNotFound: true);
         m_Menu_StartButton = m_Menu.FindAction("Start Button", throwIfNotFound: true);
         m_Menu_ExitPause = m_Menu.FindAction("Exit Pause", throwIfNotFound: true);
-        m_Menu_MenuMovement = m_Menu.FindAction("Menu Movement", throwIfNotFound: true);
+        m_Menu_UMenuMovement = m_Menu.FindAction("(U) Menu Movement", throwIfNotFound: true);
+        m_Menu_DMenuMovement = m_Menu.FindAction("(D) Menu Movement", throwIfNotFound: true);
+        m_Menu_LMenuMovement = m_Menu.FindAction("(L) Menu Movement", throwIfNotFound: true);
+        m_Menu_RMenuMovement = m_Menu.FindAction("(R) Menu Movement", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -654,7 +736,10 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     private readonly InputAction m_Menu_Select;
     private readonly InputAction m_Menu_StartButton;
     private readonly InputAction m_Menu_ExitPause;
-    private readonly InputAction m_Menu_MenuMovement;
+    private readonly InputAction m_Menu_UMenuMovement;
+    private readonly InputAction m_Menu_DMenuMovement;
+    private readonly InputAction m_Menu_LMenuMovement;
+    private readonly InputAction m_Menu_RMenuMovement;
     public struct MenuActions
     {
         private @PlayerInput m_Wrapper;
@@ -662,7 +747,10 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         public InputAction @Select => m_Wrapper.m_Menu_Select;
         public InputAction @StartButton => m_Wrapper.m_Menu_StartButton;
         public InputAction @ExitPause => m_Wrapper.m_Menu_ExitPause;
-        public InputAction @MenuMovement => m_Wrapper.m_Menu_MenuMovement;
+        public InputAction @UMenuMovement => m_Wrapper.m_Menu_UMenuMovement;
+        public InputAction @DMenuMovement => m_Wrapper.m_Menu_DMenuMovement;
+        public InputAction @LMenuMovement => m_Wrapper.m_Menu_LMenuMovement;
+        public InputAction @RMenuMovement => m_Wrapper.m_Menu_RMenuMovement;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -681,9 +769,18 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @ExitPause.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnExitPause;
                 @ExitPause.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnExitPause;
                 @ExitPause.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnExitPause;
-                @MenuMovement.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMenuMovement;
-                @MenuMovement.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMenuMovement;
-                @MenuMovement.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMenuMovement;
+                @UMenuMovement.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnUMenuMovement;
+                @UMenuMovement.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnUMenuMovement;
+                @UMenuMovement.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnUMenuMovement;
+                @DMenuMovement.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnDMenuMovement;
+                @DMenuMovement.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnDMenuMovement;
+                @DMenuMovement.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnDMenuMovement;
+                @LMenuMovement.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnLMenuMovement;
+                @LMenuMovement.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnLMenuMovement;
+                @LMenuMovement.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnLMenuMovement;
+                @RMenuMovement.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnRMenuMovement;
+                @RMenuMovement.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnRMenuMovement;
+                @RMenuMovement.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnRMenuMovement;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -697,9 +794,18 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @ExitPause.started += instance.OnExitPause;
                 @ExitPause.performed += instance.OnExitPause;
                 @ExitPause.canceled += instance.OnExitPause;
-                @MenuMovement.started += instance.OnMenuMovement;
-                @MenuMovement.performed += instance.OnMenuMovement;
-                @MenuMovement.canceled += instance.OnMenuMovement;
+                @UMenuMovement.started += instance.OnUMenuMovement;
+                @UMenuMovement.performed += instance.OnUMenuMovement;
+                @UMenuMovement.canceled += instance.OnUMenuMovement;
+                @DMenuMovement.started += instance.OnDMenuMovement;
+                @DMenuMovement.performed += instance.OnDMenuMovement;
+                @DMenuMovement.canceled += instance.OnDMenuMovement;
+                @LMenuMovement.started += instance.OnLMenuMovement;
+                @LMenuMovement.performed += instance.OnLMenuMovement;
+                @LMenuMovement.canceled += instance.OnLMenuMovement;
+                @RMenuMovement.started += instance.OnRMenuMovement;
+                @RMenuMovement.performed += instance.OnRMenuMovement;
+                @RMenuMovement.canceled += instance.OnRMenuMovement;
             }
         }
     }
@@ -719,6 +825,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         void OnSelect(InputAction.CallbackContext context);
         void OnStartButton(InputAction.CallbackContext context);
         void OnExitPause(InputAction.CallbackContext context);
-        void OnMenuMovement(InputAction.CallbackContext context);
+        void OnUMenuMovement(InputAction.CallbackContext context);
+        void OnDMenuMovement(InputAction.CallbackContext context);
+        void OnLMenuMovement(InputAction.CallbackContext context);
+        void OnRMenuMovement(InputAction.CallbackContext context);
     }
 }

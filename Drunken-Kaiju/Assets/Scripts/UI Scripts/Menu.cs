@@ -10,22 +10,29 @@ public class Menu : MonoBehaviour
 
     public static Menu singleton;
 
-    [Header("Control Setup")]
+    [Header("Base Control Setup")]
     public InputActionReference select;
     public InputActionReference startButton;
     public InputActionReference exitPause;
-    public InputActionReference navigate;
 
+    [Header("Navigate Control Setup")]
+    public InputActionReference navigateL;
+    public InputActionReference navigateR;
+    public InputActionReference navigateU;
+    public InputActionReference navigateD;
+
+    [Header("Scene Management")]
     Scene scene;
 
-    int sceneID;
+    public int sceneID;
 
     public Animator pauseAnimator;
 
     public enum MenuStates { mainMenu, howToPlay, inGame, endGame}
     public MenuStates menuStates = MenuStates.mainMenu;
 
-    bool howToPlay;
+    public bool howToPlay;
+    public bool titleStarted;
 
     void Awake()
     {
@@ -125,7 +132,11 @@ public class Menu : MonoBehaviour
         select.action.Enable();
         startButton.action.Enable();
         exitPause.action.Enable();
-        navigate.action.Enable();
+
+        navigateL.action.Enable();
+        navigateR.action.Enable();
+        navigateU.action.Enable();
+        navigateD.action.Enable();
     }
 
     private void OnDisable()
@@ -133,7 +144,11 @@ public class Menu : MonoBehaviour
         select.action.Disable();
         startButton.action.Disable();
         exitPause.action.Disable();
-        navigate.action.Disable();
+
+        navigateL.action.Disable();
+        navigateR.action.Disable();
+        navigateU.action.Disable();
+        navigateD.action.Disable();
     }
     #endregion
 }
