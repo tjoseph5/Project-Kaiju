@@ -12,13 +12,36 @@ public class MenuSelectUI : MonoBehaviour
     [SerializeField] [Range(0, 3)] int optionInt;
     [SerializeField] int tempOptionIntStore;
 
+    Vector3 [] lerpStartPos = new Vector3[4];
+    Vector3 [] lerpEndPos = new Vector3[4];
+
+    [SerializeField] float desiredDuration;
+    float elapsedTime;
+
     void Start()
     {
         optionInt = 0;
+
+        lerpStartPos[0] = optionCards[0].transform.position;
+        lerpStartPos[1] = optionCards[1].transform.position;
+        lerpStartPos[2] = optionCards[2].transform.position;
+        lerpStartPos[3] = optionCards[3].transform.position;
+
+        lerpEndPos[0] = new Vector3(optionCards[0].transform.position.x, optionCards[0].transform.position.y + 30, 0);
+        lerpEndPos[1] = new Vector3(optionCards[1].transform.position.x, optionCards[1].transform.position.y + 30, 0);
+        lerpEndPos[2] = new Vector3(optionCards[2].transform.position.x, optionCards[2].transform.position.y + 30, 0);
+        lerpEndPos[3] = new Vector3(optionCards[3].transform.position.x, optionCards[3].transform.position.y - 30, 0);
     }
 
     void Update()
     {
+        elapsedTime += Time.deltaTime;
+        float percentageMax = elapsedTime / desiredDuration;
+
+        if(Menu.singleton.navigateU.action.triggered || Menu.singleton.navigateD.action.triggered|| Menu.singleton.navigateL.action.triggered|| Menu.singleton.navigateR.action.triggered)
+        {
+            //elapsedTime = 0;
+        }
 
         if (optionInt > 3)
         {
@@ -64,7 +87,13 @@ public class MenuSelectUI : MonoBehaviour
                 dynamicCameras[1].SetActive(true);
                 dynamicCameras[2].SetActive(false);
                 dynamicCameras[3].SetActive(false);
-                dynamicCameras[4].SetActive(false);
+                dynamicCameras[4].SetActive(false); 
+
+                optionCards[0].transform.position = Vector3.Lerp(lerpStartPos[0], lerpEndPos[0], Mathf.SmoothStep(0, 1, percentageMax));
+
+                optionCards[1].transform.position = Vector3.Lerp(new Vector3(lerpEndPos[1].x, lerpEndPos[1].y - 30, 0), lerpStartPos[1], Mathf.SmoothStep(0, 1, percentageMax));
+                optionCards[2].transform.position = Vector3.Lerp(new Vector3(lerpEndPos[2].x, lerpEndPos[2].y - 30, 0), lerpStartPos[2], Mathf.SmoothStep(0, 1, percentageMax));
+                optionCards[3].transform.position = Vector3.Lerp(new Vector3(lerpEndPos[3].x, lerpEndPos[3].y + 30, 0), lerpStartPos[3], Mathf.SmoothStep(0, 1, percentageMax));
 
                 break;
 
@@ -74,6 +103,11 @@ public class MenuSelectUI : MonoBehaviour
                 dynamicCameras[3].SetActive(false);
                 dynamicCameras[4].SetActive(false);
 
+                optionCards[1].transform.position = Vector3.Lerp(lerpStartPos[1], lerpEndPos[1], Mathf.SmoothStep(0, 1, percentageMax));
+
+                optionCards[0].transform.position = Vector3.Lerp(new Vector3(lerpEndPos[0].x, lerpEndPos[0].y - 30, 0), lerpStartPos[0], Mathf.SmoothStep(0, 1, percentageMax));
+                optionCards[2].transform.position = Vector3.Lerp(new Vector3(lerpEndPos[2].x, lerpEndPos[2].y - 30, 0), lerpStartPos[2], Mathf.SmoothStep(0, 1, percentageMax));
+                optionCards[3].transform.position = Vector3.Lerp(new Vector3(lerpEndPos[3].x, lerpEndPos[3].y + 30, 0), lerpStartPos[3], Mathf.SmoothStep(0, 1, percentageMax));
                 break;
 
             case 2:
@@ -82,6 +116,11 @@ public class MenuSelectUI : MonoBehaviour
                 dynamicCameras[3].SetActive(true);
                 dynamicCameras[4].SetActive(false);
 
+                optionCards[2].transform.position = Vector3.Lerp(lerpStartPos[2], lerpEndPos[2], Mathf.SmoothStep(0, 1, percentageMax));
+
+                optionCards[0].transform.position = Vector3.Lerp(new Vector3(lerpEndPos[0].x, lerpEndPos[0].y - 30, 0), lerpStartPos[0], Mathf.SmoothStep(0, 1, percentageMax));
+                optionCards[1].transform.position = Vector3.Lerp(new Vector3(lerpEndPos[1].x, lerpEndPos[1].y - 30, 0), lerpStartPos[1], Mathf.SmoothStep(0, 1, percentageMax));
+                optionCards[3].transform.position = Vector3.Lerp(new Vector3(lerpEndPos[3].x, lerpEndPos[3].y + 30, 0), lerpStartPos[3], Mathf.SmoothStep(0, 1, percentageMax));
                 break;
 
             case 3:
@@ -90,6 +129,11 @@ public class MenuSelectUI : MonoBehaviour
                 dynamicCameras[3].SetActive(false);
                 dynamicCameras[4].SetActive(true);
 
+                optionCards[3].transform.position = Vector3.Lerp(lerpStartPos[3], lerpEndPos[3], Mathf.SmoothStep(0, 1, percentageMax));
+
+                optionCards[1].transform.position = Vector3.Lerp(new Vector3(lerpEndPos[1].x, lerpEndPos[1].y - 30, 0), lerpStartPos[1], Mathf.SmoothStep(0, 1, percentageMax));
+                optionCards[2].transform.position = Vector3.Lerp(new Vector3(lerpEndPos[2].x, lerpEndPos[2].y - 30, 0), lerpStartPos[2], Mathf.SmoothStep(0, 1, percentageMax));
+                optionCards[0].transform.position = Vector3.Lerp(new Vector3(lerpEndPos[0].x, lerpEndPos[0].y - 30, 0), lerpStartPos[0], Mathf.SmoothStep(0, 1, percentageMax));
                 break;
         }
 
