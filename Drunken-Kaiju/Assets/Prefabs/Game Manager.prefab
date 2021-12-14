@@ -169,9 +169,15 @@ MonoBehaviour:
   select: {fileID: 2723289676080018070, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   startButton: {fileID: -1167849609692074537, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
   exitPause: {fileID: -5782410236364971451, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
-  navigate: {fileID: 7017272571281466457, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
+  navigateL: {fileID: 7017272571281466457, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
+  navigateR: {fileID: -6277148948462462412, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
+  navigateU: {fileID: -5800487266822584722, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
+  navigateD: {fileID: -3644537893418705047, guid: c3f48b21657004f4ab8f02d008d78a73, type: 3}
+  sceneID: 0
   pauseAnimator: {fileID: 0}
   menuStates: 0
+  howToPlay: 0
+  titleStarted: 0
 --- !u!1 &8165019346892693903
 GameObject:
   m_ObjectHideFlags: 0
