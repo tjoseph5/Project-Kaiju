@@ -10,7 +10,7 @@ public class MenuSelectUI : MonoBehaviour
     public GameObject[] dynamicCameras;
 
     [SerializeField] [Range(0, 3)] int optionInt;
-    [SerializeField] int tempOptionIntStore;
+    int tempOptionIntStore;
 
     Vector3 [] lerpStartPos = new Vector3[4];
     Vector3 [] lerpEndPos = new Vector3[4];
@@ -35,13 +35,14 @@ public class MenuSelectUI : MonoBehaviour
 
     void Update()
     {
-        elapsedTime += Time.deltaTime;
-        float percentageMax = elapsedTime / desiredDuration;
-
-        if(Menu.singleton.navigateU.action.triggered || Menu.singleton.navigateD.action.triggered|| Menu.singleton.navigateL.action.triggered|| Menu.singleton.navigateR.action.triggered)
+        if (Menu.singleton.navigateU.action.triggered || Menu.singleton.navigateD.action.triggered || Menu.singleton.navigateL.action.triggered || Menu.singleton.navigateR.action.triggered)
         {
-            //elapsedTime = 0;
+            elapsedTime = 0;
         }
+
+        elapsedTime += Time.deltaTime;
+
+        float percentageMax = elapsedTime / desiredDuration;
 
         if (optionInt > 3)
         {
@@ -94,7 +95,6 @@ public class MenuSelectUI : MonoBehaviour
                 optionCards[1].transform.position = Vector3.Lerp(new Vector3(lerpEndPos[1].x, lerpEndPos[1].y - 30, 0), lerpStartPos[1], Mathf.SmoothStep(0, 1, percentageMax));
                 optionCards[2].transform.position = Vector3.Lerp(new Vector3(lerpEndPos[2].x, lerpEndPos[2].y - 30, 0), lerpStartPos[2], Mathf.SmoothStep(0, 1, percentageMax));
                 optionCards[3].transform.position = Vector3.Lerp(new Vector3(lerpEndPos[3].x, lerpEndPos[3].y + 30, 0), lerpStartPos[3], Mathf.SmoothStep(0, 1, percentageMax));
-
                 break;
 
             case 1:
