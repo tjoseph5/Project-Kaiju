@@ -37,6 +37,19 @@ public class MenuReferencer : MonoBehaviour
 
     public void TitleStopRotatingCamera()
     {
-        GameObject.Find("Background Rotation Camera").SetActive(false);
+        if(GameObject.Find("Background Rotation Camera"))
+        {
+            GameObject.Find("Background Rotation Camera").SetActive(false);
+        }
+    }
+
+    public void LoadintoGame()
+    {
+        LevelLoader.loader.LoadLevel(1);
+    }
+
+    public void EndApplication()
+    {
+        Application.Quit();
     }
 }

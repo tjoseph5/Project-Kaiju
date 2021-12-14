@@ -144,7 +144,37 @@ public class MenuSelectUI : MonoBehaviour
             case 0:
                 if (Menu.singleton.titleStarted)
                 {
-                    
+                    switch (Menu.singleton.menuStates)
+                    {
+                        case Menu.MenuStates.mainMenu:
+                            if (Menu.singleton.select.action.triggered)
+                            {
+                                switch (optionInt)
+                                {
+                                    case 0:
+                                        Menu.singleton.pauseAnimator.SetTrigger("play");
+                                        Debug.Log("Play");
+                                        break;
+
+                                    case 1:
+                                        Menu.singleton.pauseAnimator.SetTrigger("htp");
+                                        Menu.singleton.menuStates = Menu.MenuStates.howToPlay;
+                                        Debug.Log("HTP");
+                                        break;
+
+                                    case 2:
+                                        Menu.singleton.pauseAnimator.SetTrigger("exit");
+                                        Debug.Log("Exit");
+                                        break;
+
+                                    case 3:
+                                        Menu.singleton.pauseAnimator.SetTrigger("credits");
+                                        Debug.Log("Credit");
+                                        break;
+                                }
+                            }
+                            break;
+                    }
                 }
                 break;
 

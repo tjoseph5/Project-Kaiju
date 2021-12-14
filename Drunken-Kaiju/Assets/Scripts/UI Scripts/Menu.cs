@@ -30,8 +30,6 @@ public class Menu : MonoBehaviour
 
     public enum MenuStates { mainMenu, howToPlay, inGame, endGame}
     public MenuStates menuStates = MenuStates.mainMenu;
-
-    public bool howToPlay;
     public bool titleStarted;
 
     void Awake()
@@ -52,20 +50,27 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
         switch (sceneID)
         {
             case 0:
                 if (startButton.action.triggered)
                 {
-                    //LevelLoader.loader.LoadLevel(1);
-                    pauseAnimator.SetTrigger("next");
-
-                    if (pauseAnimator.GetCurrentAnimatorStateInfo(0).IsName("PlayGlowng"))
+                    if (pauseAnimator.GetCurrentAnimatorStateInfo(0).IsName("Play Glowing"))
                     {
                         startButton.action.Disable();
                         titleStarted = true;
+                        Debug.Log("entering menu");
+                    }
+
+                    pauseAnimator.SetTrigger("next");
+                }
+
+                if(select.action.triggered || exitPause.action.triggered)
+                {
+                    if(menuStates == MenuStates.howToPlay && pauseAnimator.GetCurrentAnimatorStateInfo(0).IsName("How To Play"))
+                    {
+                        pauseAnimator.SetTrigger("next");
+                        menuStates = MenuStates.mainMenu;
                     }
                 }
                 break;
@@ -98,19 +103,6 @@ public class Menu : MonoBehaviour
                 }
 
                 break;
-        }
-
-        if (!GameObject.Find("Game Manager"))
-        {
-            if (!howToPlay)
-            {
-                menuStates = MenuStates.mainMenu;
-            }
-            else
-            {
-                menuStates = MenuStates.howToPlay;
-            }
-            
         }
     }
 
