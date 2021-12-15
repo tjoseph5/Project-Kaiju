@@ -169,6 +169,7 @@ public class MenuSelectUI : MonoBehaviour
 
                                     case 3:
                                         Menu.singleton.pauseAnimator.SetTrigger("credits");
+                                        Menu.singleton.menuStates = Menu.MenuStates.howToPlay;
                                         Debug.Log("Credit");
                                         break;
                                 }

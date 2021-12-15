@@ -67,7 +67,7 @@ public class Menu : MonoBehaviour
 
                 if(select.action.triggered || exitPause.action.triggered)
                 {
-                    if(menuStates == MenuStates.howToPlay && pauseAnimator.GetCurrentAnimatorStateInfo(0).IsName("How To Play"))
+                    if(menuStates == MenuStates.howToPlay && pauseAnimator.GetCurrentAnimatorStateInfo(0).IsName("How To Play") || menuStates == MenuStates.howToPlay && pauseAnimator.GetCurrentAnimatorStateInfo(0).IsName("Credits"))
                     {
                         pauseAnimator.SetTrigger("next");
                         menuStates = MenuStates.mainMenu;
