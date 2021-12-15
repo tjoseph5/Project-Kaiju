@@ -20,7 +20,10 @@ public class MenuReferencer : MonoBehaviour
 
     public void ResumeGame()
     {
-        Menu.singleton.Resume();
+        if(Menu.singleton.sceneID == 1)
+        {
+            Menu.singleton.Resume();
+        }
     }
 
     public void TitleNext()
@@ -45,11 +48,32 @@ public class MenuReferencer : MonoBehaviour
 
     public void LoadintoGame()
     {
-        LevelLoader.loader.LoadLevel(1);
+        if(Menu.singleton.sceneID == 0)
+        {
+            LevelLoader.loader.LoadLevel(1);
+        }
     }
 
     public void EndApplication()
     {
         Application.Quit();
+    }
+
+    public void PauseTriggerReset()
+    {
+        Menu.singleton.pauseAnimator.ResetTrigger("Pause");
+    }
+
+    public void LoadintoDummy()
+    {
+        if (Menu.singleton.sceneID == 1)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        }
+    }
+
+    public void LoadintoMain()
+    {
+        LevelLoader.loader.LoadLevel(0);
     }
 }

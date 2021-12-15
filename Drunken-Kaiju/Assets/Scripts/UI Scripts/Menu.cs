@@ -86,7 +86,7 @@ public class Menu : MonoBehaviour
                         pauseAnimator.SetTrigger("Pause");
                         Pause();
                     }
-                    else if (!Timer.singleton.timeStart)
+                    else if (!Timer.singleton.gameOver && !Timer.singleton.timeStart && !Timer.singleton.rankFinished)
                     {
                         pauseAnimator.SetTrigger("Pause");
                     }
@@ -100,6 +100,15 @@ public class Menu : MonoBehaviour
                 if (exitPause.action.triggered && !Timer.singleton.timeStart)
                 {
                     pauseAnimator.SetTrigger("Pause");
+                }
+
+                if (select.action.triggered || exitPause.action.triggered)
+                {
+                    if (menuStates == MenuStates.howToPlay && pauseAnimator.GetCurrentAnimatorStateInfo(0).IsName("How To Play"))
+                    {
+                        pauseAnimator.SetTrigger("next");
+                        menuStates = MenuStates.inGame;
+                    }
                 }
 
                 break;
