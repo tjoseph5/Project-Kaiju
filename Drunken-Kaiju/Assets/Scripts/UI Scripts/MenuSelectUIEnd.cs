@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MenuSelectUIEnd : MonoBehaviour
 {
+    public static MenuSelectUIEnd singleton;
+
     public GameObject[] optionCards;
 
     [SerializeField] [Range(0, 1)] int optionInt;
@@ -15,6 +17,13 @@ public class MenuSelectUIEnd : MonoBehaviour
     [SerializeField] float desiredDuration;
     float elapsedTime;
 
+    AudioSource audioSource;
+
+    void Awake()
+    {
+        singleton = this;
+    }
+
     void Start()
     {
         optionInt = 0;
@@ -24,6 +33,8 @@ public class MenuSelectUIEnd : MonoBehaviour
 
         lerpEndPos[0] = new Vector3(optionCards[0].transform.position.x, optionCards[0].transform.position.y + 30, 0);
         lerpEndPos[1] = new Vector3(optionCards[1].transform.position.x, optionCards[1].transform.position.y + 30, 0);
+
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -31,6 +42,8 @@ public class MenuSelectUIEnd : MonoBehaviour
         if (Menu.singleton.navigateU.action.triggered || Menu.singleton.navigateD.action.triggered || Menu.singleton.navigateL.action.triggered || Menu.singleton.navigateR.action.triggered)
         {
             elapsedTime = 0;
+            audioSource.volume = 0.4f;
+            audioSource.PlayOneShot(JimSFXPool.singleton.menuClips[4]);
         }
 
         elapsedTime += Time.deltaTime;

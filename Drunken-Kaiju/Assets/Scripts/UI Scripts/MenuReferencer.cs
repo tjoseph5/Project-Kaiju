@@ -16,6 +16,7 @@ public class MenuReferencer : MonoBehaviour
     {
         audioSource.volume = 0.5f;
         audioSource.PlayOneShot(JimSFXPool.singleton.menuClips[2]);
+        audioSource.PlayOneShot(JimSFXPool.singleton.menuClips[3]);
     }
 
     public void ResumeGame()
@@ -79,6 +80,29 @@ public class MenuReferencer : MonoBehaviour
 
     public void DisableMainSelect(GameObject obj)
     {
-        obj.SetActive(false);
+        //obj.SetActive(false);
+    }
+
+    public void TurnOnMainCamera()
+    {
+        GameObject.Find("Game Manager").GetComponent<Menu>().enabled = true;
+        GameObject.Find("3rd Person Camera").GetComponent<Cinemachine.CinemachineFreeLook>().enabled = true;
+        Timer.singleton.musicPlayer.enabled = true;
+        KaijuMovement.singleton.audioSource.enabled = true;
+        Timer.singleton.timeStart = true;
+    }
+
+    public void AudioStop()
+    {
+        gameObject.GetComponent<AudioSource>().Stop();
+    }
+
+    public void AudioSwitch()
+    {
+        if (audioSource.clip != JimSFXPool.singleton.menuClips[6])
+        {
+            gameObject.GetComponent<AudioSource>().clip = JimSFXPool.singleton.menuClips[6];
+            gameObject.GetComponent<AudioSource>().Play();
+        }
     }
 }

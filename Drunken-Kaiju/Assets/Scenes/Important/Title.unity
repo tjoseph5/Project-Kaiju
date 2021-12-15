@@ -4667,18 +4667,18 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
-  shallowColor: {r: 0, g: 0.30228812, b: 0.5, a: 0.5019608}
+  shallowColor: {r: 0, g: 0.30228275, b: 0.5, a: 0.5019608}
   deepColor: {r: 0, g: 0.6745098, b: 0.8509804, a: 1}
   colorDepth: 0
-  horizonColor: {r: 0.075303726, g: 0, b: 1, a: 1}
+  horizonColor: {r: 0.0752999, g: 0, b: 1, a: 1}
   horizonDistance: 20
   shoreFade: 1
-  shoreColor: {r: 0, g: 1, b: 0.30961412, a: 0.604}
+  shoreColor: {r: 0, g: 1, b: 0.30960876, a: 0.604}
   shoreStrength: 0.604
   shoreBlend: 1
   shoreDepth: 0.74
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.10743258, g: 0.611, b: 1, a: 0}
+  underwaterColor: {r: 0.10742723, g: 0.611, b: 1, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.232
   surfaceFoamTexture: {fileID: 2800000, guid: 772031b03d9d46e4ab03e15c8e17718c, type: 3}
@@ -6865,6 +6865,7 @@ GameObject:
   - component: {fileID: 369641633}
   - component: {fileID: 369641632}
   - component: {fileID: 369641631}
+  - component: {fileID: 369641634}
   m_Layer: 5
   m_Name: Clock UI
   m_TagString: Untagged
@@ -6954,6 +6955,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369641629}
   m_CullTransparentMesh: 1
+--- !u!82 &369641634
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369641629}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &374106394 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6522689655627858432, guid: da215e28b9216f840aa6fdf07095be93, type: 3}
@@ -7043,6 +7140,8 @@ GameObject:
   - component: {fileID: 382901651}
   - component: {fileID: 382901646}
   - component: {fileID: 382901652}
+  - component: {fileID: 382901653}
+  - component: {fileID: 382901654}
   m_Layer: 5
   m_Name: Title Canvas
   m_TagString: Untagged
@@ -7191,6 +7290,139 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74fa3eef830594c439c8304a58c60d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &382901653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382901645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c325888ed2bda49a32d9dd2129259d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jimClips:
+  - {fileID: 8300000, guid: a5209552426a9bc4e84b40050f88b8e0, type: 3}
+  - {fileID: 8300000, guid: 3829ba0903ac321479e238aa12678eef, type: 3}
+  - {fileID: 8300000, guid: 7477149bc8ce50f47b6da9c0ac101159, type: 3}
+  - {fileID: 8300000, guid: 870e7470645cdbf4a92ac270406a6262, type: 3}
+  - {fileID: 8300000, guid: acc991fa4f491eb459eaeff2a14315a6, type: 3}
+  - {fileID: 8300000, guid: f0097db37083b494caeda4518d43f695, type: 3}
+  - {fileID: 8300000, guid: c69ce7a7bf9baa8498caec51391c6080, type: 3}
+  - {fileID: 8300000, guid: 39ae09dae8fd56141a89579752b16bf0, type: 3}
+  pickupClips:
+  - {fileID: 8300000, guid: a98e2a841b136234ba49f4dc90f84a39, type: 3}
+  vehicleClips: []
+  bottleClips:
+  - {fileID: 8300000, guid: 4d3cf314c75dd054bab8d4b91fc45eb9, type: 3}
+  - {fileID: 8300000, guid: c455f006b1644924f801f0193efab65d, type: 3}
+  - {fileID: 8300000, guid: b12859cbe401f8241b496448463d6a15, type: 3}
+  - {fileID: 8300000, guid: c546196007b924142a96a76ca60192dd, type: 3}
+  menuClips:
+  - {fileID: 8300000, guid: b4d9dcaa681cbe74b859b001c92ad88a, type: 3}
+  - {fileID: 8300000, guid: a810f0603d3a4a54ea2fcf16386d86e9, type: 3}
+  - {fileID: 8300000, guid: ef614b0bcf6ba31408e14a7cce2dd048, type: 3}
+  - {fileID: 8300000, guid: 27932f18dda052d49b8009e012f7c60d, type: 3}
+  - {fileID: 8300000, guid: 3eb6eb33fd9c7604f8c6d67255051f0f, type: 3}
+  - {fileID: 8300000, guid: b5ec00ef1885c8246ac1dc6a5421f27e, type: 3}
+  - {fileID: 8300000, guid: 4541095c661984942822e4ab7a033abc, type: 3}
+--- !u!82 &382901654
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382901645}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 49ca081b7d17697448bbaec442ee67bb, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &383043458
 GameObject:
   m_ObjectHideFlags: 0
@@ -16085,10 +16317,10 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 2800000, guid: 3c92b878fe7d7e44f903be9fdfc75b00, type: 3}
-  shallowColor: {r: 0.25869787, g: 0.8449912, b: 0.8509804, a: 0.5019608}
-  deepColor: {r: 0.08157001, g: 0.58524245, b: 0.6981132, a: 0.62352943}
+  shallowColor: {r: 0.25869253, g: 0.8449912, b: 0.8509804, a: 0.5019608}
+  deepColor: {r: 0.081565626, g: 0.58524245, b: 0.6981132, a: 0.62352943}
   colorDepth: 4
-  horizonColor: {r: 0, g: 0.34032857, b: 0.49056596, a: 1}
+  horizonColor: {r: 0, g: 0.34032324, b: 0.49056596, a: 1}
   horizonDistance: 20
   shoreFade: 1
   shoreColor: {r: 1, g: 1, b: 1, a: 0}
@@ -16096,7 +16328,7 @@ MonoBehaviour:
   shoreBlend: 1
   shoreDepth: 0
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.17543551, g: 0.6792453, b: 0.29210982, a: 0}
+  underwaterColor: {r: 0.17543045, g: 0.6792453, b: 0.29210445, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}
@@ -18825,10 +19057,10 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 2800000, guid: 3c92b878fe7d7e44f903be9fdfc75b00, type: 3}
-  shallowColor: {r: 0.25865906, g: 0.8509804, b: 0.29959202, a: 0.5019608}
-  deepColor: {r: 0, g: 0.084779374, b: 0.0035211036, a: 1}
+  shallowColor: {r: 0.25865373, g: 0.8509804, b: 0.29958668, a: 0.5019608}
+  deepColor: {r: 0, g: 0.08477492, b: 0.0035211036, a: 1}
   colorDepth: 4
-  horizonColor: {r: 0.08554324, g: 0.8, b: 0, a: 1}
+  horizonColor: {r: 0.08553892, g: 0.8, b: 0, a: 1}
   horizonDistance: 20
   shoreFade: 1
   shoreColor: {r: 1, g: 1, b: 1, a: 0}
@@ -18836,7 +19068,7 @@ MonoBehaviour:
   shoreBlend: 1
   shoreDepth: 0
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.17542955, g: 0.6792453, b: 0.29210353, a: 0}
+  underwaterColor: {r: 0.17542449, g: 0.6792453, b: 0.29209816, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}
@@ -18844,7 +19076,7 @@ MonoBehaviour:
   surfaceFoamCutoff: 0.62
   surfaceFoamDistortion: 0
   surfaceFoamBlend: 1
-  surfaceFoamColor1: {r: 0.45625633, g: 0.9811321, b: 0.262707, a: 0.3215686}
+  surfaceFoamColor1: {r: 0.45625633, g: 0.9811321, b: 0.26270166, a: 0.3215686}
   surfaceFoamColor2: {r: 0.7304496, g: 1, b: 0.61698115, a: 0.7294118}
   surfaceFoamMovement: {x: 0.7, y: 0, z: 0.47, w: 0.01}
   surfaceFoamDirection1: 0.7
@@ -18867,7 +19099,7 @@ MonoBehaviour:
   foamMovement: 0
   intersectionFoamDepth: 0.6
   intersectionFoamTexture: {fileID: 2800000, guid: 86ed7ce9e52fd71459c3ce9ac144d310, type: 3}
-  intersectionFoamColor: {r: 0.231289, g: 0.5058824, b: 0.10972036, a: 1}
+  intersectionFoamColor: {r: 0.23128366, g: 0.5058824, b: 0.10971501, a: 1}
   intersectionFoamMovement: {x: 0, y: 0}
   intersectionFoamDirection: 0
   intersectionFoamSpeed: 0
@@ -18885,7 +19117,7 @@ MonoBehaviour:
   shoreFoamBreakupScale: 31.2
   lighting: 0
   lightingSmoothness: 1
-  lightingSpecularColor: {r: 0.37596038, g: 0.9433962, b: 0.3683594, a: 0}
+  lightingSpecularColor: {r: 0.37595505, g: 0.9433962, b: 0.36835402, a: 0}
   lightingDiffuseColor: {r: 0, g: 0, b: 0, a: 0}
   lightingHardness: 1
   normalsTexture: {fileID: 2800000, guid: a41da5f5671718b47bbc71e9ef691103, type: 3}

@@ -29,7 +29,7 @@ public class Timer : MonoBehaviour
         rankFinished = false;
         musicPlayer = transform.GetChild(0).gameObject.GetComponent<AudioSource>();
 
-        musicPlayer.Play();
+        //musicPlayer.Play();
     }
 
 

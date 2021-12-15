@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MenuSelectUI : MonoBehaviour
 {
-    //THIS SCRIPT SHOULD BE ATTACHED TO THE SELECT UI AND IS MAINLY USED TO CONTROL SELECTING PARTS OF THE MENU.
+    public static MenuSelectUI singleton;
 
     public GameObject[] optionCards;
     public GameObject[] dynamicCameras;
@@ -17,6 +17,13 @@ public class MenuSelectUI : MonoBehaviour
 
     [SerializeField] float desiredDuration;
     float elapsedTime;
+
+    AudioSource audioSource;
+
+    void Awake()
+    {
+        singleton = this;
+    }
 
     void Start()
     {
@@ -39,6 +46,8 @@ public class MenuSelectUI : MonoBehaviour
                 dynamicCameras = null;
             }
         }
+
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -46,6 +55,8 @@ public class MenuSelectUI : MonoBehaviour
         if (Menu.singleton.navigateU.action.triggered || Menu.singleton.navigateD.action.triggered || Menu.singleton.navigateL.action.triggered || Menu.singleton.navigateR.action.triggered)
         {
             elapsedTime = 0;
+            audioSource.volume = 0.4f;
+            audioSource.PlayOneShot(JimSFXPool.singleton.menuClips[4]);
         }
 
         if(Menu.singleton.sceneID == 0)

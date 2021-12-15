@@ -32,6 +32,8 @@ public class Menu : MonoBehaviour
     public MenuStates menuStates = MenuStates.mainMenu;
     public bool titleStarted;
 
+    AudioSource audioSource;
+
     void Awake()
     {
         singleton = this;
@@ -45,11 +47,37 @@ public class Menu : MonoBehaviour
         sceneID = scene.buildIndex;
 
         titleStarted = false;
+
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (sceneID == 0)
+        {
+            if (MenuSelectUI.singleton.enabled)
+            {
+                if (Menu.singleton.select.action.triggered || Menu.singleton.startButton.action.triggered || Menu.singleton.exitPause.action.triggered)
+                {
+                    audioSource.volume = 0.4f;
+                    audioSource.PlayOneShot(JimSFXPool.singleton.menuClips[5]);
+                }
+            }
+        }
+        else if (sceneID == 1)
+        {
+            if (MenuSelectUI.singleton.enabled || MenuSelectUIEnd.singleton.enabled)
+            {
+                if (Menu.singleton.select.action.triggered || Menu.singleton.startButton.action.triggered || Menu.singleton.exitPause.action.triggered)
+                {
+                    audioSource.volume = 0.4f;
+                    audioSource.PlayOneShot(JimSFXPool.singleton.menuClips[5]);
+                }
+            }
+        }
+        
+
         switch (sceneID)
         {
             case 0:
@@ -60,6 +88,9 @@ public class Menu : MonoBehaviour
                         startButton.action.Disable();
                         titleStarted = true;
                         Debug.Log("entering menu");
+
+                        audioSource.volume = 0.4f;
+                        audioSource.PlayOneShot(JimSFXPool.singleton.menuClips[5]);
                     }
 
                     pauseAnimator.SetTrigger("next");
@@ -71,6 +102,9 @@ public class Menu : MonoBehaviour
                     {
                         pauseAnimator.SetTrigger("next");
                         menuStates = MenuStates.mainMenu;
+
+                        audioSource.volume = 0.4f;
+                        audioSource.PlayOneShot(JimSFXPool.singleton.menuClips[5]);
                     }
                 }
                 break;
@@ -85,21 +119,25 @@ public class Menu : MonoBehaviour
                     {
                         pauseAnimator.SetTrigger("Pause");
                         Pause();
+
+                        audioSource.volume = 0.4f;
+                        audioSource.PlayOneShot(JimSFXPool.singleton.menuClips[5]);
                     }
                     else if (!Timer.singleton.gameOver && !Timer.singleton.timeStart && !Timer.singleton.rankFinished)
                     {
                         pauseAnimator.SetTrigger("Pause");
-                    }
 
-                    if (Timer.singleton.rankFinished)
-                    {
-                        SceneManager.LoadScene(0);
+                        audioSource.volume = 0.4f;
+                        audioSource.PlayOneShot(JimSFXPool.singleton.menuClips[5]);
                     }
                 }
 
                 if (exitPause.action.triggered && !Timer.singleton.timeStart)
                 {
                     pauseAnimator.SetTrigger("Pause");
+
+                    audioSource.volume = 0.4f;
+                    audioSource.PlayOneShot(JimSFXPool.singleton.menuClips[5]);
                 }
 
                 if (select.action.triggered || exitPause.action.triggered)
@@ -108,6 +146,9 @@ public class Menu : MonoBehaviour
                     {
                         pauseAnimator.SetTrigger("next");
                         menuStates = MenuStates.inGame;
+
+                        audioSource.volume = 0.4f;
+                        audioSource.PlayOneShot(JimSFXPool.singleton.menuClips[5]);
                     }
                 }
 
