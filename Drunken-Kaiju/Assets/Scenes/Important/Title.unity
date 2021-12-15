@@ -4061,7 +4061,7 @@ GameObject:
   - component: {fileID: 218067092}
   - component: {fileID: 218067091}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Story Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4306,18 +4306,18 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
-  shallowColor: {r: 0, g: 0.30230555, b: 0.5, a: 0.5019608}
+  shallowColor: {r: 0, g: 0.3023015, b: 0.5, a: 0.5019608}
   deepColor: {r: 0, g: 0.6745098, b: 0.8509804, a: 1}
   colorDepth: 0
-  horizonColor: {r: 0.07531627, g: 0, b: 1, a: 1}
+  horizonColor: {r: 0.07531337, g: 0, b: 1, a: 1}
   horizonDistance: 20
   shoreFade: 1
-  shoreColor: {r: 0, g: 1, b: 0.30963156, a: 0.604}
+  shoreColor: {r: 0, g: 1, b: 0.3096275, a: 0.604}
   shoreStrength: 0.604
   shoreBlend: 1
   shoreDepth: 0.74
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.10745003, g: 0.611, b: 1, a: 0}
+  underwaterColor: {r: 0.10744596, g: 0.611, b: 1, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.232
   surfaceFoamTexture: {fileID: 2800000, guid: 772031b03d9d46e4ab03e15c8e17718c, type: 3}
@@ -4912,7 +4912,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -821.5, y: -384.5}
+  m_AnchoredPosition: {x: -821.5, y: -394}
   m_SizeDelta: {x: 773, y: 251}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &258714417
@@ -6441,7 +6441,6 @@ MonoBehaviour:
   sceneID: 0
   pauseAnimator: {fileID: 382901651}
   menuStates: 0
-  howToPlay: 0
   titleStarted: 0
 --- !u!114 &382901647
 MonoBehaviour:
@@ -12061,7 +12060,7 @@ GameObject:
   - component: {fileID: 690197231}
   - component: {fileID: 690197230}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: Story des
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12083,7 +12082,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: 22.931679}
+  m_AnchoredPosition: {x: 0, y: 116.17}
   m_SizeDelta: {x: 756.3539, y: 114.828}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &690197230
@@ -12106,12 +12105,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Jimothy work for a company all about destroying cities. \nJimothy is good
-    at his job, but he has been having problems recently, mainly his addiction too
-    radiation.\nHe recently has been drinking at night and has woken up this morning
-    with a killer hangover, barely being able to walk properly. \nWhats worse, he
-    has a shift he can't call out from.\nTry and do your best so that your boss doesn't
-    fire you or realize your drunk."
+  m_text: 'Jimothy works for a company all about destroying cities. Jimothy is good
+    at his job, but he has been having problems recently, mainly his addiction to
+    radiation.
+
+    He recently has been drinking at night and has woken up this
+    morning with a killer hangover, barely being able to walk properly. What''s worse,
+    he has a shift he can''t call out from. Try and do your best so that your boss
+    doesn''t fire you!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a0eb40a5fb8d8f7478e729dcb54d9012, type: 2}
   m_sharedMaterial: {fileID: -5041963523753041623, guid: a0eb40a5fb8d8f7478e729dcb54d9012, type: 2}
@@ -12138,7 +12139,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38.5
+  m_fontSize: 44
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -14749,7 +14750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.5629, y: 887}
+  m_AnchoredPosition: {x: -7.5629272, y: 886.9531}
   m_SizeDelta: {x: 330, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &876189593
@@ -15292,10 +15293,10 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 2800000, guid: 3c92b878fe7d7e44f903be9fdfc75b00, type: 3}
-  shallowColor: {r: 0.2587153, g: 0.8449912, b: 0.8509804, a: 0.5019608}
-  deepColor: {r: 0.08158428, g: 0.58524245, b: 0.6981132, a: 0.62352943}
+  shallowColor: {r: 0.25871125, g: 0.8449912, b: 0.8509804, a: 0.5019608}
+  deepColor: {r: 0.081580944, g: 0.58524245, b: 0.6981132, a: 0.62352943}
   colorDepth: 4
-  horizonColor: {r: 0, g: 0.34034604, b: 0.49056596, a: 1}
+  horizonColor: {r: 0, g: 0.34034196, b: 0.49056596, a: 1}
   horizonDistance: 20
   shoreFade: 1
   shoreColor: {r: 1, g: 1, b: 1, a: 0}
@@ -15303,7 +15304,7 @@ MonoBehaviour:
   shoreBlend: 1
   shoreDepth: 0
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.17545205, g: 0.6792453, b: 0.29212725, a: 0}
+  underwaterColor: {r: 0.17544821, g: 0.6792453, b: 0.2921232, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}
@@ -16019,6 +16020,140 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bb405ca14629e74db7ebcd9fe1d5962, type: 3}
+--- !u!1 &956080845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 956080846}
+  - component: {fileID: 956080848}
+  - component: {fileID: 956080847}
+  m_Layer: 5
+  m_Name: Controls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &956080846
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956080845}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1497278148}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 505, y: -103}
+  m_SizeDelta: {x: 756.3539, y: 114.828}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &956080847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956080845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: CONTROLS
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: a0eb40a5fb8d8f7478e729dcb54d9012, type: 2}
+  m_sharedMaterial: {fileID: -5041963523753041623, guid: a0eb40a5fb8d8f7478e729dcb54d9012, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 72
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -299.79977, y: 0, z: 704.8169, w: -197.7956}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &956080848
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956080845}
+  m_CullTransparentMesh: 1
 --- !u!4 &960491949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7130186412100846003, guid: 26e95c24b202fdf4e84c0cfa41ddc970, type: 3}
@@ -17898,10 +18033,10 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 2800000, guid: 3c92b878fe7d7e44f903be9fdfc75b00, type: 3}
-  shallowColor: {r: 0.25867653, g: 0.8509804, b: 0.29960948, a: 0.5019608}
-  deepColor: {r: 0, g: 0.08479374, b: 0.0035211036, a: 1}
+  shallowColor: {r: 0.25867245, g: 0.8509804, b: 0.29960543, a: 0.5019608}
+  deepColor: {r: 0, g: 0.08479043, b: 0.0035211036, a: 1}
   colorDepth: 4
-  horizonColor: {r: 0.08555753, g: 0.8, b: 0, a: 1}
+  horizonColor: {r: 0.08555422, g: 0.8, b: 0, a: 1}
   horizonDistance: 20
   shoreFade: 1
   shoreColor: {r: 1, g: 1, b: 1, a: 0}
@@ -17909,7 +18044,7 @@ MonoBehaviour:
   shoreBlend: 1
   shoreDepth: 0
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.1754461, g: 0.6792453, b: 0.29212096, a: 0}
+  underwaterColor: {r: 0.17544225, g: 0.6792453, b: 0.2921169, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}
@@ -17917,7 +18052,7 @@ MonoBehaviour:
   surfaceFoamCutoff: 0.62
   surfaceFoamDistortion: 0
   surfaceFoamBlend: 1
-  surfaceFoamColor1: {r: 0.45625633, g: 0.9811321, b: 0.26272446, a: 0.3215686}
+  surfaceFoamColor1: {r: 0.45625633, g: 0.9811321, b: 0.26272038, a: 0.3215686}
   surfaceFoamColor2: {r: 0.7304496, g: 1, b: 0.61698115, a: 0.7294118}
   surfaceFoamMovement: {x: 0.7, y: 0, z: 0.47, w: 0.01}
   surfaceFoamDirection1: 0.7
@@ -17940,7 +18075,7 @@ MonoBehaviour:
   foamMovement: 0
   intersectionFoamDepth: 0.6
   intersectionFoamTexture: {fileID: 2800000, guid: 86ed7ce9e52fd71459c3ce9ac144d310, type: 3}
-  intersectionFoamColor: {r: 0.23130646, g: 0.5058824, b: 0.109737806, a: 1}
+  intersectionFoamColor: {r: 0.23130241, g: 0.5058824, b: 0.10973374, a: 1}
   intersectionFoamMovement: {x: 0, y: 0}
   intersectionFoamDirection: 0
   intersectionFoamSpeed: 0
@@ -17958,7 +18093,7 @@ MonoBehaviour:
   shoreFoamBreakupScale: 31.2
   lighting: 0
   lightingSmoothness: 1
-  lightingSpecularColor: {r: 0.37597784, g: 0.9433962, b: 0.36837682, a: 0}
+  lightingSpecularColor: {r: 0.3759738, g: 0.9433962, b: 0.36837277, a: 0}
   lightingDiffuseColor: {r: 0, g: 0, b: 0, a: 0}
   lightingHardness: 1
   normalsTexture: {fileID: 2800000, guid: a41da5f5671718b47bbc71e9ef691103, type: 3}
@@ -26016,6 +26151,7 @@ RectTransform:
   m_Children:
   - {fileID: 218067090}
   - {fileID: 690197229}
+  - {fileID: 956080846}
   m_Father: {fileID: 1216932341}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -33274,7 +33410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 41, y: -391.5}
+  m_AnchoredPosition: {x: 41, y: -413}
   m_SizeDelta: {x: 767, y: 258}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1896077994
