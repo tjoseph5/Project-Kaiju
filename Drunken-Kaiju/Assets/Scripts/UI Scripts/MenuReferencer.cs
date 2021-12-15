@@ -20,9 +20,10 @@ public class MenuReferencer : MonoBehaviour
 
     public void ResumeGame()
     {
-        if(Menu.singleton.sceneID == 1)
+        if(Time.timeScale == 0)
         {
             Menu.singleton.Resume();
+            Debug.Log("We'll be right back...");
         }
     }
 
@@ -66,14 +67,18 @@ public class MenuReferencer : MonoBehaviour
 
     public void LoadintoDummy()
     {
-        if (Menu.singleton.sceneID == 1)
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
-        }
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+
     }
 
     public void LoadintoMain()
     {
         LevelLoader.loader.LoadLevel(0);
+    }
+
+    public void DisableMainSelect(GameObject obj)
+    {
+        obj.SetActive(false);
     }
 }

@@ -9,8 +9,8 @@ public class MenuSelectUIEnd : MonoBehaviour
     [SerializeField] [Range(0, 1)] int optionInt;
     int tempOptionIntStore;
 
-    Vector3 [] lerpStartPos = new Vector3[2];
-    Vector3 [] lerpEndPos = new Vector3[2];
+    Vector3[] lerpStartPos = new Vector3[2];
+    Vector3[] lerpEndPos = new Vector3[2];
 
     [SerializeField] float desiredDuration;
     float elapsedTime;
@@ -42,13 +42,13 @@ public class MenuSelectUIEnd : MonoBehaviour
         if (optionInt > 1)
         {
             optionInt = 0;
-        } 
-        else if(optionInt < 0)
+        }
+        else if (optionInt < 0)
         {
             optionInt = 1;
         }
 
-        if(Menu.singleton.navigateL.action.triggered)
+        if (Menu.singleton.navigateL.action.triggered)
         {
             tempOptionIntStore = optionInt;
             optionInt -= 1;
@@ -97,27 +97,24 @@ public class MenuSelectUIEnd : MonoBehaviour
         if (Timer.singleton.rankFinished)
         {
 
-            switch (Menu.singleton.menuStates)
+            if (Menu.singleton.select.action.triggered)
             {
-                case Menu.MenuStates.inGame:
-                    if (Menu.singleton.select.action.triggered)
-                    {
-                        switch (optionInt)
-                        {
-                            case 0:
-                                Menu.singleton.pauseAnimator.SetTrigger("Pause");
-                                Debug.Log("Play");
-                                break;
+                switch (optionInt)
+                {
+                    case 0:
+                        Menu.singleton.pauseAnimator.SetBool("InEndGame", true);
+                        Menu.singleton.pauseAnimator.SetTrigger("play");
+                        Debug.Log("Play");
+                        break;
 
-                            case 1:
-                                Menu.singleton.pauseAnimator.SetTrigger("htp");
-                                Menu.singleton.menuStates = Menu.MenuStates.howToPlay;
-                                Debug.Log("HTP");
-                                break;
-                        }
-                    }
-                    break;
+                    case 1:
+                        Menu.singleton.pauseAnimator.SetBool("InEndGame", true);
+                        Menu.singleton.pauseAnimator.SetTrigger("exit");
+                        Debug.Log("Return");
+                        break;
+                }
             }
+
         }
     }
 }

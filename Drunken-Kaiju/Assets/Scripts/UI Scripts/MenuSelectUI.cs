@@ -253,6 +253,9 @@ public class MenuSelectUI : MonoBehaviour
                                 }
                             }
                             break;
+                        case Menu.MenuStates.endGame:
+                            //gameObject.transform.parent.gameObject.SetActive(false);
+                            break;
                     }
                 }
                 break;
