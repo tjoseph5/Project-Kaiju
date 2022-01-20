@@ -90,6 +90,8 @@ public class MenuReferencer : MonoBehaviour
         Timer.singleton.musicPlayer.enabled = true;
         KaijuMovement.singleton.audioSource.enabled = true;
         Timer.singleton.timeStart = true;
+
+        Destroy(GameObject.Find("Start-game Canvas"));
     }
 
     public void AudioStop()
