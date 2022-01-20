@@ -49,6 +49,9 @@ public class Menu : MonoBehaviour
         titleStarted = false;
 
         audioSource = gameObject.GetComponent<AudioSource>();
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame

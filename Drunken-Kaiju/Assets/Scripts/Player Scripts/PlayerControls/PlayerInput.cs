@@ -581,6 +581,197 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Trailer"",
+            ""id"": ""93b2bada-d5e5-4325-9852-8e0957df9ef5"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""bea5aec0-9bbb-4e39-9c68-ce98a00a48e5"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Rotation"",
+                    ""type"": ""Button"",
+                    ""id"": ""204aee9b-fea4-4f07-90f1-ff906132a664"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Elevate"",
+                    ""type"": ""Value"",
+                    ""id"": ""6643b9f4-0e72-4281-896f-7ec4aba41422"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Decend"",
+                    ""type"": ""Value"",
+                    ""id"": ""4d27cae0-a146-4717-a368-459053bfd388"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Gameplay"",
+                    ""type"": ""Button"",
+                    ""id"": ""858c129e-d80f-46a4-9cd5-28e8b433596c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""220171c2-22d0-4ee9-afd4-a0e3eced2621"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""9b4409ce-e19b-4f41-a975-2ae271fb8dcf"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""780771f2-e7e6-40c5-b8e5-378467bb5de8"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""e3259c2e-a32a-4a1c-859e-9e6af08100a4"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""1c749d2b-d091-41b1-8ef2-da4177dbb63b"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""bdb2aeee-6b9d-427e-ba9a-00d4f7729052"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""3df3b513-988b-4bce-a18a-9150c02c7371"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""14ab8ea1-25d4-472a-90c9-d130b8f36e5b"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""15fdaf73-7f12-43cc-90e4-00f0f74197dd"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""2efaa6d8-e893-4790-9a15-e8b738a9802d"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""493bcade-b8e9-464d-8ad3-2f228a2766d7"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Elevate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""236e9743-4928-4908-8758-389abe19d2d5"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Decend"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""53fbe881-49c3-4560-a860-70b21f25149a"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Gameplay"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -603,6 +794,13 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         m_Menu_DMenuMovement = m_Menu.FindAction("(D) Menu Movement", throwIfNotFound: true);
         m_Menu_LMenuMovement = m_Menu.FindAction("(L) Menu Movement", throwIfNotFound: true);
         m_Menu_RMenuMovement = m_Menu.FindAction("(R) Menu Movement", throwIfNotFound: true);
+        // Trailer
+        m_Trailer = asset.FindActionMap("Trailer", throwIfNotFound: true);
+        m_Trailer_Movement = m_Trailer.FindAction("Movement", throwIfNotFound: true);
+        m_Trailer_Rotation = m_Trailer.FindAction("Rotation", throwIfNotFound: true);
+        m_Trailer_Elevate = m_Trailer.FindAction("Elevate", throwIfNotFound: true);
+        m_Trailer_Decend = m_Trailer.FindAction("Decend", throwIfNotFound: true);
+        m_Trailer_Gameplay = m_Trailer.FindAction("Gameplay", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -810,6 +1008,71 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         }
     }
     public MenuActions @Menu => new MenuActions(this);
+
+    // Trailer
+    private readonly InputActionMap m_Trailer;
+    private ITrailerActions m_TrailerActionsCallbackInterface;
+    private readonly InputAction m_Trailer_Movement;
+    private readonly InputAction m_Trailer_Rotation;
+    private readonly InputAction m_Trailer_Elevate;
+    private readonly InputAction m_Trailer_Decend;
+    private readonly InputAction m_Trailer_Gameplay;
+    public struct TrailerActions
+    {
+        private @PlayerInput m_Wrapper;
+        public TrailerActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_Trailer_Movement;
+        public InputAction @Rotation => m_Wrapper.m_Trailer_Rotation;
+        public InputAction @Elevate => m_Wrapper.m_Trailer_Elevate;
+        public InputAction @Decend => m_Wrapper.m_Trailer_Decend;
+        public InputAction @Gameplay => m_Wrapper.m_Trailer_Gameplay;
+        public InputActionMap Get() { return m_Wrapper.m_Trailer; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TrailerActions set) { return set.Get(); }
+        public void SetCallbacks(ITrailerActions instance)
+        {
+            if (m_Wrapper.m_TrailerActionsCallbackInterface != null)
+            {
+                @Movement.started -= m_Wrapper.m_TrailerActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_TrailerActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_TrailerActionsCallbackInterface.OnMovement;
+                @Rotation.started -= m_Wrapper.m_TrailerActionsCallbackInterface.OnRotation;
+                @Rotation.performed -= m_Wrapper.m_TrailerActionsCallbackInterface.OnRotation;
+                @Rotation.canceled -= m_Wrapper.m_TrailerActionsCallbackInterface.OnRotation;
+                @Elevate.started -= m_Wrapper.m_TrailerActionsCallbackInterface.OnElevate;
+                @Elevate.performed -= m_Wrapper.m_TrailerActionsCallbackInterface.OnElevate;
+                @Elevate.canceled -= m_Wrapper.m_TrailerActionsCallbackInterface.OnElevate;
+                @Decend.started -= m_Wrapper.m_TrailerActionsCallbackInterface.OnDecend;
+                @Decend.performed -= m_Wrapper.m_TrailerActionsCallbackInterface.OnDecend;
+                @Decend.canceled -= m_Wrapper.m_TrailerActionsCallbackInterface.OnDecend;
+                @Gameplay.started -= m_Wrapper.m_TrailerActionsCallbackInterface.OnGameplay;
+                @Gameplay.performed -= m_Wrapper.m_TrailerActionsCallbackInterface.OnGameplay;
+                @Gameplay.canceled -= m_Wrapper.m_TrailerActionsCallbackInterface.OnGameplay;
+            }
+            m_Wrapper.m_TrailerActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @Rotation.started += instance.OnRotation;
+                @Rotation.performed += instance.OnRotation;
+                @Rotation.canceled += instance.OnRotation;
+                @Elevate.started += instance.OnElevate;
+                @Elevate.performed += instance.OnElevate;
+                @Elevate.canceled += instance.OnElevate;
+                @Decend.started += instance.OnDecend;
+                @Decend.performed += instance.OnDecend;
+                @Decend.canceled += instance.OnDecend;
+                @Gameplay.started += instance.OnGameplay;
+                @Gameplay.performed += instance.OnGameplay;
+                @Gameplay.canceled += instance.OnGameplay;
+            }
+        }
+    }
+    public TrailerActions @Trailer => new TrailerActions(this);
     public interface IPlayerActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -829,5 +1092,13 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         void OnDMenuMovement(InputAction.CallbackContext context);
         void OnLMenuMovement(InputAction.CallbackContext context);
         void OnRMenuMovement(InputAction.CallbackContext context);
+    }
+    public interface ITrailerActions
+    {
+        void OnMovement(InputAction.CallbackContext context);
+        void OnRotation(InputAction.CallbackContext context);
+        void OnElevate(InputAction.CallbackContext context);
+        void OnDecend(InputAction.CallbackContext context);
+        void OnGameplay(InputAction.CallbackContext context);
     }
 }
