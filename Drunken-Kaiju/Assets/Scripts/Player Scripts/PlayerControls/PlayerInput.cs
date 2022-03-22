@@ -297,14 +297,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Exit Pause"",
-                    ""type"": ""Button"",
-                    ""id"": ""62643d60-693f-47f0-ae07-94d74efc4c5c"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""(U) Menu Movement"",
                     ""type"": ""Button"",
                     ""id"": ""f7e72550-e500-47c4-8d2b-4e5beb7bf9c2"",
@@ -362,6 +354,17 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""cfcd587f-941d-4394-b8d9-4b79b129c53d"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""588a2dc8-b23d-467c-89cb-e0446dc41861"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
@@ -384,23 +387,12 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f5af0960-899a-40a0-a2bf-f5b55fa13b23"",
-                    ""path"": ""<Keyboard>/backspace"",
+                    ""id"": ""ac57280f-a58e-4bec-86fe-e32a83681724"",
+                    ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Exit Pause"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a1e4f783-8b17-4f33-9f83-a75319652080"",
-                    ""path"": ""<Gamepad>/start"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Exit Pause"",
+                    ""action"": ""Start Button"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -789,7 +781,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_Select = m_Menu.FindAction("Select", throwIfNotFound: true);
         m_Menu_StartButton = m_Menu.FindAction("Start Button", throwIfNotFound: true);
-        m_Menu_ExitPause = m_Menu.FindAction("Exit Pause", throwIfNotFound: true);
         m_Menu_UMenuMovement = m_Menu.FindAction("(U) Menu Movement", throwIfNotFound: true);
         m_Menu_DMenuMovement = m_Menu.FindAction("(D) Menu Movement", throwIfNotFound: true);
         m_Menu_LMenuMovement = m_Menu.FindAction("(L) Menu Movement", throwIfNotFound: true);
@@ -933,7 +924,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     private IMenuActions m_MenuActionsCallbackInterface;
     private readonly InputAction m_Menu_Select;
     private readonly InputAction m_Menu_StartButton;
-    private readonly InputAction m_Menu_ExitPause;
     private readonly InputAction m_Menu_UMenuMovement;
     private readonly InputAction m_Menu_DMenuMovement;
     private readonly InputAction m_Menu_LMenuMovement;
@@ -944,7 +934,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         public MenuActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Select => m_Wrapper.m_Menu_Select;
         public InputAction @StartButton => m_Wrapper.m_Menu_StartButton;
-        public InputAction @ExitPause => m_Wrapper.m_Menu_ExitPause;
         public InputAction @UMenuMovement => m_Wrapper.m_Menu_UMenuMovement;
         public InputAction @DMenuMovement => m_Wrapper.m_Menu_DMenuMovement;
         public InputAction @LMenuMovement => m_Wrapper.m_Menu_LMenuMovement;
@@ -964,9 +953,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @StartButton.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnStartButton;
                 @StartButton.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnStartButton;
                 @StartButton.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnStartButton;
-                @ExitPause.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnExitPause;
-                @ExitPause.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnExitPause;
-                @ExitPause.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnExitPause;
                 @UMenuMovement.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnUMenuMovement;
                 @UMenuMovement.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnUMenuMovement;
                 @UMenuMovement.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnUMenuMovement;
@@ -989,9 +975,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @StartButton.started += instance.OnStartButton;
                 @StartButton.performed += instance.OnStartButton;
                 @StartButton.canceled += instance.OnStartButton;
-                @ExitPause.started += instance.OnExitPause;
-                @ExitPause.performed += instance.OnExitPause;
-                @ExitPause.canceled += instance.OnExitPause;
                 @UMenuMovement.started += instance.OnUMenuMovement;
                 @UMenuMovement.performed += instance.OnUMenuMovement;
                 @UMenuMovement.canceled += instance.OnUMenuMovement;
@@ -1087,7 +1070,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     {
         void OnSelect(InputAction.CallbackContext context);
         void OnStartButton(InputAction.CallbackContext context);
-        void OnExitPause(InputAction.CallbackContext context);
         void OnUMenuMovement(InputAction.CallbackContext context);
         void OnDMenuMovement(InputAction.CallbackContext context);
         void OnLMenuMovement(InputAction.CallbackContext context);

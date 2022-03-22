@@ -462,8 +462,8 @@ public class KaijuMovement : MonoBehaviour
 
         if (isHolding)
         {
-            heldObj.transform.position = objectHolderTransform.transform.position;
-            heldObj.transform.rotation = objectHolderTransform.transform.rotation;
+            heldObj.GetComponent<Rigidbody>().position = objectHolderTransform.transform.position;
+            heldObj.GetComponent<Rigidbody>().rotation = objectHolderTransform.transform.rotation;
             //Physics.IgnoreLayerCollision(6, 8, true);
         }
         else if (!isHolding)
