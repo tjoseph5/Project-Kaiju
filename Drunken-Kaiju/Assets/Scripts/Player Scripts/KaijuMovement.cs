@@ -535,6 +535,7 @@ public class KaijuMovement : MonoBehaviour
 
 
     #region ActivateRagdoll
+    //NOTE TO SELF: Include dropping an object when entering ragdoll state in the function itself rather than just calling it from pressing the dash button
     public void ActivateRagdoll(bool activated)
     {
         //The Universal Joint Drive's spring Position amount for when the player enters a Ragdoll state
