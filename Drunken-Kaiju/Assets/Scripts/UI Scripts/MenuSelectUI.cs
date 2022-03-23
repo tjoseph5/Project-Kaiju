@@ -254,12 +254,14 @@ public class MenuSelectUI : MonoBehaviour
                                     case 2:
                                         Menu.singleton.pauseAnimator.SetTrigger("play");
                                         Debug.Log("Restart");
+                                        MenuSelectUI.singleton.enabled = false;
                                         break;
 
                                     case 3:
                                         Menu.singleton.pauseAnimator.SetTrigger("exit");
                                         Menu.singleton.menuStates = Menu.MenuStates.howToPlay;
                                         Debug.Log("BTM");
+                                        MenuSelectUI.singleton.enabled = false;
                                         break;
                                 }
                             }

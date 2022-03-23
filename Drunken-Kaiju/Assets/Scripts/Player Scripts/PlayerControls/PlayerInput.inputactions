@@ -284,14 +284,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Exit Pause",
-                    "type": "Button",
-                    "id": "62643d60-693f-47f0-ae07-94d74efc4c5c",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "(U) Menu Movement",
                     "type": "Button",
                     "id": "f7e72550-e500-47c4-8d2b-4e5beb7bf9c2",
@@ -349,6 +341,17 @@
                 },
                 {
                     "name": "",
+                    "id": "cfcd587f-941d-4394-b8d9-4b79b129c53d",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "588a2dc8-b23d-467c-89cb-e0446dc41861",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
@@ -371,23 +374,12 @@
                 },
                 {
                     "name": "",
-                    "id": "f5af0960-899a-40a0-a2bf-f5b55fa13b23",
-                    "path": "<Keyboard>/backspace",
+                    "id": "ac57280f-a58e-4bec-86fe-e32a83681724",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Exit Pause",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a1e4f783-8b17-4f33-9f83-a75319652080",
-                    "path": "<Gamepad>/start",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Exit Pause",
+                    "action": "Start Button",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

@@ -13,7 +13,6 @@ public class Menu : MonoBehaviour
     [Header("Base Control Setup")]
     public InputActionReference select;
     public InputActionReference startButton;
-    public InputActionReference exitPause;
 
     [Header("Navigate Control Setup")]
     public InputActionReference navigateL;
@@ -61,7 +60,7 @@ public class Menu : MonoBehaviour
         {
             if (MenuSelectUI.singleton.enabled)
             {
-                if (Menu.singleton.select.action.triggered || Menu.singleton.startButton.action.triggered || Menu.singleton.exitPause.action.triggered)
+                if (Menu.singleton.select.action.triggered || Menu.singleton.startButton.action.triggered)
                 {
                     audioSource.volume = 0.4f;
                     audioSource.PlayOneShot(JimSFXPool.singleton.menuClips[5]);
@@ -72,11 +71,20 @@ public class Menu : MonoBehaviour
         {
             if (MenuSelectUI.singleton.enabled || MenuSelectUIEnd.singleton.enabled)
             {
-                if (Menu.singleton.select.action.triggered || Menu.singleton.startButton.action.triggered || Menu.singleton.exitPause.action.triggered)
+                if (Menu.singleton.select.action.triggered || Menu.singleton.startButton.action.triggered)
                 {
                     audioSource.volume = 0.4f;
                     audioSource.PlayOneShot(JimSFXPool.singleton.menuClips[5]);
                 }
+            }
+
+            if (!Timer.singleton.timeStart)
+            {
+                startButton.action.Disable();
+            }
+            else
+            {
+                startButton.action.Enable();
             }
         }
         
@@ -84,7 +92,7 @@ public class Menu : MonoBehaviour
         switch (sceneID)
         {
             case 0:
-                if (startButton.action.triggered)
+                if (startButton.action.triggered && !titleStarted)
                 {
                     if (pauseAnimator.GetCurrentAnimatorStateInfo(0).IsName("Play Glowing"))
                     {
@@ -94,12 +102,13 @@ public class Menu : MonoBehaviour
 
                         audioSource.volume = 0.4f;
                         audioSource.PlayOneShot(JimSFXPool.singleton.menuClips[5]);
+                        startButton.action.Disable();
                     }
 
                     pauseAnimator.SetTrigger("next");
                 }
 
-                if(select.action.triggered || exitPause.action.triggered)
+                if(select.action.triggered || startButton.action.triggered)
                 {
                     if(menuStates == MenuStates.howToPlay && pauseAnimator.GetCurrentAnimatorStateInfo(0).IsName("How To Play") || menuStates == MenuStates.howToPlay && pauseAnimator.GetCurrentAnimatorStateInfo(0).IsName("Credits"))
                     {
@@ -135,7 +144,7 @@ public class Menu : MonoBehaviour
                     }
                 }
 
-                if (exitPause.action.triggered && !Timer.singleton.timeStart)
+                if (startButton.action.triggered && !Timer.singleton.timeStart)
                 {
                     pauseAnimator.SetTrigger("Pause");
 
@@ -143,7 +152,7 @@ public class Menu : MonoBehaviour
                     audioSource.PlayOneShot(JimSFXPool.singleton.menuClips[5]);
                 }
 
-                if (select.action.triggered || exitPause.action.triggered)
+                if (select.action.triggered || startButton.action.triggered)
                 {
                     if (menuStates == MenuStates.howToPlay && pauseAnimator.GetCurrentAnimatorStateInfo(0).IsName("How To Play"))
                     {
@@ -153,6 +162,14 @@ public class Menu : MonoBehaviour
                         audioSource.volume = 0.4f;
                         audioSource.PlayOneShot(JimSFXPool.singleton.menuClips[5]);
                     }
+                }
+
+                if(pauseAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle") && Time.timeScale == 0f && !Timer.singleton.timeStart)
+                {
+                    Debug.Log("Glitch happened: " + Time.timeScale + "Time Start is: " + Timer.singleton.timeStart);
+                    
+                    //Resume();
+          
                 }
 
                 break;
@@ -178,7 +195,6 @@ public class Menu : MonoBehaviour
     {
         select.action.Enable();
         startButton.action.Enable();
-        exitPause.action.Enable();
 
         navigateL.action.Enable();
         navigateR.action.Enable();
@@ -190,7 +206,6 @@ public class Menu : MonoBehaviour
     {
         select.action.Disable();
         startButton.action.Disable();
-        exitPause.action.Disable();
 
         navigateL.action.Disable();
         navigateR.action.Disable();
