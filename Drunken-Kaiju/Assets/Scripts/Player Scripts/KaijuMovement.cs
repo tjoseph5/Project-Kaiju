@@ -465,6 +465,8 @@ public class KaijuMovement : MonoBehaviour
             heldObj.GetComponent<Rigidbody>().position = objectHolderTransform.transform.position;
             heldObj.GetComponent<Rigidbody>().rotation = objectHolderTransform.transform.rotation;
             //Physics.IgnoreLayerCollision(6, 8, true);
+
+            //NOTE: Using Rigidbody.MovePosition(pos vector3) will fix the collision issue while holding an object, but for now I'm keeping this the way it is because this would make throwing stuff harder because it would keep clashing with buildings, breaking the flow of gameplay
         }
         else if (!isHolding)
         {
