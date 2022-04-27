@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 34b2087933d1ab14e8963f02f16c4c33
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - eGAnimator: {instanceID: 0}
+  - text: {instanceID: 0}
+  - click: {instanceID: 0}
+  - final: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
